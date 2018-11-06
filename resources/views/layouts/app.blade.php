@@ -23,8 +23,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
              <div class="nav-header " >
-                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/icono quimica.png')}}" width="40" />
-                   <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="4"> <span>Laboratorio de Quimica Ambiental </span></font>
+                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/quimica.jpg')}}" width="50" />
+                   <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="5"> <span>Laboratorio de Quimica Ambiental </span></font>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
