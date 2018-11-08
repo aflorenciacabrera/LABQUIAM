@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Http\Controllers\Auth;
+namespace labquiam\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

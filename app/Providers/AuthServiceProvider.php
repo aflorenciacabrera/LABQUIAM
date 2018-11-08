@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Providers;
+namespace labquiam\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'LABQUIAM\Model' => 'LABQUIAM\Policies\ModelPolicy',
+        'labquiam\Model' => 'labquiam\Policies\ModelPolicy',
     ];
 
     /**

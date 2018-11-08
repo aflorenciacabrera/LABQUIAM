@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Http\Middleware;
+namespace labquiam\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 

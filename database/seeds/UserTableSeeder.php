@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use LABQUIAM\User;
-use LABQUIAM\Role;
+use labquiam\User;
+use labquiam\Role;
 class UserTableSeeder extends Seeder
 {
     /**

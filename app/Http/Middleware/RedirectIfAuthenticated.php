@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Http\Middleware;
+namespace labquiam\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

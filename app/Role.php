@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM;
+namespace labquiam;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +10,7 @@ class Role extends Model
 
     public function users(){
     return $this
-        ->belongsToMany('LABQUIAM\User')
+        ->belongsToMany('labquiam\User')
         ->withTimestamps();
 }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Http\Controllers;
+namespace labquiam\Http\Controllers;
 
 use Illuminate\Http\Request;
 

@@ -24,7 +24,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "LABQUIAM\\": "app/"
+            "labquiam\\": "app/"
         }
     },
     "autoload-dev": {

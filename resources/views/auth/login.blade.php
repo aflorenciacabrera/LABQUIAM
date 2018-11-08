@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                {{-- Titulo --}}
                 <div class="card-header text-center">{{ __('Iniciar sesión') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        {{-- Ingreso de Correo --}}
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-center">{{ __('Correo Electrónico') }}</label>
 
@@ -24,7 +24,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{-- Ingreso de Contraseña --}}
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-center">{{ __('Contraseña') }}</label>
 
@@ -38,7 +38,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{-- Recordar Contraseña --}}
                         {{-- <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div> --}}
-
+                        {{-- Boton de aceptar y recuperar Contraseña --}}
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

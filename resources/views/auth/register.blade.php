@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                {{-- Titulo --}}
                 <div class="card-header text-center">{{ __('Registro de Cliente') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        {{-- Ingreso de usuario --}}
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-center">{{ __('Usuario') }}</label>
 
@@ -24,7 +24,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{-- Ingreso de Correo Electrónico --}}
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-center">{{ __('Correo Electrónico') }}</label>
 
@@ -38,7 +38,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{-- Ingreso Contraseña --}}
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-center">{{ __('Contraseña') }}</label>
 
@@ -52,7 +52,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        {{-- Contirmar Ingreso de Contraseña --}}
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-center">{{ __('Confirmar Contraseña') }}</label>
 
@@ -60,7 +60,7 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-
+                        {{-- Boton Registrar --}}
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

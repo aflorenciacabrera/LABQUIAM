@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM;
+namespace labquiam;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function roles(){
     return $this
-        ->belongsToMany('LABQUIAM\Role')
+        ->belongsToMany('labquiam\Role')
         ->withTimestamps();
     }
 

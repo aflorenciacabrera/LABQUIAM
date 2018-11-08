@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Providers;
+namespace labquiam\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;

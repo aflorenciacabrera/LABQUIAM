@@ -1,9 +1,9 @@
 <?php
 
-namespace LABQUIAM\Http\Controllers\Auth;
+namespace labquiam\Http\Controllers\Auth;
 
-use LABQUIAM\User;
-use LABQUIAM\Http\Controllers\Controller;
+use labquiam\User;
+use labquiam\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \LABQUIAM\User
+     * @return \labquiam\User
      */
     protected function create(array $data)
     {

@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        LABQUIAM\Providers\AppServiceProvider::class,
-        LABQUIAM\Providers\AuthServiceProvider::class,
-        // LABQUIAM\Providers\BroadcastServiceProvider::class,
-        LABQUIAM\Providers\EventServiceProvider::class,
-        LABQUIAM\Providers\RouteServiceProvider::class,
+        labquiam\Providers\AppServiceProvider::class,
+        labquiam\Providers\AuthServiceProvider::class,
+        // labquiam\Providers\BroadcastServiceProvider::class,
+        labquiam\Providers\EventServiceProvider::class,
+        labquiam\Providers\RouteServiceProvider::class,
 
     ],
 

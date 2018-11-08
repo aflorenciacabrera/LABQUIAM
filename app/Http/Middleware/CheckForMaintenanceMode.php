@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Http\Middleware;
+namespace labquiam\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode as Middleware;
 

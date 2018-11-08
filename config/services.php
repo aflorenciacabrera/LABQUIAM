@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => LABQUIAM\User::class,
+        'model' => labquiam\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

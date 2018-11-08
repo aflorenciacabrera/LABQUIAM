@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => LABQUIAM\User::class,
+            'model' => labquiam\User::class,
         ],
 
         // 'users' => [

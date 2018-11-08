@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use LABQUIAM\Role;
+use labquiam\Role;
 class RoleTableSeeder extends Seeder
 {
     /**

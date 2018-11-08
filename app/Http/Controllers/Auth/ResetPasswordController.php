@@ -1,8 +1,8 @@
 <?php
 
-namespace LABQUIAM\Http\Controllers\Auth;
+namespace labquiam\Http\Controllers\Auth;
 
-use LABQUIAM\Http\Controllers\Controller;
+use labquiam\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

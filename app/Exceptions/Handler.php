@@ -1,6 +1,6 @@
 <?php
 
-namespace LABQUIAM\Exceptions;
+namespace labquiam\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
