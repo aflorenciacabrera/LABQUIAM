@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Rutas Publicas
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas Privadas
-// Route::get('admin/inicio','');
+Route::get('admin/inicio','AdministradorController@inicio');
+Route::get('admin/usuario','AdministradorController@usuario');

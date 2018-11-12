@@ -15,7 +15,12 @@
                     @endif
 
                     @if(Auth::user()->hasRole('admin'))
-                        <div>Acceso como administrador</div>
+                       
+                         <div align="center">
+                            <a  rol="button" href="{{url('admin/usuario')}}" class="btn btn-outline-primary btn-sm " > <i class="fa fa-plus"></i> Nuevo Técnico</a>
+                            <a  rol="button" href="{{url('producto/agregar')}}" class="btn btn-outline-success btn-sm " > <i class="fa fa-plus"></i> Lista de Clientes</a>
+                            {{-- <a  rol="button" href="{{url('producto/agregar')}}" class="btn btn-outline-warning btn-sm " > <i class="fa fa-plus"></i> Nuevo</a> --}}
+                        </div>
                     @else
                         <div>Acceso usuario</div>
                     @endif
