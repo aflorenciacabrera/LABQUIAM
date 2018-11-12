@@ -21,10 +21,34 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+
+     protected function guard()
+     {
+      return Auth::guard('user');
+     }
+    // public function index(Request $request)
+    // {
+    //     $request->user()->authorizeRoles(['user', 'admin']);
+    //     return view('home');
+    // }
+
+     public function incio()
     {
-        $request->user()->authorizeRoles(['user', 'admin']);
-        return view('home');
+       // $request->user()->authorizeRoles(['user', 'admin']);
+
+       if(Auth::user()->hasRole('admin')){
+         $users = User::where('rol', 'tecnico')->take(10)->get();
+          return view('admin.inicio',compact('users'));
+       }
+           
+        if(Auth::user()->hasRole('user')){
+          
+        //    $users = User::all()->take(10);
+
+        return view('cliente.inicio', compact('users'));
+
+        }
+
     }
 
     /*
