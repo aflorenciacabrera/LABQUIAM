@@ -3,6 +3,7 @@
 namespace labquiam\Http\Controllers\Auth;
 
 use labquiam\User;
+use labquiam\Role;
 use labquiam\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'admin/inicio';
 
     /**
      * Create a new controller instance.
@@ -68,11 +69,20 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        $user
+          if(Auth::user()->hasRole('admin')){
+            $user
+        ->roles()
+        ->attach(Role::where('name', 'tecnico')->first());
+        return $user;
+         }
+        else {
+            $user
         ->roles()
         ->attach(Role::where('name', 'user')->first());
         return $user;
+       
+          } 
+       
 
     }
 }
