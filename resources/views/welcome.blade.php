@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Inicio</a>
+                        <a href="{{ url('inicio') }}">Inicio</a>
                     @else
                         <a href="{{ route('login') }}">Acceder</a>
                         <a href="{{ route('register') }}">Registrar</a>
@@ -82,14 +82,15 @@
                     LABQUIAM
                 </div>
 
-                {{-- <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
+                 <div class="links"> 
+                    <h3>Sistema de Gestión de Información de Análisis de Laboratorio de Química Ambiental</h3>
+                    {{--<a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> --}}
+                    <a href="https://github.com/laravel/laravel">GitHub</a>--}}
+                </div> 
             </div>
         </div>
     </body>

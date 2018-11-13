@@ -3,7 +3,7 @@
 namespace labquiam\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
@@ -26,31 +26,28 @@ class HomeController extends Controller
      {
       return Auth::guard('user');
      }
-    public function index(Request $request)
-    {
-        $request->user()->authorizeRoles(['user', 'admin']);
-        return view('home');
-    }
+    // public function index(Request $request)
+    // {
+    //     $request->user()->authorizeRoles(['user', 'admin']);
+    //     return view('home');
+    // }
 
-     public function incio()
-    {
-       // $request->user()->authorizeRoles(['user', 'admin']);
-
-       if(Auth::user()->hasRole('admin')){
-         $users = User::where('rol', 'tecnico')->take(10)->get();
-          return view('admin.inicio',compact('users'));
+     public function inicio(){
+      // return view('admin.inicio');
+      if(Auth::user()->hasRole('admin')){
+         
+          return view('admin.inicio');
        }
-           
-        if(Auth::user()->hasRole('user')){
-          
-        //    $users = User::all()->take(10);
-
-        return view('cliente.inicio', compact('users'));
-
-        }
-
+        if(Auth::user()->hasRole('cliente')){
+         
+          return view('cliente.inicio');
+       }
+       if(Auth::user()->hasRole('usuario')){
+         
+          return view('usuario.inicio');
+       }
+      
     }
-
     /*
     public function someAdminStuff(Request $request)
     {

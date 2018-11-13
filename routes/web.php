@@ -22,7 +22,7 @@ Auth::routes();
 
 Route::group(['middleware'=>['auth']], function(){
 // Rutas Privadas
-Route::get('admin/inicio','AdministradorController@inicio');
+Route::get('inicio','HomeController@inicio');
 Route::get('admin/usuario','AdministradorController@usuario');
 
 });

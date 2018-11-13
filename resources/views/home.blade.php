@@ -16,8 +16,10 @@
 
                     @if(Auth::user()->hasRole('admin'))
                         <div>Acceso como administrador</div>
+                    @if (Auth::user()->hasRole('usuario'))
+                        <div>Acceso como Usuario</div>
                     @else
-                        <div>Acceso usuario</div>
+                        <div>Acceso Cliente</div>
                     @endif
                     
 

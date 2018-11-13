@@ -29,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'admin/inicio';
+    protected $redirectTo = 'inicio';
 
     /**
      * Create a new controller instance.
@@ -85,10 +85,10 @@ class RegisterController extends Controller
                 ->attach(Role::where('name', 'cliente')->first());
             break;
 
-            case 'tecnico':
+            case 'usuario':
                 $user
                 ->roles()
-                ->attach(Role::where('name', 'tecnico')->first());
+                ->attach(Role::where('name', 'usuario')->first());
             break;
             }
         return $user;
