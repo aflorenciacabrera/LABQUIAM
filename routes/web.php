@@ -20,6 +20,9 @@ Auth::routes();
 // Rutas Publicas
 // Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['middleware'=>['auth']], function(){
 // Rutas Privadas
 Route::get('admin/inicio','AdministradorController@inicio');
 Route::get('admin/usuario','AdministradorController@usuario');
+
+});

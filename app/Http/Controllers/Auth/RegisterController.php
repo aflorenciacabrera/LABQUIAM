@@ -36,10 +36,10 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -52,6 +52,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'rol'=> 'required|string|max:225',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -67,22 +68,29 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'rol'=> $data['rol'],
             'password' => Hash::make($data['password']),
         ]);
-          if(Auth::user()->hasRole('admin')){
-            $user
-        ->roles()
-        ->attach(Role::where('name', 'tecnico')->first());
-        return $user;
-         }
-        else {
-            $user
-        ->roles()
-        ->attach(Role::where('name', 'user')->first());
-        return $user;
        
-          } 
-       
+         switch ($data['rol']) {
+            case 'admin':
+             $user
+                ->roles()
+                ->attach(Role::where('name', 'admin')->first());
+            break;
 
+            case 'cliente':
+             $user
+                ->roles()
+                ->attach(Role::where('name', 'cliente')->first());
+            break;
+
+            case 'tecnico':
+                $user
+                ->roles()
+                ->attach(Role::where('name', 'tecnico')->first());
+            break;
+            }
+        return $user;
     }
 }

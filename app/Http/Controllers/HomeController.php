@@ -26,11 +26,11 @@ class HomeController extends Controller
      {
       return Auth::guard('user');
      }
-    // public function index(Request $request)
-    // {
-    //     $request->user()->authorizeRoles(['user', 'admin']);
-    //     return view('home');
-    // }
+    public function index(Request $request)
+    {
+        $request->user()->authorizeRoles(['user', 'admin']);
+        return view('home');
+    }
 
      public function incio()
     {
