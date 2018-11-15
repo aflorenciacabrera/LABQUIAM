@@ -21,11 +21,14 @@
                             <a  rol="button" href="{{url('admin/listado/usuario')}}" class="btn btn-outline-info btn-sm " > <i class="fa fa-plus"></i> Lista de Técnico</a>
                             <a  rol="button" href="{{url('admin/listado/cliente')}}" class="btn btn-outline-success btn-sm " > <i class="fa fa-plus"></i> Lista de Clientes</a>
                             {{-- <a  rol="button" href="{{url('producto/agregar')}}" class="btn btn-outline-warning btn-sm " > <i class="fa fa-plus"></i> Nuevo</a> --}}
+                             <a  class="btn btn-sm btn-default"  role="button" href="{{url('/perfil') }}" >Perfil <i class="glyphicon glyphicon-user"></i></a>
                         </div>
                     @elseif(Auth::user()->hasRole('cliente'))
                        <div>Acceso Cliente</div>
+                        <a  class="btn btn-sm btn-default"  role="button" href="{{url('/perfil') }}" >Perfil <i class="glyphicon glyphicon-user"></i></a>
                     @else
                         <div>Acceso Usuario</div>
+                         <a  class="btn btn-sm btn-default"  role="button" href="{{url('/perfil') }}" >Perfil <i class="glyphicon glyphicon-user"></i></a>
                     @endif
                     
 

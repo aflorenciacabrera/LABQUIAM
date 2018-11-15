@@ -56,4 +56,20 @@ class HomeController extends Controller
     }
     */
 
+     public function perfil(){
+        if(Auth::user()->hasRole('admin')){
+            return view('perfil');
+       }
+              
+        if(Auth::user()->hasRole('usuario')){
+          return view('perfil');
+        }
+        
+
+        if(Auth::user()->hasRole('cliente')){
+            return view('perfil');
+        }
+       
+    }
+
 }

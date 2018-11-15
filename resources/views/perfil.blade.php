@@ -1,0 +1,30 @@
+
+
+@extends('layouts.footer')
+@extends('layouts.perfil')
+@extends('layouts.app')
+ @section('content')    
+ 
+        @if(Auth::user()->hasRole('admin'))
+           
+         
+             
+        @endif
+           
+        @if(Auth::user()->hasRole('usuario'))
+          
+          
+
+        @endif
+
+        @if(Auth::user()->hasRole('cleinte'))
+           
+        
+
+        @endif
+
+        
+
+       
+
+@endsection

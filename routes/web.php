@@ -22,7 +22,13 @@ Auth::routes();
 
 Route::group(['middleware'=>['auth']], function(){
 // Rutas Privadas
+
 Route::get('inicio','HomeController@inicio');
+// Administrador 
 Route::get('admin/usuario','AdministradorController@usuario');
 
+// PERFIL
+Route::get('/perfil','HomeController@perfil');
+Route::put('/perfil','HomeController@editarPerfil');	
+Route::post('/perfil', 'HomeController@update_avatar');
 });
