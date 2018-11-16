@@ -3,12 +3,12 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center">Panel de Cliente</div>
+                <div class="card-header text-center">Perfil de {{ Auth::user()->name }}</div>
 
                 <div class="card-body">
                   
                             <div class="row">
-                <div class="col-md-3 col-lg-3 " align="center"> {{-- <img src="{{asset('img/descarga (3).jpg')}}" style="width:100px; height:100px; float:left; margin-right:30px;"  class="img-responsive" > --}}
+                <div class="col-md-6 col-lg-4" align="center"> {{-- <img src="{{asset('img/descarga (3).jpg')}}" style="width:100px; height:100px; float:left; margin-right:30px;"  class="img-responsive" > --}}
                  <div class="col-lg-offset-1 " > 
                   <img alt="User Pic" src="/cargas/avatars/{{ Auth::user()->avatar }}" style="width:120px; height:120px; float:left; margin-right:50px;" id="profile-image1" class=" img-responsive"> 
                    </div>
@@ -20,7 +20,7 @@
                         </form>  
                       </div>
                               <br>
-                <div class=" col-md-16 col-lg-9 "> 
+                <div class=" col-md-14 col-lg-8"> 
                   <table class="table table-user-information">
 
                     <tbody>
@@ -73,20 +73,24 @@
             </div>
            
                  <div class="card-footer col-md-12">
+                  
+                      <div  align="center"> 
                     {{-- <div class="btn-group col-lg-offset-4 "> --}}
+                       <span class="pull-left"> 
                         <a href="#" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info  ">Mensaje</a>
-                        <div class="btn-group col-lg-offset-5 ">
+                        </span> 
                         
                            <a href="#ventana"  data-original-title="Editar Perfil"  class="btn  btn-warning " data-toggle="modal" role ="button" > Editar <i class="glyphicon glyphicon-edit"></i></a>
-                             </div>
+                           <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>
+                            
                          <span class="pull-right"> 
                         
-                        <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>
+                        
                          <a href="{{ url('/producto') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">Cancelar</a>
                          </span> 
                          {{-- </div> --}}
                     </div>
-
+ </div>
 
 <div class="modal fade in" id="ventana" >
   <div class="modal-dialog">
