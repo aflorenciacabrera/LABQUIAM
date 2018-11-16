@@ -14,7 +14,7 @@
     }
     /* Espacio de Footer */
     #justpushtobottom {
-        height: 30vh;
+        height: 10vh;
     } 
     /* Efecto Iconos Sociales*/
     .social:hover {
