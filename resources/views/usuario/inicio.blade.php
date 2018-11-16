@@ -5,7 +5,7 @@
 
 @section('content')
 
-   @extends('layouts.menu')
+@extends('layouts.menu')
 
 
 @endsection

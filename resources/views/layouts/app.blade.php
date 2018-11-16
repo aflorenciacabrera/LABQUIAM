@@ -55,9 +55,9 @@
                                 </a>
                                 {{-- Lista de dropdown --}}
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Inicio</a>
-                                    <a class="dropdown-item" href="#">Usuario</a>
-                                    <a class="dropdown-item" href="#">Clientes</a>
+                                    <a class="dropdown-item" href="{{url('/inicio')}}">Inicio</a>
+                                    <a class="dropdown-item" href="{{url('/perfil')}}">Perfil</a>
+                                   
                                      <hr>{{-- linea de separacion al Salir --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
