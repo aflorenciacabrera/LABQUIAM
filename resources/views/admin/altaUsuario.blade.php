@@ -1,12 +1,16 @@
 @extends('layouts.footer')
+
 @extends('layouts.app')
+
 @section('content')
+
 {{-- Alta de tecnico --}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header text-center">
+                    
                  <h4>{{ __('Alta de Técnico') }}</h4></div>
                 {{-- *************************************************************************************** --}}
                 <div class="card-body">

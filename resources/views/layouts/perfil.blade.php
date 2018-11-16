@@ -183,7 +183,7 @@
                   <div class="modal-dialog">
                     <div class="container">
                       <div class="row justify-content-center">
-                      <div class="  col-md-20 " >
+                      <div class="  col-md-0 " >
                       <div class="modal-content">
                       <div class="card">  
                             <div class="card-header text-center">Panel de {{ Auth::user()->name }}   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
@@ -192,7 +192,7 @@
                     <form method="POST" action="{{url('/perfil')}}" class="bootstrap-form-with-validation">
                       {{ csrf_field() }}
                     {{ method_field('PUT') }}
-                      <div class=" col-md-16 col-lg-12 "> 
+                      
                             <table class="table table-user-information">
                             <tbody>
                             <tr>
@@ -213,17 +213,17 @@
                             </tr>
                             </tbody>
                             </table>
-                            <div class="card-footer">
+                            <div class="card-footer ">
                                 <div class="row">
-                                      <div class="col-md-4 col-lg-offset-2 ">
+                                     
                                             {{--Boton de Guaedar --}}                         
                                             <input type="hidden" name="id" value="{{ Auth::user()->id }}" >
                                           <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " > </input>
-                                      </div>                                   
+                                                                      
                                 </div>                    
                             </div>
                     </form> 
-                      </div>
+                    
                     </div>
                   </div>
                 </div>
