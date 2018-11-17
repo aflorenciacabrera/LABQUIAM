@@ -106,10 +106,11 @@
                 <div class="row">
                    <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="/cargas/avatars/{{ Auth::user()->avatar }}" alt=""/>
-                            <div class="file btn btn-lg btn-primary">
+                             <form enctype="multipart/form-data" action="{{url('/perfil')}}" method="POST"> 
+                            <img src="/cargas/avatars/{{ Auth::user()->avatar }}" alt="" />
+                            <div class="file btn btn-lg btn-info" >
                                Cambiar Imagen
-                                <input type="file" name="avatar" accept="image/*"/>
+                                <input type="file" name="avatar" accept="image/*" value="Seleccionar imagen" />
                             </div>
                                
                            
@@ -119,29 +120,14 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit" value="Cargar" class="pull btn btn-sm btn-default active">
                               </div>
+                               </form>  
                     </div>
                     
-                  {{-- <img src="{{asset('img/descarga (3).jpg')}}" style="width:100px; height:100px; float:left; margin-right:30px;"  class="img-responsive" > --}}
-                 {{-- <div class="col-lg-offset-1 " > 
-                  <img alt="User Pic" src="/cargas/avatars/{{ Auth::user()->avatar }}" style="width:120px; height:120px; float:left; margin-right:50px;" id="profile-image1" class=" img-responsive"> 
-                   </div>
-                        <form enctype="multipart/form-data" action="{{url('/perfil')}}" method="POST">   
-                        <input id="profile-image-upload" value="Seleccionar imagen" name="avatar" class="hidden" type="file" accept="image/*" >
-                            <div   style="color:#999;" >haga clic aquí para cambiar la imagen del perfil</div>  
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input type="submit" value="Cargar" class="pull btn btn-sm btn-default active">
-                        </form>   --}}
-                              
+                 
                 <div class=" col-md-14 col-lg-8" align="center"> 
                   <table class="table table-user-information">
                     <tbody>
-                      {{--  <label>Cambiar foto de perfil:</label> --}}
-                             {{--  <form enctype="multipart/form-data" action="{{url('productor/perfil')}}" method="POST">   
-                                <input type="file" value="Seleccionar imagen" name="avatar"  accept="image/*" >
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <br>
-                                <input type="submit" value="Cargar" class="pull-right btn btn-sm btn-primary">
-                              </form> --}}
+                      
                       <tr>
                         <td>Usuario:</td>
                         <td>{{ Auth::user()->name }}</td>
@@ -223,11 +209,9 @@
                             </table>
                             <div class="card-footer ">
                                 <div class="row">
-                                     
                                             {{--Boton de Guaedar --}}                         
                                             <input type="hidden" name="id" value="{{ Auth::user()->id }}" >
-                                          <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " > </input>
-                                                                      
+                                          <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " > </input>                             
                                 </div>                    
                             </div>
                     </form> 

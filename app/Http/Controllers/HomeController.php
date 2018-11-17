@@ -3,6 +3,7 @@
 namespace labquiam\Http\Controllers;
 use labquiam\User;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
