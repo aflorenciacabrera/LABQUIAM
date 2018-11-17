@@ -1,6 +1,8 @@
 @extends('layouts.footer')
 @extends('layouts.app')
 @section('content')
+
+ 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -17,7 +19,7 @@
                     @if(Auth::user()->hasRole('admin'))
                         <div>Acceso como administrador</div>
                     @if (Auth::user()->hasRole('usuario'))
-                        <div>Acceso como Usuario</div>
+                      
                     @else
                         <div>Acceso Cliente</div>
                     @endif

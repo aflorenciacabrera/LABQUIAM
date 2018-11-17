@@ -9,7 +9,24 @@
           {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> --}}
      </div>
 @endif  
-
+ 
+                 @if(Session::has('activacion'))     
+					<div class="alert alert-success text-center"><p><h4><strong>Tu usuario ha sido registrado con éxito.</strong> </h4></p></div>
+                	 <div class="col-md-offset-4"><img src="{{asset('img/images (3).jpg')}}" class="img-rounded img-responsive" /> </div>
+                	  
+                        <div class="alert alert-danger  text-center" role="alert">
+                          {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> --}}
+                           <h4> <span>{{Session::get('activacion')}}</span> </h4>
+                            
+                       </div>
+                       {{-- @else 
+                       <div class="col-md-offset-3"><img src="{{asset('img/stop-stealing-contents.jpg')}}" class="img-rounded img-responsive" /> </div>
+                       <div class="alert alert-danger  text-center" role="alert">
+                        {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> --}}
+                           {{-- <h4> <span>Su cuenta aun no ha sido activada, Se le enviara con un correo electrónico.</span> </h4> --}}
+                            
+                       {{-- </div>  --}} 
+                    @endif
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -82,6 +99,14 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('inicio') }}">Inicio</a>
+                         <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Salir') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                     @else
                         <a href="{{ route('login') }}">Acceder</a>
                         <a href="{{ route('register') }}">Registrar</a>

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('nombre')->nullable();
             $table->string('apellido')->nullable();
             $table->string('email')->unique();
-             $table->string('telefono')->nullable();
+            $table->string('telefono')->nullable();
             $table->string('rol');
             $table->string('especialidad')->nullable();
             $table->boolean('estado')->default(false);

@@ -5,10 +5,11 @@
 @extends('layouts.app')
  @section('content')    
  
+ 
         @if(Auth::user()->hasRole('admin'))
            
          
-             
+            
         @endif
            
         @if(Auth::user()->hasRole('usuario'))

@@ -20,12 +20,16 @@ Auth::routes();
 // Rutas Publicas
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware'=>['auth']], function(){
+Route::group(['middleware'=>['auth', 'Admin']], function(){
 // Rutas Privadas
-
+Route::get('/home', 'HomeController@home');
 Route::get('inicio','HomeController@inicio');
 // Administrador 
 Route::get('admin/usuario','AdministradorController@usuario');
+
+//Activar y suspender usuarios
+Route::get('inicio/activar/{tipo}/{user}','HomeController@activar');
+Route::get('inicio/suspender/{tipo}/{user}','HomeController@suspender');
 
 // PERFIL
 Route::get('/perfil','HomeController@perfil');

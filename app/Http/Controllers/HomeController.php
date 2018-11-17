@@ -33,21 +33,22 @@ class HomeController extends Controller
     //     return view('home');
     // }
 
+
      public function inicio(){
       // return view('admin.inicio');
       if(Auth::user()->hasRole('admin')){
-         
-          return view('admin.inicio');
+          $usuario = User::where('rol', 'usuario')->take(10)->get();
+           $cliente = User::where('rol', 'cliente')->take(10)->get();
+          return view('admin.inicio',compact('usuario'), compact('cliente'));
        }
         if(Auth::user()->hasRole('cliente')){
-         
-          return view('cliente.inicio');
+          $users = User::where('rol', 'cliente')->take(10)->get();
+          return view('cliente.inicio',compact('users'));
        }
        if(Auth::user()->hasRole('usuario')){
-         
-          return view('usuario.inicio');
+          $users = User::where('rol', 'cliente')->take(10)->get();
+          return view('usuario.inicio',compact('users'));
        }
-      
     }
     /*
     public function someAdminStuff(Request $request)
@@ -56,21 +57,20 @@ class HomeController extends Controller
         return view(‘some.view’);
     }
     */
+public function home(){
+      return view('home');
+    }
 
      public function perfil(){
         if(Auth::user()->hasRole('admin')){
             return view('perfil');
-       }
-              
+       }     
         if(Auth::user()->hasRole('usuario')){
           return view('perfil');
         }
-        
-
         if(Auth::user()->hasRole('cliente')){
             return view('perfil');
         }
-       
     }
 
     public function editarPerfil(Request $request)
@@ -82,10 +82,8 @@ class HomeController extends Controller
         $user->telefono= $request->telefono;
         $user->especialidad= $request->especialidad;
         $user->save();
-
        // return view("institucion.mostrarCapacidad");
         return redirect(url('/perfil'));
-   
       }
 
        public function update_avatar(Request $request){
@@ -100,17 +98,38 @@ class HomeController extends Controller
         $user->save();
       }
       return redirect(url('/perfil'));
-
     }
+
      public function eliminarPerfil(Request $request) {
 
           $user =User::findOrFail($request->id);
           $user->delete();
 
           return redirect(url('/'))->with('status','Tu cuenta a sido ELIMINADA');
-
       }
 
+      public function activar($tipo,$user){
+        if($tipo=='usuario'){
+        $user = User::findOrFail($user);
+      }
+      if ($tipo=='cliente') {
+        $user = User::findOrFail($user);
+      }
+        $user->estado = 1;
+        $user->save();
+       return back()->with('activado','Usuario '.$user->name .' activado');
+    }
 
+    public function suspender($tipo,$user){
+      if($tipo=='usuario'){
+        $user = User::findOrFail($user);
+      }
+      if ($tipo=='cliente') {
+        $user = User::findOrFail($user);
+      }
+        $user->estado = 0;
+        $user->save();
+        return back()->with('suspendido','Usuario '.$user->name .' suspendido');
+    }
 
 }
