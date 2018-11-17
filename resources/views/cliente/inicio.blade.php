@@ -1,6 +1,6 @@
 @extends('layouts.footer')
-@extends('layouts.app')
 @extends('layouts.menu')
+@extends('layouts.app')
 @section('content')
 
 {{-- <div class="container">

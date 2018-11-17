@@ -106,13 +106,21 @@
                 <div class="row">
                    <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="{{asset('img/default.jpg')}}" alt=""/>
+                            <img src="/cargas/avatars/{{ Auth::user()->avatar }}" alt=""/>
                             <div class="file btn btn-lg btn-primary">
                                Cambiar Imagen
-                                <input type="file" name="file"/>
+                                <input type="file" name="avatar" accept="image/*"/>
                             </div>
+                               
+                           
                         </div>
+                            <div class="col-md-3 col-lg-12 " align="center">
+                                 <form enctype="multipart/form-data" action="{{url('/perfil')}}" method="POST"> 
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" value="Cargar" class="pull btn btn-sm btn-default active">
+                              </div>
                     </div>
+                    
                   {{-- <img src="{{asset('img/descarga (3).jpg')}}" style="width:100px; height:100px; float:left; margin-right:30px;"  class="img-responsive" > --}}
                  {{-- <div class="col-lg-offset-1 " > 
                   <img alt="User Pic" src="/cargas/avatars/{{ Auth::user()->avatar }}" style="width:120px; height:120px; float:left; margin-right:50px;" id="profile-image1" class=" img-responsive"> 
@@ -123,8 +131,8 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit" value="Cargar" class="pull btn btn-sm btn-default active">
                         </form>   --}}
-                              <br>
-                <div class=" col-md-14 col-lg-8"> 
+                              
+                <div class=" col-md-14 col-lg-8" align="center"> 
                   <table class="table table-user-information">
                     <tbody>
                       {{--  <label>Cambiar foto de perfil:</label> --}}
@@ -201,7 +209,7 @@
                             </tr>
                             <tr>
                             <td>Nombre :</td>
-                            <td><input  class="form-control" type="" name="name2" value="{{ Auth::user()->nombre }}"></td>
+                            <td><input  class="form-control" type="" name="nombre" value="{{ Auth::user()->nombre }}"></td>
                             </tr>
                             <tr>
                             <td>Apellido:</td>

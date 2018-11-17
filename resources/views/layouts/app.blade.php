@@ -76,7 +76,104 @@
             </div>
             
         </nav>
- 
+   @guest
+        
+   @else
+   @extends('layouts.menu')
+   <div class="container">
+     <div class="row justify-content-center">
+       @if(Auth::user()->hasRole('admin'))
+          <ul class="nav">
+          <li><a href="{{url('/perfil')}}">Perfil</a></li> 
+          
+          <li><a href="{{url('admin/usuario')}}">Nuevo Técnico</a>
+          {{-- <ul class ="sub">
+          <li><a href="#">Lenovo</a></li> 
+            <li><a href="#">Nokia</a></li>
+            <li><a href="#">LAVA</a></li>
+            </ul> --}}
+          </li>
+
+          <li><a href="{{url('lista/usuario')}}"> Lista de Técnico</a>
+          {{-- <ul class ="sub">
+          <li><a href="#">HP</a></li> 
+            <li><a href="#">Dell</a></li>
+            <li><a href="#">Lenovo</a></li>
+        </ul> --}}
+          </li> 
+
+          <li><a href="{{url('lista/usuario')}}">Lista de Clientes</a>
+          {{-- <ul class ="sub">
+          <li><a href="#">LG</a></li> 
+            <li><a href="#">samsung</a></li>
+            <li><a href="#">Kelvinator</a></li>
+            </ul>  --}}
+            </li>
+            
+          </ul>
+      @elseif(Auth::user()->hasRole('cliente'))
+            <ul class="nav">
+            <li><a href="{{url('/perfil')}}">Perfil</a></li> 
+          
+            <li><a href="{{url('admin/usuario')}}">Nuevo Técnico</a>
+            {{-- <ul class ="sub">
+            <li><a href="#">Lenovo</a></li> 
+              <li><a href="#">Nokia</a></li>
+              <li><a href="#">LAVA</a></li>
+              </ul> --}}
+            </li>
+        
+            {{-- <li><a href="{{url('lista/usuario')}}"> Lista de Técnico</a> --}}
+            {{-- <ul class ="sub">
+            <li><a href="#">HP</a></li> 
+              <li><a href="#">Dell</a></li>
+              <li><a href="#">Lenovo</a></li>
+          </ul> --}}
+            {{-- </li>  --}}
+        
+            <li><a href="{{url('lista/usuario')}}">Lista de Clientes</a>
+            {{-- <ul class ="sub">
+            <li><a href="#">LG</a></li> 
+              <li><a href="#">samsung</a></li>
+              <li><a href="#">Kelvinator</a></li>
+              </ul>  --}}
+              </li>
+              
+            </ul>
+        @else
+            <ul class="nav">
+          <li><a href="{{url('/perfil')}}">Perfil</a></li> 
+         
+            <li><a href="{{url('admin/usuario')}}">Nuevo Técnico</a>
+            {{-- <ul class ="sub">
+            <li><a href="#">Lenovo</a></li> 
+              <li><a href="#">Nokia</a></li>
+              <li><a href="#">LAVA</a></li>
+              </ul> --}}
+            </li>
+       
+            <li><a href="{{url('lista/usuario')}}"> Lista de Técnico</a>
+            {{-- <ul class ="sub">
+            <li><a href="#">HP</a></li> 
+              <li><a href="#">Dell</a></li>
+              <li><a href="#">Lenovo</a></li>
+          </ul> --}}
+            </li> 
+         
+            <li><a href="{{url('lista/usuario')}}">Lista de Clientes</a>
+            {{-- <ul class ="sub">
+            <li><a href="#">LG</a></li> 
+              <li><a href="#">samsung</a></li>
+              <li><a href="#">Kelvinator</a></li>
+              </ul>  --}}
+              </li>
+              
+            </ul>
+        @endif
+  </div>
+	</div>
+	
+     @endguest
         <main class="py-4">
             
             @yield('content')

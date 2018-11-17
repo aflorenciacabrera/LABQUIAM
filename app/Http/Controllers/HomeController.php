@@ -1,7 +1,7 @@
 <?php
 
 namespace labquiam\Http\Controllers;
-
+use labquiam\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
@@ -71,5 +71,36 @@ class HomeController extends Controller
         }
        
     }
+
+    public function editarPerfil(Request $request)
+      {
+        $user =User::findOrFail($request->id);  
+        $user->name= $request->name;
+        $user->nombre= $request->nombre;
+        $user->apellido= $request->apellido;
+        $user->telefono= $request->telefono;
+        $user->especialidad= $request->especialidad;
+        $user->save();
+
+       // return view("institucion.mostrarCapacidad");
+        return redirect(url('/perfil'));
+   
+      }
+
+       public function update_avatar(Request $request){
+      // Handle the user upload of avatar
+      if($request->hasFile('avatar')){
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(300, 300)->save( public_path('/cargas/avatars/'.$filename ) );
+
+        $user =Auth::user();
+        $user->avatar = $filename;
+        $user->save();
+      }
+      return redirect(url('/perfil'));
+
+    }
+
 
 }
