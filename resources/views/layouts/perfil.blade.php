@@ -167,7 +167,18 @@
                         <a href="#" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info  ">Mensaje</a>
                         </span> 
                            <a href="#ventana"  data-original-title="Editar Perfil"  class="btn  btn-warning " data-toggle="modal" role ="button" > Editar <i class="glyphicon glyphicon-edit"></i></a>
-                           <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>      
+                            <form method="post" action="{{ route('eliminarPerfil') }}">
+                                                          {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                <input type="hidden" name="id" value="{{ Auth::Guard()->user()->id }}">
+                                <div class="col-md-6 col-md-offset-2">
+                                 
+                                  <button class="btn btn-sm btn-danger" type="submit" >Eliminar Perfil <i class="glyphicon glyphicon-trash"></i></button>
+                                 
+                                </div>
+                        </form>
+                           {{-- <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>       --}}
                          <span class="pull-right"> 
                          <a href="{{ url('/producto') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">Cancelar</a>
                          </span> 
@@ -211,7 +222,7 @@
                                 <div class="row">
                                             {{--Boton de Guaedar --}}                         
                                             <input type="hidden" name="id" value="{{ Auth::user()->id }}" >
-                                          <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Guardar cambios " > </input>                             
+                                          <input type="submit" data-original-title="Editar perfil" data-toggle="tooltip" class="btn btn-sm btn-success" value="Actualizar " > </input>                             
                                 </div>                    
                             </div>
                     </form> 

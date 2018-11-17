@@ -31,4 +31,5 @@ Route::get('admin/usuario','AdministradorController@usuario');
 Route::get('/perfil','HomeController@perfil');
 Route::put('/perfil','HomeController@editarPerfil');	
 Route::post('/perfil', 'HomeController@update_avatar');
+Route::delete('/perfil','HomeController@eliminarPerfil')->name("eliminarPerfil");
 });

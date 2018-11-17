@@ -1,3 +1,10 @@
+@if(session('status'))
+      <div class="alert alert-danger text-uppercase text-center" role="alert">
+          <strong>{{session('status')}}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+     </div>
+@endif  
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
