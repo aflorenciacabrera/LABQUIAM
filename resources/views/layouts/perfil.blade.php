@@ -162,28 +162,33 @@
               </div>
             </div>
                  <div class="card-footer col-md-12">
-                      <div  align="center"> 
-                       <span class="pull-left"> 
-                        <a href="#" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info  ">Mensaje</a>
-                        </span> 
-                           <a href="#ventana"  data-original-title="Editar Perfil"  class="btn  btn-warning " data-toggle="modal" role ="button" > Editar <i class="glyphicon glyphicon-edit"></i></a>
-                            <form method="post" action="{{ route('eliminarPerfil') }}">
+                      <div align="center">
+                          <div class="form-group row ">
+                      
+                           <div class="col-md-3">
+                        <a href="#" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info  ">Mensaje</a> </div>
+                     
+
+                        
+                            <div class="col-md-3">
+                            <a href="#ventana"  data-original-title="Editar Perfil"  class="btn  btn-warning " data-toggle="modal" role ="button" > Editar <i class="glyphicon glyphicon-edit"></i></a>
+                             </div>
+                              <div class="col-md-3">
+                                 <form method="post" action="{{ route('eliminarPerfil') }}">
                                                           {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
-                                                        {{-- <input type="hidden" name="_method" value="delete"> --}}
+                                                       
                                 <input type="hidden" name="id" value="{{ Auth::Guard()->user()->id }}">
-                                <div class="col-md-6 col-md-offset-2">
-                                 
-                                  <button class="btn btn-sm btn-danger" type="submit" >Eliminar Perfil <i class="glyphicon glyphicon-trash"></i></button>
-                                 
-                                </div>
-                        </form>
+                                <button class="btn  btn-danger" type="submit" >Eliminar  <i class="glyphicon glyphicon-trash"></i></button>
+                            </form></div>
+
                            {{-- <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>       --}}
-                         <span class="pull-right"> 
+                       
+                               <div class="col-md-3">
                          <a href="{{ url('/producto') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">Cancelar</a>
-                         </span> 
-                    </div>
-                </div>
+                         </div></div>
+                           </div>
+                    
                 <div class="modal fade in" id="ventana" >
                   <div class="modal-dialog">
                     <div class="container">
