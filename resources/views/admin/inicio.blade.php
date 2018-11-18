@@ -48,9 +48,9 @@
 
              </thead>
              <tbody>
-              @if($usuario->count(Auth::user()->hasRole('usuario')))   
+              @if($tecnico->count(Auth::user()->hasRole('tecnico')))   
 
-               @foreach($usuario as $user)   
+               @foreach($tecnico as $user)   
               <tr>
                  <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>

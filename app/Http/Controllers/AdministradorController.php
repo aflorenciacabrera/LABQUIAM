@@ -14,8 +14,8 @@ class AdministradorController extends Controller
 
    
     
-     public function usuario(){
-      return view('admin.altaUsuario');
+     public function tecnico(){
+      return view('admin.altatecnico');
     }
 
 

@@ -12,13 +12,13 @@
             
         @endif
            
-        @if(Auth::user()->hasRole('usuario'))
+        @if(Auth::user()->hasRole('tecnico'))
           
           
 
         @endif
 
-        @if(Auth::user()->hasRole('cleinte'))
+        @if(Auth::user()->hasRole('cliente'))
            
         
 

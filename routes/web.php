@@ -25,7 +25,7 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
 Route::get('/home', 'HomeController@home');
 Route::get('inicio','HomeController@inicio');
 // Administrador 
-Route::get('admin/usuario','AdministradorController@usuario');
+Route::get('admin/tecnico','AdministradorController@tecnico');
 
 //Activar y suspender usuarios
 Route::get('inicio/activar/{tipo}/{user}','HomeController@activar');

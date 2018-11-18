@@ -37,17 +37,17 @@ class HomeController extends Controller
      public function inicio(){
       // return view('admin.inicio');
       if(Auth::user()->hasRole('admin')){
-          $usuario = User::where('rol', 'usuario')->take(10)->get();
+          $tecnico = User::where('rol', 'tecnico')->take(10)->get();
            $cliente = User::where('rol', 'cliente')->take(10)->get();
-          return view('admin.inicio',compact('usuario'), compact('cliente'));
+          return view('admin.inicio',compact('tecnico'), compact('cliente'));
        }
         if(Auth::user()->hasRole('cliente')){
           $users = User::where('rol', 'cliente')->take(10)->get();
           return view('cliente.inicio',compact('users'));
        }
-       if(Auth::user()->hasRole('usuario')){
+       if(Auth::user()->hasRole('tecnico')){
           $users = User::where('rol', 'cliente')->take(10)->get();
-          return view('usuario.inicio',compact('users'));
+          return view('tecnico.inicio',compact('users'));
        }
     }
     /*
@@ -65,7 +65,7 @@ public function home(){
         if(Auth::user()->hasRole('admin')){
             return view('perfil');
        }     
-        if(Auth::user()->hasRole('usuario')){
+        if(Auth::user()->hasRole('tecnico')){
           return view('perfil');
         }
         if(Auth::user()->hasRole('cliente')){
@@ -109,7 +109,7 @@ public function home(){
       }
 
       public function activar($tipo,$user){
-        if($tipo=='usuario'){
+        if($tipo=='tecnico'){
         $user = User::findOrFail($user);
       }
       if ($tipo=='cliente') {
@@ -121,7 +121,7 @@ public function home(){
     }
 
     public function suspender($tipo,$user){
-      if($tipo=='usuario'){
+      if($tipo=='tecnico'){
         $user = User::findOrFail($user);
       }
       if ($tipo=='cliente') {
