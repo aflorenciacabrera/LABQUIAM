@@ -115,7 +115,7 @@
             <ul class="nav">
             <li><a href="{{url('/perfil')}}" class="btn btn-primary  "><i class="fa fa-home"></i> Perfil</a></li> 
           
-            <li><a href="{{url('admin/tecnico')}}" class="btn btn-primary  " ><i class="fa fa-plus"></i> Nuevo Técnico</a>
+            <li><a href="{{url('cliente/formulario')}}" class="btn btn-primary  " ><i class="fa fa-plus"></i> Nuevo Formulario</a>
             {{-- <ul class ="sub">
             <li><a href="#">Lenovo</a></li> 
               <li><a href="#">Nokia</a></li>
@@ -131,13 +131,7 @@
           </ul> --}}
             {{-- </li>  --}}
         
-            <li><a href="{{url('lista/tecnico')}}"class="btn btn-primary  " ><i class="fa fa-list"></i>Lista de Clientes</a>
-            {{-- <ul class ="sub">
-            <li><a href="#">LG</a></li> 
-              <li><a href="#">samsung</a></li>
-              <li><a href="#">Kelvinator</a></li>
-              </ul>  --}}
-              </li>
+            
               
             </ul>
         @else
