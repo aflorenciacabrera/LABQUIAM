@@ -89,10 +89,10 @@ class RegisterController extends Controller
                 ->attach(Role::where('name', 'cliente')->first());
             break;
 
-            case 'usuario':
+            case 'tecnico':
                 $user
                 ->roles()
-                ->attach(Role::where('name', 'usuario')->first());
+                ->attach(Role::where('name', 'tecnico')->first());
             break;
             }
         return $user;

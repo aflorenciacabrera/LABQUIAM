@@ -26,6 +26,7 @@ Route::get('/home', 'HomeController@home');
 Route::get('inicio','HomeController@inicio');
 // Administrador 
 Route::get('admin/tecnico','AdministradorController@tecnico');
+Route::delete('/inicio','AdministradorController@eliminarcuenta')->name("eliminarcuenta");
 
 //Activar y suspender usuarios
 Route::get('inicio/activar/{tipo}/{user}','HomeController@activar');

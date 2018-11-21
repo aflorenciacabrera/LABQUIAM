@@ -9,7 +9,13 @@
                <div class="container">
  <div class="row">
       <div class="text-center col-md-12 ">
-                {{-- Mensaje de activado de Representante --}}
+      @if(session('status'))
+      <div class="alert alert-danger text-uppercase text-center" role="alert">
+          <strong>{{session('status')}}</strong>
+          {{-- <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button> --}}
+     </div>
+@endif  
+                {{-- Mensaje de activado  --}}
                @if(session('activado'))
                         <div class="alert alert-success text-center" role="alert">
 
@@ -17,7 +23,7 @@
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                        </div>
                     @endif 
-                     {{-- Mensaje de desactivado de Representante --}}
+                     {{-- Mensaje de desactivado --}}
                      @if(session('suspendido'))
                         <div class="alert alert-danger text-center" role="alert">
 
@@ -39,12 +45,14 @@
             <table id="mytable" class="table table-bordred table-striped">
               {{-- Lista de la tabla --}}
              <thead>
-               <th>Nombre</th>
+               <th>Usuario</th>
                <th>Correo Electrónico</th>
                <th>Roles</th>
-               
+                <th>Ver</th>
                <th>Activar</th>
                <th>Desactivar</th>
+               <th>Eliminar</th>
+
 
              </thead>
              <tbody>
@@ -55,15 +63,23 @@
                  <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->rol }}</td> 
+                <td>  <button class="btn btn-info " nombre=""><i class="fa fa-check"></i></button> </td>
                  @if ($user->estado)
                     
                       <td> <button class="btn btn-primary boton-activar" disabled="true" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}" ><i class="glyphicon glyphicon-ok"></i>&nbspActivar</button></td>
-                      <td>  <button class="btn btn-danger boton-desactivar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
+                      <td>  <button class="btn btn-warning boton-desactivar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
                       @else
                         <td> <button class="btn btn-primary boton-activar"  user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}" ><i class="glyphicon glyphicon-ok"></i>&nbspActivar</button></td>
-                      <td>  <button class="btn btn-danger boton-desactivar" disabled="true" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
+                      <td>  <button class="btn btn-warning boton-desactivar" disabled="true" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
                         
                  @endif
+                  <td>   <form method="post" action="{{ route('eliminarcuenta') }}">
+                                                          {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                       
+                                <input type="hidden" name="id" value="{{$user->id}}">
+                                <button class="btn  btn-danger" type="submit" >Eliminar  <i class="fa fa-trash"></i></button>
+                            </form> </td>
               {{--  <td><a class="btn btn-primary btn-xs " href="" ><span class="glyphicon glyphicon-ok"></span></a></td> 
                 <td> --}}
                  {{--  <form action="{{action('LibroController@destroy', $libro->id)}}" method="post">
@@ -81,19 +97,27 @@
                  <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->rol }}</td> 
+                <td>  <button class="btn btn-info " nombre=""><i class="fa fa-check"></i></button> </td>
                  @if ($user->estado)
                     
                       <td> <button class="btn btn-primary boton-activar" disabled="true" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}" ><i class="glyphicon glyphicon-ok"></i>&nbspActivar</button></td>
-                      <td>  <button class="btn btn-danger boton-desactivar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
+                      <td>  <button class="btn btn-warning boton-desactivar" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
                       @else
                         <td> <button class="btn btn-primary boton-activar"  user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}" ><i class="glyphicon glyphicon-ok"></i>&nbspActivar</button></td>
-                      <td>  <button class="btn btn-danger boton-desactivar" disabled="true" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
+                      <td>  <button class="btn btn-warning boton-desactivar" disabled="true" user="{{$user->id}}" nombre="{{$user->name}}" tipo="{{$user->rol}}"><i class="glyphicon glyphicon-remove"></i>&nbspSuspender</button> </td>
                         
                  @endif
+                  <td>  <form method="post" action="{{ route('eliminarcuenta') }}">
+                                                          {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                       
+                                <input type="hidden" name="id" value="{{$user->id}}">
+                                <button class="btn  btn-danger" type="submit" >Eliminar  <i class="fa fa-trash"></i></button>
+                            </form> </td>
                  @endforeach 
                @else 
                <tr>
-                <td colspan="8">No hay responsables registrados !!</td>
+                <td colspan="8">No hay Usuarios registrados !!</td>
               </tr>
               @endif 
             </tbody>

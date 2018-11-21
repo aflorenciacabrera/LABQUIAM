@@ -179,7 +179,7 @@
                                                         {{ method_field('DELETE') }}
                                                        
                                 <input type="hidden" name="id" value="{{ Auth::Guard()->user()->id }}">
-                                <button class="btn  btn-danger" type="submit" >Eliminar  <i class="glyphicon glyphicon-trash"></i></button>
+                                <button class="btn  btn-danger" type="submit" >Eliminar  <i class="fa fa-trash"></i></button>
                             </form></div>
 
                            {{-- <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>       --}}
