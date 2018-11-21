@@ -185,7 +185,7 @@
                            {{-- <a href="edit.html" data-original-title="Remove this user" data-toggle="tooltip"  class="btn  btn-danger" role ="button">Eliminar<i class="glyphicon glyphicon-trash"></i></a>       --}}
                        
                                <div class="col-md-3">
-                         <a href="{{ url('/producto') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">Cancelar</a>
+                         <a href="{{ url('/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">Cancelar</a>
                          </div></div>
                            </div>
                     

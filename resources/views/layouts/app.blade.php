@@ -86,7 +86,7 @@
           <ul class="nav">
           <li><a href="{{url('/perfil')}}"  class="btn btn-primary  " > <i class="fa fa-user"> </i> Perfil</a></li> 
           
-          <li><a href="{{url('admin/usuario')}}" class="btn btn-primary  " > <i class="fa fa-plus"> </i> Nuevo Técnico</a>
+          <li><a href="{{url('admin/tecnico')}}" class="btn btn-primary  " > <i class="fa fa-plus"> </i> Nuevo Técnico</a>
           {{-- <ul class ="sub">
           <li><a href="#">Lenovo</a></li> 
             <li><a href="#">Nokia</a></li>
@@ -94,7 +94,7 @@
             </ul> --}}
           </li>
 
-          <li><a href="{{url('lista/usuario')}}"class="btn btn-primary  " ><i class="fa fa-list"></i> Lista de Técnico</a>
+          <li><a href="{{url('lista/tecnico')}}"class="btn btn-primary  " ><i class="fa fa-list"></i> Lista de Técnico</a>
           {{-- <ul class ="sub">
           <li><a href="#">HP</a></li> 
             <li><a href="#">Dell</a></li>
@@ -102,7 +102,7 @@
         </ul> --}}
           </li> 
 
-          <li><a href="{{url('lista/usuario')}}" class="btn btn-primary  " ><i class="fa fa-list"></i> Lista de Clientes</a>
+          <li><a href="{{url('lista/cliente')}}" class="btn btn-primary  " ><i class="fa fa-list"></i> Lista de Clientes</a>
           {{-- <ul class ="sub">
           <li><a href="#">LG</a></li> 
             <li><a href="#">samsung</a></li>
@@ -115,7 +115,7 @@
             <ul class="nav">
             <li><a href="{{url('/perfil')}}" class="btn btn-primary  "><i class="fa fa-home"></i> Perfil</a></li> 
           
-            <li><a href="{{url('admin/usuario')}}" class="btn btn-primary  " ><i class="fa fa-plus"></i> Nuevo Técnico</a>
+            <li><a href="{{url('admin/tecnico')}}" class="btn btn-primary  " ><i class="fa fa-plus"></i> Nuevo Técnico</a>
             {{-- <ul class ="sub">
             <li><a href="#">Lenovo</a></li> 
               <li><a href="#">Nokia</a></li>
@@ -131,7 +131,7 @@
           </ul> --}}
             {{-- </li>  --}}
         
-            <li><a href="{{url('lista/usuario')}}"class="btn btn-primary  " ><i class="fa fa-list"></i>Lista de Clientes</a>
+            <li><a href="{{url('lista/tecnico')}}"class="btn btn-primary  " ><i class="fa fa-list"></i>Lista de Clientes</a>
             {{-- <ul class ="sub">
             <li><a href="#">LG</a></li> 
               <li><a href="#">samsung</a></li>
@@ -144,7 +144,7 @@
             <ul class="nav">
           <li><a href="{{url('/perfil')}}"class="btn btn-primary  " >Perfil</a></li> 
          
-            <li><a href="{{url('admin/usuario')}}"class="btn btn-primary  " >Nuevo Técnico</a>
+            <li><a href="{{url('admin/tecnico')}}"class="btn btn-primary  " >Nuevo Técnico</a>
             {{-- <ul class ="sub">
             <li><a href="#">Lenovo</a></li> 
               <li><a href="#">Nokia</a></li>
@@ -152,7 +152,7 @@
               </ul> --}}
             </li>
        
-            <li><a href="{{url('lista/usuario')}}" class="btn btn-primary  "> Lista de Técnico</a>
+            <li><a href="{{url('lista/tecnico')}}" class="btn btn-primary  "> Lista de Técnico</a>
             {{-- <ul class ="sub">
             <li><a href="#">HP</a></li> 
               <li><a href="#">Dell</a></li>
@@ -160,7 +160,7 @@
           </ul> --}}
             </li> 
          
-            <li><a href="{{url('lista/usuario')}}" class="btn btn-primary  ">Lista de Clientes</a>
+            <li><a href="{{url('lista/cliente')}}" class="btn btn-primary  ">Lista de Clientes</a>
             {{-- <ul class ="sub">
             <li><a href="#">LG</a></li> 
               <li><a href="#">samsung</a></li>
