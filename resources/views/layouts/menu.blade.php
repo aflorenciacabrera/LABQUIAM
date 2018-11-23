@@ -58,21 +58,7 @@
    	line-height :24px;
    	text-decoration :none;
    	}
-   	@keyframes ss
-   	{
-   		0%
-   		{
-   		transform:scale(1);
-   	}
-   		30%
-   		{
-   			transform:scale(1.3);
-   		}
-   		100%
-   		{
-   			transform:scale(1);
-   		}
-   	}
+   	
     .nav li >a:hover
     {
     	animation:ss 0.3s linear infinite forwards;
@@ -110,6 +96,6 @@
     opacity:1;	
     }
     	}
-</style>
 
+</style>
 
