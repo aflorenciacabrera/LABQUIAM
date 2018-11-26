@@ -17,13 +17,13 @@
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
-                            Agregar
+                            Administrar
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Procedencia</a>
-                            <a class="dropdown-item" href="#">Tipo de muestra</a>
-                            <a class="dropdown-item" href="#">Tipo de analisis</a>
+                            <a class="dropdown-item" href="/muestra/procedencia">Procedencia</a>
+                            <a class="dropdown-item" href="/muestra/tipodemuestra">Tipo de muestra</a>
+                            <a class="dropdown-item" href="/muestra/tipodeanalisis">Tipo de analisis</a>
                         </div>
                     </div>
                 </div>
@@ -110,87 +110,38 @@
                     </div>
 
                     <div class="card-footer text-muted d-flex justify-content-end">
-                        <button class="btn btn-light mr-2">Cancelar</button>
-                        <button class="btn btn-primary">Enviar</button>
+                        <button class="btn btn-light mr-2" type="reset">Cancelar</button>
+                        <button class="btn btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>
             </div>
-            {{-- <div class="card">
-                <div class="card-header text-center">
-                    <h4>Alta Muestra</h4>
-                </div>
-
-                <div class="card-body">
-                    <form method="POST">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-center">{{ __('Usuario') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-center">{{ __('Correo Electrónico') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-center">{{ __('Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-center">{{ __('Confirmar Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-
-
-                        <div class="card-footer">
-                            <div class="form-group col-12">
-                                <div class="col-12 label-column d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-primary">{{ __('Aceptar') }}</button>
-                                    <a href="{{ url('inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Cancelar</a>
-                                </div>
-                             </div>
-                         </div>
-                    </form>
-                </div>
-            </div> --}}
         </div>
     </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 @endsection
