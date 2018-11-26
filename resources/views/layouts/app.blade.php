@@ -76,102 +76,72 @@
             </div>
             
         </nav>
-   @guest
-        
-   @else
-   @extends('layouts.menu')
-   <div class="container">
+  {{-- **************************************** MENU *********************************************** --}}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+ {{-- @auth
+ <div class="container">
      <div class="row justify-content-center">
-       @if(Auth::user()->hasRole('admin'))
-          <ul class="nav">
-          <li><a href="{{url('/perfil')}}"  class="btn btn-primary  " > <i class="fa fa-user"> </i> Perfil</a></li> 
-          
-          <li><a href="{{url('admin/tecnico')}}" class="btn btn-primary  " > <i class="fa fa-plus"> </i> Nuevo Técnico</a>
-          {{-- <ul class ="sub">
-          <li><a href="#">Lenovo</a></li> 
-            <li><a href="#">Nokia</a></li>
-            <li><a href="#">LAVA</a></li>
-            </ul> --}}
-          </li>
+                @if(Auth::user()->hasRole('admin'))
+                <nav>
+                	<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab"  href="{{url('/inicio') }}" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+						<a class="nav-item nav-link" id="nav-profile-tab"  href="{{url('/perfil') }}" role="tab" aria-controls="nav-profile" aria-selected="false">Perfil</a>
+						<a class="nav-item nav-link" id="nav-contact-tab"  href="{{url('/tecnico') }}" role="tab" aria-controls="nav-contact" aria-selected="false">Nuevo Técnico</a>
+                        <a class="nav-item nav-link" id="nav-about-tab" href="{{url('/cliente') }}" role="tab" aria-controls="nav-about" aria-selected="false">Nuevo Cliente</a>
+                        <a class="nav-item nav-link" id="nav-about-tab"  href="{{url('/muestra') }}" role="tab" aria-controls="nav-about" aria-selected="false">Muestras</a>
+					</div>
+                </nav>      
 
-          <li><a href="{{url('lista/tecnico')}}"class="btn btn-primary  " ><i class="fa fa-list"></i> Lista de Técnico</a>
-          {{-- <ul class ="sub">
-          <li><a href="#">HP</a></li> 
-            <li><a href="#">Dell</a></li>
-            <li><a href="#">Lenovo</a></li>
-        </ul> --}}
-          </li> 
+                @elseif(Auth::user()->hasRole('cliente'))
+                <nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab"  href="{{url('/inicio') }}" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+						<a class="nav-item nav-link" id="nav-profile-tab"  href="{{url('/perfil') }}" role="tab" aria-controls="nav-profile" aria-selected="false">Perfil</a>
+						<a class="nav-item nav-link" id="nav-contact-tab"  href="{{url('/tecnico') }}" role="tab" aria-controls="nav-contact" aria-selected="false">Nuevo Solicitud</a>
+                        <a class="nav-item nav-link" id="nav-about-tab" href="{{url('/cliente') }}" role="tab" aria-controls="nav-about" aria-selected="false">Muestras</a>
+                        <a class="nav-item nav-link" id="nav-about-tab"  href="{{url('/muestra') }}" role="tab" aria-controls="nav-about" aria-selected="false">Historial</a>
+					</div>
+                </nav>
+             
+                @else
+                <nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab"  href="{{url('/inicio') }}" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+						<a class="nav-item nav-link" id="nav-profile-tab"  href="{{url('/perfil') }}" role="tab" aria-controls="nav-profile" aria-selected="false">Perfil</a>
+						<a class="nav-item nav-link" id="nav-contact-tab"  href="{{url('/tecnico') }}" role="tab" aria-controls="nav-contact" aria-selected="false">Nuevo Técnico</a>
+                        <a class="nav-item nav-link" id="nav-about-tab" href="{{url('/cliente') }}" role="tab" aria-controls="nav-about" aria-selected="false">Nuevo Cliente</a>
+                        <a class="nav-item nav-link" id="nav-about-tab"  href="{{url('/muestra') }}" role="tab" aria-controls="nav-about" aria-selected="false">Muestras</a>
+					</div>
+                </nav>
+               
+                @endif
+    </div>
+</div> --}}
 
-          <li><a href="{{url('lista/cliente')}}" class="btn btn-primary  " ><i class="fa fa-list"></i> Lista de Clientes</a>
-          {{-- <ul class ="sub">
-          <li><a href="#">LG</a></li> 
-            <li><a href="#">samsung</a></li>
-            <li><a href="#">Kelvinator</a></li>
-            </ul>  --}}
-            </li>
-            
-          </ul>
-      @elseif(Auth::user()->hasRole('cliente'))
-            <ul class="nav">
-            <li><a href="{{url('/perfil')}}" class="btn btn-primary  "><i class="fa fa-home"></i> Perfil</a></li> 
-          
-            <li><a href="{{url('cliente/formulario')}}" class="btn btn-primary  " ><i class="fa fa-plus"></i> Nuevo Formulario</a>
-            {{-- <ul class ="sub">
-            <li><a href="#">Lenovo</a></li> 
-              <li><a href="#">Nokia</a></li>
-              <li><a href="#">LAVA</a></li>
-              </ul> --}}
-            </li>
-        
-            {{-- <li><a href="{{url('lista/usuario')}}"> Lista de Técnico</a> --}}
-            {{-- <ul class ="sub">
-            <li><a href="#">HP</a></li> 
-              <li><a href="#">Dell</a></li>
-              <li><a href="#">Lenovo</a></li>
-          </ul> --}}
-            {{-- </li>  --}}
-        
-            
-              
-            </ul>
-        @else
-            <ul class="nav">
-          <li><a href="{{url('/perfil')}}"class="btn btn-primary  " >Perfil</a></li> 
-         
-            <li><a href="{{url('admin/tecnico')}}"class="btn btn-primary  " >Nuevo Técnico</a>
-            {{-- <ul class ="sub">
-            <li><a href="#">Lenovo</a></li> 
-              <li><a href="#">Nokia</a></li>
-              <li><a href="#">LAVA</a></li>
-              </ul> --}}
-            </li>
-       
-            <li><a href="{{url('lista/tecnico')}}" class="btn btn-primary  "> Lista de Técnico</a>
-            {{-- <ul class ="sub">
-            <li><a href="#">HP</a></li> 
-              <li><a href="#">Dell</a></li>
-              <li><a href="#">Lenovo</a></li>
-          </ul> --}}
-            </li> 
-         
-            <li><a href="{{url('lista/cliente')}}" class="btn btn-primary  ">Lista de Clientes</a>
-            {{-- <ul class ="sub">
-            <li><a href="#">LG</a></li> 
-              <li><a href="#">samsung</a></li>
-              <li><a href="#">Kelvinator</a></li>
-              </ul>  --}}
-              </li>
-              
-            </ul>
-        @endif
-  </div>
-	</div>
-	
-     @endguest
-        <main class="py-4">
-            
-            @yield('content')
-           
+{{-- <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+					</div>
+					<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+						Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+					</div>
+					<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+						Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+					</div>
+					<div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
+						Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+					</div>
+				</div> --}}
+
+
+{{--    
+     @endauth --}}
+
+        <main class="py-4">   
+            @yield('content')  
         </main>
     </div>
 </body>
