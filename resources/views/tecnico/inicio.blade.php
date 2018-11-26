@@ -7,7 +7,6 @@
 
 @extends('layouts.menu')
 
-
 @endsection
  
 @extends('layouts.app')
