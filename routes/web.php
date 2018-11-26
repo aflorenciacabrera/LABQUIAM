@@ -21,20 +21,23 @@ Auth::routes();
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware'=>['auth', 'Admin']], function(){
-// Rutas Privadas
-Route::get('/home', 'HomeController@home');
-Route::get('inicio','HomeController@inicio');
-// Administrador 
-Route::get('admin/tecnico','AdministradorController@tecnico');
-Route::delete('/inicio','AdministradorController@eliminarcuenta')->name("eliminarcuenta");
+    // Rutas Privadas
+    Route::get('/home', 'HomeController@home');
+    Route::get('inicio','HomeController@inicio');
+    // Administrador
+    Route::get('admin/tecnico','AdministradorController@tecnico');
+    Route::delete('/inicio','AdministradorController@eliminarcuenta')->name("eliminarcuenta");
 
-//Activar y suspender usuarios
-Route::get('inicio/activar/{tipo}/{user}','HomeController@activar');
-Route::get('inicio/suspender/{tipo}/{user}','HomeController@suspender');
+    //Activar y suspender usuarios
+    Route::get('inicio/activar/{tipo}/{user}','HomeController@activar');
+    Route::get('inicio/suspender/{tipo}/{user}','HomeController@suspender');
 
-// PERFIL
-Route::get('/perfil','HomeController@perfil');
-Route::put('/perfil','HomeController@editarPerfil');	
-Route::post('/perfil', 'HomeController@update_avatar');
-Route::delete('/perfil','HomeController@eliminarPerfil')->name("eliminarPerfil");
+    // PERFIL
+    Route::get('/perfil','HomeController@perfil');
+    Route::put('/perfil','HomeController@editarPerfil');
+    Route::post('/perfil', 'HomeController@update_avatar');
+    Route::delete('/perfil','HomeController@eliminarPerfil')->name("eliminarPerfil");
+
+    // Muestra
+    Route::get('/muestra/altamuestra', 'MuestraController@altaMuestra');
 });
