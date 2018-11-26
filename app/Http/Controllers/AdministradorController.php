@@ -13,15 +13,15 @@ class AdministradorController extends Controller {
         return view('admin.altatecnico');
     }
 
-    public function eliminarcuenta(Request $request) {
+    public function eliminarcuenta (Request $request) {
 
-        $user =User::findOrFail($request->id);
+        $user = User::findOrFail($request->id);
         $user->delete();
 
         return redirect(url('/inicio'))->with('status','El usuario a sido ELIMINADA definitivamente');
     }
 
-    public function altaUsuario(){
+    public function altaUsuario () {
 
     }
 }

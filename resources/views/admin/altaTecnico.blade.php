@@ -8,11 +8,11 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header text-center">
-                    
+
                  <h4>{{ __('Alta de Técnico') }}</h4></div>
                 {{-- *************************************************************************************** --}}
                 <div class="card-body">
-                        <form method="POST"  action="{{ route('register')}}">
+                    <form method="POST"  action="{{ route('register')}}">
                         @csrf
 
                         {{-- ******************************************************************************--}}
@@ -29,7 +29,7 @@
                                 @endif
                             </div>
                         </div>
-                       
+
                         <input type="hidden" value="tecnico" name="rol">
                           <input type="hidden" value="1" name="estado">
                         {{--******************************************************************************--}}
@@ -68,22 +68,22 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                      
-                      
-                         
+
+
+
                         {{-- ******************************** footer panel **************************************- --}}
-                        
-                        <div class="card-footer col-md-12">                           
+
+                        <div class="card-footer col-md-12">
                             <div class="form-group row">
-                                <div class="col-sm-10 label-column">  
+                                <div class="col-sm-10 label-column">
                                     <button type="submit" class="btn btn-primary">{{ __('Aceptar') }}</button>
-                                </div>      
-                                <div class="col-sm-0 input-column">     
+                                </div>
+                                <div class="col-sm-0 input-column">
                                     <a href="{{ url('inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Cancelar</a>
-                                </div>  
-                             </div> 
+                                </div>
+                             </div>
                          </div>
-                        
+
                     </form>
                 </div>
             </div>

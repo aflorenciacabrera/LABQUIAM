@@ -11,8 +11,7 @@ class CreateClientesTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up () {
         Schema::create('clientes', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
@@ -24,8 +23,7 @@ class CreateClientesTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down () {
         Schema::dropIfExists('clientes');
     }
 }

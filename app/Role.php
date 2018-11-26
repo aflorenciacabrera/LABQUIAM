@@ -4,13 +4,12 @@ namespace labquiam;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Role extends Model
-{
+class Role extends Model {
     //
 
-    public function users(){
-    return $this
-        ->belongsToMany('labquiam\User')
-        ->withTimestamps();
-}
+    public function users () {
+        return $this
+            ->belongsToMany('labquiam\User')
+            ->withTimestamps();
+    }
 }

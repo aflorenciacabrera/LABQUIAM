@@ -32,7 +32,7 @@ class HomeController extends Controller {
     // }
 
 
-    public function inicio(){
+    public function inicio () {
       // return view('admin.inicio');
         if (Auth::user()->hasRole('admin')) {
             $tecnico = User::where('rol', 'tecnico')->take(10)->get();
@@ -105,7 +105,7 @@ class HomeController extends Controller {
     }
 
     public function activar ($tipo,$user) {
-        if($tipo == 'tecnico'){
+        if ($tipo == 'tecnico'){
             $user = User::findOrFail($user);
         }
         if ($tipo == 'cliente') {

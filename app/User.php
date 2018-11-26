@@ -7,21 +7,19 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
-      use Notifiable;
-     public function SoftDeletes(){
-        if(Auth::user()->hasRole('tecnico')){
-              SoftDeletes;
-             $dates = ['deleted_at'];
+class User extends Authenticatable {
+    use Notifiable;
 
+    public function SoftDeletes () {
+        if (Auth::user()->hasRole('tecnico')) {
+            SoftDeletes;
+            $dates = ['deleted_at'];
         }
-        if(Auth::user()->hasRole('cliente')){
-             SoftDeletes;
-             $dates = ['deleted_at'];
-
+        if (Auth::user()->hasRole('cliente')) {
+            SoftDeletes;
+            $dates = ['deleted_at'];
         }
-    } 
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -40,21 +38,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function roles(){
-    return $this
-        ->belongsToMany('labquiam\Role')
-        ->withTimestamps();
+    public function roles () {
+        return $this
+            ->belongsToMany('labquiam\Role')
+            ->withTimestamps();
     }
 
-    public function authorizeRoles($roles)
-    {
+    public function authorizeRoles ($roles) {
         if ($this->hasAnyRole($roles)) {
             return true;
         }
         abort(401, 'Esta acción no está autorizada.');
     }
-    public function hasAnyRole($roles)
-    {
+
+    public function hasAnyRole ($roles) {
         if (is_array($roles)) {
             foreach ($roles as $role) {
                 if ($this->hasRole($role)) {
@@ -68,8 +65,8 @@ class User extends Authenticatable
         }
         return false;
     }
-    public function hasRole($role)
-    {
+
+    public function hasRole($role) {
         if ($this->roles()->where('name', $role)->first()) {
             return true;
         }

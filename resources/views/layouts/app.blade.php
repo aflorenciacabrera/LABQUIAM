@@ -67,14 +67,12 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-
                                 </div>
                             </li>
                         @endguest
                     </ul>
                 </div>
             </div>
-
         </nav>
 
     {{-- **************************************** MENU *********************************************** --}}
