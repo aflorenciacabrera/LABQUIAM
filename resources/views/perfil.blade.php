@@ -19,11 +19,7 @@
 						 <a class="nav-item nav-link" id="nav-about-tab"  href="{{url('/muestra') }}" role="tab" aria-controls="nav-about" aria-selected="false">Historial</a>
 					</div>
                 </nav>      
-
-
-            
-        @endif
-           
+        @endif       
         @if(Auth::user()->hasRole('tecnico'))
           <nav>
 					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">

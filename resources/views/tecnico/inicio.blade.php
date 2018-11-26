@@ -1,10 +1,7 @@
  
 @extends('layouts.footer')
-
-
-
 @section('content')
-
+{{-- **************************************** MENU *********************************************** --}}
 <div class="container">
             <div class="row justify-content-center">
                 <nav>
@@ -19,8 +16,5 @@
                 </nav>      
             </div>
             </div>
-
-
 @endsection
- 
 @extends('layouts.app')
