@@ -128,25 +128,26 @@
         // -------------------------------- AGREGAR PROCEDENCIA --------------------------------
         $('#btnModalNuevaProcedencia').click(function (e) {
 
-            $('#modalProcedencia').modal('show')
-
             $('#modalProcedencia').on('shown.bs.modal', function (e) {
                 const modal = $(this)
 
-                modal.find('.modal-title').text('Nueva Procedencia')
+                modal.find('.modal-title').text('Agregar Procedencia')
+
+                $('#modal-input-procedencia-id').val(-1)
+                $('#modal-input-procedencia-nombre').val('')
+
                 $('#btn-submit').text('Agregar')
 
+                $('#modal-input-procedencia-nombre').prop('disabled', false)
                 $('#form-procedencia').attr('method', 'post')
-                $('#form-procedencia').attr('action', '/muestra/procedencia/agregar')
+                $('#form-procedencia').attr('action', `/muestra/procedencia/agregar`)
             })
         })
 
         // -------------------------------- ELIMINAR PRODECENCIA --------------------------------
         $('#btnModalEliminarProcedencia').click(function (e) {
-            $('#modalProcedencia').modal('show')
 
             $('#modalProcedencia').on('shown.bs.modal', function (e) {
-
                 const modal = $(this)
 
                 const nombreProcedencia = $('#table-procedencia-nombre').text()
@@ -156,30 +157,16 @@
 
                 $('#modal-input-procedencia-id').val(idProcedencia)
                 $('#modal-input-procedencia-nombre').val(nombreProcedencia)
-                $('#modal-input-procedencia-nombre').prop('disabled', true)
                 $('#btn-submit').text('Eliminar')
 
+                $('#modal-input-procedencia-nombre').prop('disabled', true)
                 $('#form-procedencia').attr('method', 'post')
                 $('#form-procedencia').attr('action', `/muestra/procedencia/${idProcedencia}/eliminar`)
-            })
-
-            $('#modalProcedencia').on('hidden.bs.modal', function (e) {
-                const modal = $(this)
-
-                const nombreProcedencia = $('#table-procedencia-nombre').text()
-                const idProcedencia = $('#table-procedencia-id').text()
-
-                modal.find('.modal-title').text('')
-
-                $('#modal-input-procedencia-id').val(-1)
-                $('#modal-input-procedencia-nombre').val('')
-                $('#modal-input-procedencia-nombre').prop('disabled', false)
             })
         })
 
         // -------------------------------- ACTUALIZAR PROCEDENCIA --------------------------------
         $('#btnModalActualizarProcedencia').click(function (e) {
-            $('#modalProcedencia').modal('show')
 
             $('#modalProcedencia').on('shown.bs.modal', function (e) {
                 const modal = $(this)
@@ -193,20 +180,9 @@
                 $('#modal-input-procedencia-nombre').val(nombreProcedencia)
                 $('#btn-submit').text('Actualizar')
 
+                $('#modal-input-procedencia-nombre').prop('disabled', false)
                 $('#form-procedencia').attr('method', 'post')
                 $('#form-procedencia').attr('action', `/muestra/procedencia/${idProcedencia}/actualizar`)
-            })
-
-            $('#modalProcedencia').on('hidden.bs.modal', function (e) {
-                const modal = $(this)
-
-                const nombreProcedencia = $('#table-procedencia-nombre').text()
-                const idProcedencia = $('#table-procedencia-id').text()
-
-                modal.find('.modal-title').text('')
-
-                $('#modal-input-procedencia-id').val(-1)
-                $('#modal-input-procedencia-nombre').val('')
             })
         })
     })
