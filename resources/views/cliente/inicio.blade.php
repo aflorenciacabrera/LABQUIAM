@@ -1,35 +1,21 @@
 @extends('layouts.footer')
-@extends('layouts.menu')
-@extends('layouts.app')
+
+
 @section('content')
 
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header text-center">Panel de Cliente</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    @if(Auth::user()->hasRole('admin'))
-                       
-                         <div align="center">
-                           
-                             <a  class="btn btn-sm btn-default"  role="button" href="{{url('/perfil') }}" >Perfil <i class="glyphicon glyphicon-user"></i></a>
-                        </div>
-                  
-                    @endif
-                    
-
-                </div>
+<div class="container">
+            <div class="row justify-content-center">
+                <nav>
+                	<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab"  href="{{url('/inicio') }}" role="tab" aria-controls="nav-home" aria-selected="true">Inicio</a>
+						<a class="nav-item nav-link" id="nav-profile-tab"  href="{{url('/perfil') }}" role="tab" aria-controls="nav-profile" aria-selected="false">Perfil</a>
+						<a class="nav-item nav-link" id="nav-contact-tab"  href="{{url('/tecnico') }}" role="tab" aria-controls="nav-contact" aria-selected="false">Nuevo Solicitud</a>
+                        <a class="nav-item nav-link" id="nav-about-tab" href="{{url('/cliente') }}" role="tab" aria-controls="nav-about" aria-selected="false">Muestras</a>
+                        <a class="nav-item nav-link" id="nav-about-tab"  href="{{url('/muestra') }}" role="tab" aria-controls="nav-about" aria-selected="false">Historial</a>
+					</div>
+                </nav>      
             </div>
-        </div>
-    </div>
-</div> --}}
+            </div>
 
 @endsection
+@extends('layouts.app')
