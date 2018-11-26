@@ -35,11 +35,11 @@
                         <div class="form-group row">
                             <div class="col-6">
                                 <label for="input-fecha-ingreso">Fecha de ingreso (*)</label>
-                                <input type="email" class="form-control" id="input-fecha-ingreso" placeholder="Ej: 2018/11/29" required>
+                                <input type="date" class="form-control" id="input-fecha-ingreso" placeholder="Ej: 2018/11/29" required>
                             </div>
                             <div class="col-6">
                                 <label for="input-fecha-toma">Fecha de toma (*)</label>
-                                <input type="email" class="form-control" id="input-fecha-toma" placeholder="Ej: 2018/11/29" required>
+                                <input type="date" class="form-control" id="input-fecha-toma" placeholder="Ej: 2018/11/29" required>
                             </div>
                         </div>
 
