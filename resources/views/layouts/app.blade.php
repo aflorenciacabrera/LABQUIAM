@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             {{--******************** Logo *******************--}}
              <div class="nav-header " >
-                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/quimica.jpg')}}" width="50" />
+                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/quimica.png')}}" width="50" />
                    <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="5"> <span>Laboratorio de Quimica Ambiental </span></font>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
