@@ -1,11 +1,8 @@
  
 @extends('layouts.footer')
 @section('content')
-<<<<<<< HEAD
 
-@extends('layouts.menu')
 
-=======
 {{-- **************************************** MENU *********************************************** --}}
 <div class="container">
             <div class="row justify-content-center">
@@ -21,6 +18,5 @@
                 </nav>      
             </div>
             </div>
->>>>>>> esdras
 @endsection
 @extends('layouts.app')
