@@ -13,6 +13,14 @@ class CreateMuestrasTable extends Migration {
     public function up () {
         Schema::create('muestras', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('fecha_ingreso');
+            $table->string('fecha_toma_muestra');
+            $table->string('procedencia_id');
+            $table->string('tipo_muestra');
+            $table->string('remitida_tomada');
+            $table->string('tipo_analisis');
+            $table->string('descripcion');
+            $table->string('detalles');
             $table->timestamps();
         });
     }
