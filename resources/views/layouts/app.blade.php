@@ -52,7 +52,25 @@
                                 @endif
                             </li>
                         @else
-                   {{-- <li class="nav-item dropdown">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <nav>
+                                    <a href="{{url('/perfil')}}" class="btn  btn-primary "  role ="button" ><i class="material-icons">
+                                    account_circle</i> {{ Auth::user()->name }}</a>
+
+                                    <a class="btn  btn-danger active"  href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    <i class="material-icons">power_settings_new</i>{{ __('Salir') }}</a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                    </form>
+                                </nav>
+                            </div>
+                        </div>
+                                    
+                                {{--                
+                                <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -63,55 +81,38 @@
 
                                      <hr>
                                 </div>
+ 
+                                </li> --}}
                                 
-                                    
-                                </li>
-                                 --}}
                         @endguest
                     </ul>
                 </div>
             </div>
 
-             @auth
-    
-<div class="container">
-    <div class="row justify-content-center">
-        <nav>
-                     {{ Auth::user()->name }}
-                 <a href="#ventana"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
-
-                 <a href="#ventana"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Perfil <i class="glyphicon glyphicon-edit"></i></a>
-
-                 <a href="#ventana"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Tecnicos <i class="glyphicon glyphicon-edit"></i></a>
-
-                 <a href="#ventana"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Clientes <i class="glyphicon glyphicon-edit"></i></a>
-
-                  <a href="#ventana"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Muestas <i class="glyphicon glyphicon-edit"></i></a>
-
-                <a class="btn  btn-danger active"  href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }} 
-                                        
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-               
-              
-               
-            
         </nav>
-    </div>
-</div>
+{{-- **************************************** MENU *********************************************** --}}
+    @auth
+        <div class="container">
+            <div class="row justify-content-center">
+                <nav>
+                        <hr>
+                        <a href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
 
+                        <a href="{{url('/perfil')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Perfil <i class="glyphicon glyphicon-edit"></i></a>
 
+                        <a href="{{url('/tecnico')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Tecnico <i class="glyphicon glyphicon-edit"></i></a>
 
-    @endauth
-        </nav>
+                        <a href="{{url('/cliente')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
 
+                        <a href="{{url('/muestra')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Muestra <i class="glyphicon glyphicon-edit"></i></a>
+                        <hr>
+                    
+                </nav>
+            </div>
+        </div>
+     @endauth
    
-    {{-- **************************************** MENU *********************************************** --}}
+    
    
 
         <main class="py-6">
