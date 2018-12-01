@@ -16,6 +16,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+
+     
 </head>
 {{-- ********************************** Navegador  ****************************************** --}}
 
@@ -55,12 +57,11 @@
                         <div class="container">
                             <div class="row justify-content-center">
                                 <nav>
-                                    <a href="{{url('/perfil')}}" class="btn  btn-primary "  role ="button" ><i class="material-icons">
-                                    account_circle</i> {{ Auth::user()->name }}</a>
+                                    <a href="{{url('/perfil')}}" class="btn  btn-primary "  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
 
                                     <a class="btn  btn-danger active"  href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    <i class="material-icons">power_settings_new</i>{{ __('Salir') }}</a>
+                                    <i class="fa fa-power-off"></i> {{ __('Salir') }}</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
@@ -100,11 +101,11 @@
 
                         <a href="{{url('/perfil')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Perfil <i class="glyphicon glyphicon-edit"></i></a>
 
-                        <a href="{{url('/tecnico')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Tecnico <i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{url('/lista/tecnico')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Tecnico <i class="glyphicon glyphicon-edit"></i></a>
 
-                        <a href="{{url('/cliente')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{url('/lista/cliente')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
 
-                        <a href="{{url('/muestra')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Muestra <i class="glyphicon glyphicon-edit"></i></a>
+                        <a href="{{url('/muestra/altamuestra')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Muestra <i class="glyphicon glyphicon-edit"></i></a>
                         <hr>
                     
                 </nav>
@@ -115,7 +116,7 @@
     
    
 
-        <main class="py-6">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>

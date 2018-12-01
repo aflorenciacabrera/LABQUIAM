@@ -44,4 +44,8 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('/muestra/procedencia', 'MuestraController@procedencia');
     Route::get('/muestra/tipodeanalisis', 'MuestraController@tipoDeAnalisis');
     Route::get('/muestra/tipodemuestra', 'MuestraController@tipoDeMuestra');
+
+    //Listas
+    Route::get('/lista/tecnico','AdministradorController@listaTecnico');
+    Route::get('/lista/cliente','AdministradorController@listaCliente');
 });

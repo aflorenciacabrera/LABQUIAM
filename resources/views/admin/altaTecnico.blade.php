@@ -1,5 +1,5 @@
 @extends('layouts.footer')
-@extends('layouts.menu')
+
 @section('content')
 
 {{-- Alta de tecnico --}}

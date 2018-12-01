@@ -48,6 +48,24 @@ class HomeController extends Controller {
             return view('tecnico.inicio', compact('users'));
         }
     }
+
+        public function listaTecnico () {
+
+        if (Auth::user()->hasRole('tecnico')) {
+            $users = User::where('rol', 'cliente')->take(10)->get();
+            return view('admin.listaTecnico', compact('users'));
+        }
+    }
+     public function listaCliente () {
+      
+       
+        if (Auth::user()->hasRole('cliente')) {
+            $users = User::where('rol', 'cliente')->take(10)->get();
+            return view('admin.listaCliente', compact('users'));
+        }
+        
+    }
+
     /*
     public function someAdminStuff(Request $request)
     {
