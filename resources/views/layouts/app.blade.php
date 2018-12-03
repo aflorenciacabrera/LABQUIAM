@@ -92,29 +92,40 @@
 
         </nav>
 {{-- **************************************** MENU *********************************************** --}}
+   
     @auth
+        
         <div class="container">
             <div class="row justify-content-center">
                 <nav>
                         <hr>
                         <a href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
 
-                        <a href="{{url('/perfil')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Perfil <i class="glyphicon glyphicon-edit"></i></a>
-
+                       
                         <a href="{{url('/lista/tecnico')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Tecnico <i class="glyphicon glyphicon-edit"></i></a>
 
                         <a href="{{url('/lista/cliente')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
 
-                        <a href="{{url('/muestra/altamuestra')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Muestra <i class="glyphicon glyphicon-edit"></i></a>
+                        <a  data-toggle="collapse" href="#menu"  class="btn  btn-info " role ="button" > Muestra <span class="caret"></span></a>
+                           
                         <hr>
-                    
+                            <div class="collapse menu" class="dropdown-menu dropdown-menu-right"  id="menu">
+                                <ul class="list-inline">
+                                    
+                                    <a  class="btn  sm btn-outline-info "  role ="button"  href="{{url('/muestra/altamuestra')}}">Nueva</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Lista</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Historial</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Estado Actual</a></li>
+                                   
+                            </div>
+                           
                 </nav>
             </div>
         </div>
      @endauth
    
     
-   
+    
 
         <main class="py-4">
             @yield('content')
