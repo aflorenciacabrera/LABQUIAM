@@ -94,15 +94,52 @@
 {{-- **************************************** MENU *********************************************** --}}
    
     @auth
-        
+    {{-- **************************************** MENU de Admin *********************************************** --}}
+    @if(Auth::user()->hasRole('admin'))
         <div class="container">
             <div class="row justify-content-center">
                 <nav>
                         <hr>
-                        <a href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
+                        <a  href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
 
                        
-                        <a href="{{url('/lista/tecnico')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Tecnico <i class="glyphicon glyphicon-edit"></i></a>
+                        <a data-toggle="collapse" href="#menu2" data-original-title="Tecnico"  class="btn  btn-info "  role ="button" > Técnico <i class="glyphicon glyphicon-edit"></i></a>
+
+                        <a data-toggle="collapse" href="#menu1"  data-original-title="Cliente"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
+
+                        <a  data-toggle="collapse" href="#menu"  class="btn  btn-info " role ="button" > Muestra <span class="caret"></span></a>
+                           
+                        <hr>
+                            <div class="collapse menu" class="dropdown-menu dropdown-menu-right"  id="menu">
+                                <ul class="list-inline">
+                                    <a  class="btn  sm btn-outline-info "  role ="button"  href="{{url('/muestra/altamuestra')}}">Nueva</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Lista</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Historial</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Estado Actual</a></li>
+                                </ul>
+                            </div>  
+                            <div class="collapse menu1" class="dropdown-menu dropdown-menu1-right"  id="menu1">
+                                <ul class="list-inline">
+                                    <a  class="btn  sm btn-outline-info "  role ="button"  href="{{url('/admin/cliente')}}">Nuevo</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button" href="{{url('/lista/tecnico')}}"  >Lista</a></li>     
+                                </ul>
+                            </div>  
+                             <div class="collapse menu2" class="dropdown-menu dropdown-menu2-right"  id="menu2">
+                                <ul class="list-inline">
+                                    <a  class="btn  sm btn-outline-info "  role ="button"  href="{{url('/admin/tecnico')}}">Nuevo</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="{{url('/lista/cliente')}}"  >Lista</a></li>     
+                                </ul>
+                            </div>        
+                </nav>
+            </div>
+        </div>
+         {{-- **************************************** MENU de Tecnico *********************************************** --}}
+    @elseif(Auth::user()->hasRole('tecnico'))
+         <div class="container">
+            <div class="row justify-content-center">
+                <nav>
+                        <hr>
+                        <a href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
 
                         <a href="{{url('/lista/cliente')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
 
@@ -117,16 +154,42 @@
                                     <a class="btn   btn-outline-info "  role ="button"  href="#">Historial</a></li>
                                     <a class="btn   btn-outline-info "  role ="button"  href="#">Estado Actual</a></li>
                                    
-                            </div>
+                            </div>    
                            
+                             <div class="collapse menu2" class="dropdown-menu dropdown-menu2-right"  id="menu2">
+                                <ul class="list-inline">
+                                    <a  class="btn  sm btn-outline-info "  role ="button"  href="{{url('/admin/cliente')}}">Nuevo</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="{{url('/lista/cliente')}}"  >Lista</a></li>     
+                                </ul>
+                            </div>        
                 </nav>
             </div>
         </div>
-     @endauth
-   
-    
-    
+         {{-- **************************************** MENU de Cliente *********************************************** --}}
+    @elseif(Auth::user()->hasRole('cliente'))
+         <div class="container">
+            <div class="row justify-content-center">
+                <nav>
+                        <hr>
+                        <a href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
 
+                        <a  data-toggle="collapse" href="#menu"  class="btn  btn-info " role ="button" > Muestra <span class="caret"></span></a>
+                           
+                        <hr>
+                            <div class="collapse menu" class="dropdown-menu dropdown-menu-right"  id="menu">
+                                <ul class="list-inline">
+                                    
+                                    <a  class="btn  sm btn-outline-info "  role ="button"  href="{{url('/muestra/altamuestra')}}">Solicitud de Muestra</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Lista</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Historial</a></li>
+                                    <a class="btn   btn-outline-info "  role ="button"  href="#">Estado Actual</a></li>
+                                </ul>
+                            </div>    
+                </nav>
+            </div>
+        </div>
+    @endif
+     @endauth
         <main class="py-4">
             @yield('content')
         </main>

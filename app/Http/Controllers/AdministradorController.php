@@ -12,6 +12,9 @@ class AdministradorController extends Controller {
     public function tecnico(){
         return view('admin.altatecnico');
     }
+    public function cliente(){
+        return view('admin.altaCliente');
+    }
 
     public function eliminarcuenta (Request $request) {
 
