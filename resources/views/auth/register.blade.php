@@ -25,6 +25,7 @@
                             </div>
                         </div>
                         <input type="hidden" value="cliente" name="rol">
+                         {{-- <input type="hidden" value="0" name="estado"> --}}
                         {{-- Ingreso de Correo Electrónico --}}
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-center">{{ __('Correo Electrónico') }}</label>
