@@ -28,10 +28,44 @@ class MuestraController extends Controller {
             'procedencias' => $array
         ]);
     }
+
     public function tipoDeMuestra () {
-        return view('muestra.tipodemuestra');
+        $array = array(
+            (object) array(
+                'id' => 1,
+                'tipo_de_muestra' => 'tipo de muestra 1',
+            ),
+            (object) array(
+                'id' => 2,
+                'tipo_de_muestra' => 'tipo de muestra 2',
+            ),
+            (object) array(
+                'id' => 3,
+                'tipo_de_muestra' => 'tipo de muestra 3',
+            ),
+        );
+        return view('muestra.tipodemuestra', [
+            'tipos_de_muestras' => $array
+        ]);
     }
+
     public function tipoDeAnalisis () {
-        return view('muestra.tipodeanalisis');
+        $array = array(
+            (object) array(
+                'id' => 1,
+                'tipo_de_analisis' => 'tipo de analisis 1',
+            ),
+            (object) array(
+                'id' => 2,
+                'tipo_de_analisis' => 'tipo de analisis 2',
+            ),
+            (object) array(
+                'id' => 3,
+                'tipo_de_analisis' => 'tipo de analisis 3',
+            ),
+        );
+        return view('muestra.tipodeanalisis', [
+            'tipos_de_analisis' => $array
+        ]);
     }
 }

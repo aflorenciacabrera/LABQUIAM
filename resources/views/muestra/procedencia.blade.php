@@ -24,7 +24,7 @@
                     <caption>List of users</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Procedencia</th>
+                            <th scope="col">Nombre</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -36,11 +36,11 @@
                                 data-key="{{ $item->id }}"
                                 scope="row"
                                 >{{ $item->procedencia }}</th>
-                            <td
+                            {{-- <td
                                 class="table-procedencia-id"
                                 data-key="{{ $item->id }}"
                                 class="d-none"
-                                >{{ $item->id }}</td>
+                                >{{ $item->id }}</td> --}}
                             <td>
                                 <button
                                     type="button"
@@ -105,13 +105,15 @@
 
 @section('content-footer')
 <script>
+    console.log('Cargo')
     $(document).ready(function () {
         // -------------------------------- AGREGAR PROCEDENCIA --------------------------------
         $('#btnModalNuevaProcedencia').click(function (e) {
 
             $('#modalProcedencia').on('shown.bs.modal', function (e) {
                 const modal = $(this)
-
+                console.log(modal)
+                console.log(modal.find('.modal-title'))
                 modal.find('.modal-title').text('Agregar Procedencia')
 
                 $('#modal-input-procedencia-id').val(-1)
