@@ -1,17 +1,21 @@
 @extends('layouts.footer')
-@extends('layouts.app')
 @section('content')
+
+{{-- Alta de tecnico --}}
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
-                {{-- Titulo --}}
-                <div class="card-header text-center">{{ __('Registro de Cliente') }}</div>
+                <div class="card-header text-center">
+
+                 <h4>{{ __('Alta de Cliente') }}</h4></div>
+                {{-- *************************************************************************************** --}}
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST"  action="{{ route('register')}}">
                         @csrf
-                        {{-- Ingreso de usuario --}}
-                        <div class="form-group row">
+                        
+                        {{-- ******************************************************************************--}}
+                          <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-center">{{ __('Usuario') }}</label>
 
                             <div class="col-md-6">
@@ -24,10 +28,11 @@
                                 @endif
                             </div>
                         </div>
+
                         <input type="hidden" value="cliente" name="rol">
-                         {{-- <input type="hidden" value="0" name="estado"> --}}
-                        {{-- Ingreso de Correo Electrónico --}}
-                        <div class="form-group row">
+                          <input type="hidden" value="1" name="estado">
+                        {{--******************************************************************************--}}
+                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-center">{{ __('Correo Electrónico') }}</label>
 
                             <div class="col-md-6">
@@ -40,8 +45,8 @@
                                 @endif
                             </div>
                         </div>
-                        {{-- Ingreso Contraseña --}}
-                        <div class="form-group row">
+                        {{--******************************************************************************--}}
+                          <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-center">{{ __('Contraseña') }}</label>
 
                             <div class="col-md-6">
@@ -54,26 +59,37 @@
                                 @endif
                             </div>
                         </div>
-                        {{-- Contirmar Ingreso de Contraseña --}}
-                        <div class="form-group row">
+                        {{--******************************************************************************--}}
+                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-center">{{ __('Confirmar Contraseña') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-                        {{-- Boton Registrar --}}
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
-                                </button>
-                            </div>
-                        </div>
+
+
+
+                        {{-- ******************************** footer panel **************************************- --}}
+
+                        <div class="card-footer col-md-12">
+                            <div class="form-group row">
+                                <div class="col-sm-10 label-column">
+                                    <button type="submit" class="btn btn-primary">{{ __('Aceptar') }}</button>
+                                </div>
+                                <div class="col-sm-0 input-column">
+                                    <a href="{{ url('inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Cancelar</a>
+                                </div>
+                             </div>
+                         </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection
+@extends('layouts.app')

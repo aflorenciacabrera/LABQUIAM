@@ -27,6 +27,7 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
 
     // Administrador
     Route::get('admin/tecnico','AdministradorController@tecnico');
+    Route::get('admin/cliente','AdministradorController@cliente');
     Route::delete('/inicio','AdministradorController@eliminarcuenta')->name("eliminarcuenta");
 
     //Activar y suspender usuarios
