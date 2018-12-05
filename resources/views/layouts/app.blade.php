@@ -102,7 +102,6 @@
                         <hr>
                         <a  href="{{url('/inicio')}}"  data-original-title="Inicio"  class="btn  btn-info "  role ="button" > Inicio <i class="glyphicon glyphicon-edit"></i></a>
 
-                       
                         <a data-toggle="collapse" href="#menu2" data-original-title="Tecnico"  class="btn  btn-info "  role ="button" > Técnico <i class="glyphicon glyphicon-edit"></i></a>
 
                         <a data-toggle="collapse" href="#menu1"  data-original-title="Cliente"  class="btn  btn-info "  role ="button" > Cliente <i class="glyphicon glyphicon-edit"></i></a>
