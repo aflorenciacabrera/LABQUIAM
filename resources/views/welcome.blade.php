@@ -121,20 +121,17 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-12">
+                  <h1 class="h1">
                     LABQUIAM
+                  </h1>
+  
+                  <h3 class="lead">Sistema de Gestión de Información de Análisis de Laboratorio de Química Ambiental</h3>
+                  
                 </div>
-
-                 <div class="links"> 
-                    <h3>Sistema de Gestión de Información de Análisis de Laboratorio de Química Ambiental</h3>
-                    {{--<a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>--}}
-                </div> 
+              </div>
             </div>
         </div>
     </body>
