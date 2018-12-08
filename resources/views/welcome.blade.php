@@ -106,14 +106,9 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('inicio') }}">Inicio</a>
-                         <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                        <a href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Salir') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf</form>
                     @else
                         <a href="{{ route('login') }}">Acceder</a>
                         <a href="{{ route('register') }}">Registrar</a>
@@ -124,6 +119,9 @@
             <div class="container">
               <div class="row text-center">
                 <div class="col-12">
+                   
+                    <img src="{{asset('img/icono quimica.png')}}" width="300" />
+               
                   <h1 class="h1">
                     LABQUIAM
                   </h1>
