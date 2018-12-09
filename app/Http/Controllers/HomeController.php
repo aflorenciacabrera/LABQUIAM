@@ -30,23 +30,31 @@ class HomeController extends Controller {
     //     $request->user()->authorizeRoles(['user', 'admin']);
     //     return view('home');
     // }
-
+    public function tecnico(){
+        return view('tecnico.inicio');
+    }
+     public function cliente(){
+        return view('cliente.inicio');
+    }
+     public function muestra(){
+        return view('muestra.inicio');
+    }
 
     public function inicio () {
-      // return view('admin.inicio');
-        if (Auth::user()->hasRole('admin')) {
-            $tecnico = User::where('rol', 'tecnico')->take(10)->get();
-            $cliente = User::where('rol', 'cliente')->take(10)->get();
-            return view('admin.inicio', compact('tecnico'), compact('cliente'));
-        }
-        if (Auth::user()->hasRole('cliente')) {
-            $users = User::where('rol', 'cliente')->take(10)->get();
-            return view('cliente.inicio', compact('users'));
-        }
-        if (Auth::user()->hasRole('tecnico')) {
-            $users = User::where('rol', 'cliente')->take(10)->get();
-            return view('tecnico.inicio', compact('users'));
-        }
+      return view('inicio');
+        // if (Auth::user()->hasRole('admin')) {
+        //     $tecnico = User::where('rol', 'tecnico')->take(10)->get();
+        //     $cliente = User::where('rol', 'cliente')->take(10)->get();
+        //     return view('admin.inicio', compact('tecnico'), compact('cliente'));
+        // }
+        // if (Auth::user()->hasRole('cliente')) {
+        //     $users = User::where('rol', 'cliente')->take(10)->get();
+        //     return view('cliente.inicio', compact('users'));
+        // }
+        // if (Auth::user()->hasRole('tecnico')) {
+        //     $users = User::where('rol', 'cliente')->take(10)->get();
+        //     return view('tecnico.inicio', compact('users'));
+        // }
     }
 
         public function listaTecnico () {

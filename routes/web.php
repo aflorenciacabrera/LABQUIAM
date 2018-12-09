@@ -24,6 +24,9 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     // Rutas Privadas
     Route::get('/home', 'HomeController@home');
     Route::get('/inicio','HomeController@inicio');
+    Route::get('tecnico/inicio','HomeController@tecnico');
+    Route::get('cliente/inicio','HomeController@cliente');
+    Route::get('muestra/inicio','HomeController@muestra');
 
     // Administrador
     Route::get('admin/tecnico','AdministradorController@tecnico');
