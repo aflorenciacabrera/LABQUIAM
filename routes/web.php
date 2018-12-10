@@ -33,6 +33,10 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('admin/cliente','AdministradorController@cliente');
     Route::delete('/inicio','AdministradorController@eliminarcuenta')->name("eliminarcuenta");
 
+    // Tecnico
+    Route::get('tecnico/nuevo','TecnicoController@tecnicoNuevo');
+    Route::get('tecnico/lista','TecnicoController@listaTecnico');
+
     //Activar y suspender usuarios
     Route::get('/inicio/activar/{tipo}/{user}','HomeController@activar');
     Route::get('/inicio/suspender/{tipo}/{user}','HomeController@suspender');
@@ -50,6 +54,6 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('/muestra/tipodemuestra', 'MuestraController@tipoDeMuestra');
 
     //Listas
-    Route::get('/lista/tecnico','AdministradorController@listaTecnico');
+    
     Route::get('/lista/cliente','AdministradorController@listaCliente');
 });

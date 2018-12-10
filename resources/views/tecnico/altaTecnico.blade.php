@@ -79,7 +79,7 @@
                                     <button type="submit" class="btn btn-primary">{{ __('Aceptar') }}</button>
                                 </div>
                                 <div class="col-sm-0 input-column">
-                                    <a href="{{ url('inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Cancelar</a>
+                                    <a href="{{ url('tecnico/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-danger  ">Cancelar</a>
                                 </div>
                              </div>
                          </div>

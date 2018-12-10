@@ -9,9 +9,7 @@ use labquiam\Role;
 
 class AdministradorController extends Controller {
 
-    public function tecnico(){
-        return view('admin.altatecnico');
-    }
+   
     public function cliente(){
         return view('admin.altaCliente');
     }
@@ -27,12 +25,7 @@ class AdministradorController extends Controller {
     public function altaUsuario () {
 
     }
-     public function listaTecnico () {
-       
-            $tecnico = User::where('rol', 'tecnico')->take(10)->get();
-            return view('admin.listaTecnico', compact('tecnico'));
-        
-    }
+    
      public function listaCliente () {
        
             $cliente = User::where('rol', 'cliente')->take(10)->get();
