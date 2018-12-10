@@ -4,12 +4,34 @@
 @section('content')
 {{-- **************************************** MENU *********************************************** --}}
    
-    @auth
+@auth
     {{-- **************************************** MENU de Admin *********************************************** --}}
     @if(Auth::user()->hasRole('admin'))
+   
         <div class="container">
             <div class="row justify-content-center">
                 <nav>
+                   
+                        {{-- <div id="app">
+                            <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                                <div class="container">
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        
+                                        <ul class="navbar-nav mr-auto">
+                                            
+                                            <li class="nav-item"> <a class="nav-link"  href="{{url('/inicio')}}"    > Inicio </a> </li>
+                                    
+                                            <li class="nav-item"> <a   class="nav-link" href="{{url('tecnico/inicio')}}" > Técnico </a> </li>
+
+                                            <li class="nav-item"><a   class="nav-link" href="{{url('cliente/inicio')}}"    > Cliente </a> </li>
+
+                                            <li class="nav-item"> <a  class="nav-link" href="{{url('muestra/inicio')}}"   > Muestra </a> </li>        
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div> --}}
+
                         <hr>
                         <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a>
 

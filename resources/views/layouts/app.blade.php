@@ -27,7 +27,7 @@
             {{--******************** Logo *******************--}}
              <div class="nav-header " >
                 <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/quimica.png')}}" width="50" />
-                   <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="5"> <span>Laboratorio de Quimica Ambiental </span></font>
+                   <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="4"> <span>Laboratorio de Quimica Ambiental </span></font>
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,22 +54,17 @@
                                 @endif
                             </li>
                         @else
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <nav>
-                                    <a href="{{url('/perfil')}}" class="btn  btn-primary "  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a>
+                             <li class="nav-item"> <a  class="nav-link" href="{{url('/inicio')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
+                            <li class="nav-item"> <a  class="nav-link" href="{{url('/perfil')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
 
-                                    <a class="btn  btn-danger active"  href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                    <i class="fa fa-power-off"></i> {{ __('Salir') }}</a>
+                            <li class="nav-item">  <a class="nav-link" class="btn  btn-outline-link "  href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <i class="fa fa-power-off"></i> {{ __('Salir') }}</a> </li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                    </form>
-                                </nav>
-                            </div>
-                        </div>
-                                    
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                            </form>
+                    </ul>           
                                 {{--                
                                 <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -86,13 +81,12 @@
                                 </li> --}}
                                 
                         @endguest
-                    </ul>
+                  
                 </div>
             </div>
-
         </nav>
 
-        <main class="py-4">
+        <main class="py-2">
             @yield('content')
         </main>
     </div>
