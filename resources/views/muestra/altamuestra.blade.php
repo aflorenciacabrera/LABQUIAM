@@ -112,7 +112,10 @@
                     </div>
 
                     <div class="card-footer text-muted d-flex justify-content-end">
-                        <button class="btn btn-light mr-2" type="reset">Cancelar</button>
+
+                        <div class="col-sm-11 input-column">
+                          <a href="{{ url('muestra/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
+                        {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
                         <button class="btn btn-primary" type="submit">Enviar</button>
                     </div>
                 </form>

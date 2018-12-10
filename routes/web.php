@@ -37,6 +37,10 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('tecnico/nuevo','TecnicoController@tecnicoNuevo');
     Route::get('tecnico/lista','TecnicoController@listaTecnico');
 
+    // Cliente
+    Route::get('cliente/nuevo','ClienteController@clienteNuevo');
+    Route::get('cliente/lista','ClienteController@listaCliente');
+
     //Activar y suspender usuarios
     Route::get('/inicio/activar/{tipo}/{user}','HomeController@activar');
     Route::get('/inicio/suspender/{tipo}/{user}','HomeController@suspender');
