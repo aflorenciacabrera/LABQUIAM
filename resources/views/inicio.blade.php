@@ -33,7 +33,7 @@
                         </div> --}}
 
                         <hr>
-                        <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a>
+                        {{-- <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a> --}}
 
                         <a  href="{{url('tecnico/inicio')}}"class="btn  btn-info "  role ="button" > Técnico </a>
 
@@ -51,9 +51,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <nav>
+                     
                         <hr>
-                        <hr>
-                        <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a>
+                        {{-- <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a> --}}
 
                         <a  href="{{url('cliente/inicio')}}"   class="btn  btn-info "  role ="button" > Cliente </a>
 
@@ -69,13 +69,12 @@
          <div class="container">
             <div class="row justify-content-center">
                 <nav>
+                    
                         <hr>
-                        <hr>
-                        <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a>
+                        {{-- <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a> --}}
 
                         <a  href="{{url('muestra/inicio')}}"  class="btn  btn-info " role ="button" > Muestra </a>
                            
-                        <hr>
                            
                         <hr>
                            

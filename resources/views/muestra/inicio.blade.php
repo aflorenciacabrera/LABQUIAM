@@ -11,7 +11,7 @@
                         <a  href="{{url('/inicio')}}"   class="btn  btn-info "  role ="button" > Inicio </a>   
                          
                                     <a class="btn   btn-outline-info "  role ="button"  href="#">Solicitud de Muestra</a>
-                                     <a class="btn   btn-outline-info "  role ="button"  href="#">Lista </a>
+                                
                                     <a class="btn   btn-outline-info "  role ="button"  href="#">Historial</a>
                                     <a class="btn   btn-outline-info "  role ="button"  href="#">Estado Actual</a>   
                         <hr>
