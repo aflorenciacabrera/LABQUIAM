@@ -13,9 +13,7 @@ class TecnicoController extends Controller
         return view('tecnico.altaTecnico');
     }
      public function listaTecnico () {
-       
             $tecnico = User::where('rol', 'tecnico')->take(10)->get();
             return view('admin.listaTecnico', compact('tecnico'));
-        
     }
 }
