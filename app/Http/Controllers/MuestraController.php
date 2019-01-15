@@ -1,7 +1,7 @@
 <?php
 
 namespace labquiam\Http\Controllers;
-
+use labquiam\muestra;
 use Illuminate\Http\Request;
 
 class MuestraController extends Controller {
@@ -68,4 +68,24 @@ class MuestraController extends Controller {
             'tipos_de_analisis' => $array
         ]);
     }
+
+
+    public function crearMuestra (Request $request)
+      {
+        $m = new muestra; 
+
+      $m->fecha_ingreso= $request->fecha_ingreso;
+      $m->fecha_toma_muestra= $request->fecha_toma_muestra;
+      $m->procedencia= $request->procedencia;
+      $m->tipo_muestra= $request->tipo_muestra;
+      $m->remitida_tomada= $request->remitida_tomada;
+      $m->tipo_analisis= $request->tipo_analisis;
+      $m->descripcion= $request->descripcion;
+      $m->detalles= $request->detalles;
+      $m->save();
+     // return view("institucion.mostrarCapacidad");
+      return redirect(url('muestra/inicio'));
+      }
+
+      
 }

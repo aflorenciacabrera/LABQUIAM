@@ -30,18 +30,19 @@
                     </div>
                 </div>
 
-                <form method="POST">
+                       
+                <form method="POST" action="{{url('muestra/altamuestra')}}">
                     <div class="card-body">
                         @csrf
 
                         <div class="form-group row">
                             <div class="col-6">
-                                <label for="input-fecha-ingreso">Fecha de ingreso (*)</label>
-                                <input type="date" class="form-control" id="input-fecha-ingreso" placeholder="Ej: 2018/11/29" required>
+                                <label for="fecha_ingreso">Fecha de ingreso (*)</label>
+                                <input type="date" class="form-control" name="fecha_ingreso" id="fecha_ingreso" placeholder="Ej: 2018/11/29" required>
                             </div>
                             <div class="col-6">
-                                <label for="input-fecha-toma">Fecha de toma (*)</label>
-                                <input type="date" class="form-control" id="input-fecha-toma" placeholder="Ej: 2018/11/29" required>
+                                <label for="fecha_toma_muestra">Fecha de toma (*)</label>
+                                <input type="date" class="form-control" name="fecha_toma_muestra" id="fecha_toma_muestra" placeholder="Ej: 2018/11/29" required>
                             </div>
                         </div>
 
@@ -50,8 +51,8 @@
 
                         <div class="form-group row">
                             <div class="col-12">
-                                <label for="input-procedencia">Seleccione una procedencia (*)</label>
-                                <select class="form-control form-control" id="input-procedencia" required>
+                                <label for="procedencia">Seleccione una procedencia (*)</label>
+                                <select class="form-control form-control" name="procedencia" id="procedencia" required>
                                     <option>Procedencia 1</option>
                                     <option>Procedencia 2</option>
                                     <option>Procedencia 3</option>
@@ -61,8 +62,8 @@
 
                         <div class="form-group row">
                             <div class="col-12">
-                                <label for="input-tipo-muestra">Seleccione un tipo de muestra (*)</label>
-                                <select class="form-control form-control" id="input-tipo-muestra" required>
+                                <label for="tipo_muestra">Seleccione un tipo de muestra (*)</label>
+                                <select class="form-control form-control" name="tipo_muestra" id="tipo_muestra" required>
                                     <option>Tipo de muestra 1</option>
                                     <option>Tipo de muestra 2</option>
                                     <option>Tipo de muestra 3</option>
@@ -73,12 +74,12 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="input-remitida-tomada" id="input-remitida" value="remitida" required>
+                                    <input class="form-check-input" type="radio" name="remitida_tomada" id="remitida_tomada" value="remitida" required>
                                     <label class="form-check-label" for="input-remitida">Remitida</label>
                                 </div>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="input-remitida-tomada" id="input-tomada" value="tomada" required>
+                                    <input class="form-check-input" type="radio" name="remitida_tomada" id="remitida_tomada" value="tomada" required>
                                     <label class="form-check-label" for="input-tomada">Tomada</label>
                                 </div>
                             </div>
@@ -86,8 +87,8 @@
 
                         <div class="form-group row">
                             <div class="col-12">
-                                <label for="input-tipo-de-analisis">Seleccione un tipo de analisis (*)</label>
-                                <select class="form-control form-control" id="input-tipo-de-analisis" required>
+                                <label for="tipo_analisis">Seleccione un tipo de analisis (*)</label>
+                                <select class="form-control form-control" name="tipo_analisis" id="tipo_analisis" required>
                                     <option>Tipo de analisis 1</option>
                                     <option>Tipo de analisis 2</option>
                                     <option>Tipo de analisis 3</option>
@@ -97,15 +98,15 @@
 
                         <div class="form-group row">
                             <div class="col-12">
-                                <label for="input-descripcion">Descripcion</label>
-                                <textarea class="form-control" id="input-descripcion" rows="3"></textarea>
+                                <label for="descripcion">Descripcion</label>
+                                <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-12">
-                                <label for="input-descripcion">Detalle</label>
-                                <textarea class="form-control" id="input-descripcion" rows="3"></textarea>
+                                <label for="detalles">Detalle</label>
+                                <textarea class="form-control" name="detalles" id="detalles" rows="3"></textarea>
                             </div>
                         </div>
 

@@ -15,7 +15,7 @@ class CreateMuestrasTable extends Migration {
             $table->increments('id');
             $table->string('fecha_ingreso');
             $table->string('fecha_toma_muestra');
-            $table->string('procedencia_id');
+            $table->string('procedencia');
             $table->string('tipo_muestra');
             $table->string('remitida_tomada');
             $table->string('tipo_analisis');
