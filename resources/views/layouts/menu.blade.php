@@ -58,3 +58,21 @@
             </div>
         </div> 
      --}}
+
+        {{-- <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a href="#" class="navbar-brand">Company Name</a><button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li role="presentation" class="nav-item"><a href="#" class="nav-link active">First Item</a></li>
+                        <li role="presentation" class="nav-item"><a href="#" class="nav-link">Second Item</a></li>
+                        <li role="presentation" class="nav-item"><a href="#" class="nav-link">Third Item</a></li>
+                        <li class="dropdown"><a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Dropdown</a>
+                            <div role="menu" class="dropdown-menu"><a role="presentation" href="#" class="dropdown-item">First Item</a><a role="presentation" href="#" class="dropdown-item">Second Item</a><a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div> --}}

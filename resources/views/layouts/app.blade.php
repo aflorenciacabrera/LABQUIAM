@@ -16,7 +16,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-
+ 
+   
      
 </head>
 {{-- ********************************** Navegador  ****************************************** --}}
@@ -54,8 +55,57 @@
                                 @endif
                             </li>
                         @else
-                             <li class="nav-item"> <a  class="nav-link" href="{{url('/inicio')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
+                            <li class="nav-item"> <a  class="nav-link" href="{{url('/inicio')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
                             <li class="nav-item"> <a  class="nav-link" href="{{url('/perfil')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
+                            {{-- Inicia como Administrador --}}
+                             @if(Auth::user()->hasRole('admin'))
+                             <li class="dropdown">
+                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Técnico</a>
+                                <div role="menu" class="dropdown-menu">
+                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                            </li>
+                             <li class="dropdown">
+                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
+                                <div role="menu" class="dropdown-menu">
+                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                            </li>
+                             <li class="dropdown">
+                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
+                                <div role="menu" class="dropdown-menu">
+                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                            </li>
+                              {{-- Inicia como Tecnico --}}
+                            @elseif(Auth::user()->hasRole('tecnico'))
+                            <li class="dropdown">
+                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
+                                <div role="menu" class="dropdown-menu">
+                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                            </li>
+                            <li class="dropdown">
+                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
+                                <div role="menu" class="dropdown-menu">
+                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                            </li>
+                              {{-- Inicia como Cliente --}}
+                            @elseif(Auth::user()->hasRole('cliente'))
+                            <li class="dropdown">
+                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
+                                <div role="menu" class="dropdown-menu">
+                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                            </li>
+                            @endif
 
                             <li class="nav-item">  <a class="nav-link" class="btn  btn-outline-link "  href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
@@ -91,5 +141,7 @@
         </main>
     </div>
 </body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/script.min.js"></script>
+     <script src="{{ asset('js/script.min.js') }}" defer></script>
 </html>

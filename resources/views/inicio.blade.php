@@ -1,6 +1,6 @@
 
 @extends('layouts.footer')
-
+@extends('layouts.menu')
 @section('content')
 {{-- **************************************** MENU *********************************************** --}}
    
