@@ -62,15 +62,15 @@
                              <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Técnico</a>
                                 <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                                <a role="presentation" href="{{url('tecnico/nuevo')}}" class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('tecnico/lista')}}" class="dropdown-item">Lista</a>
+                                
                             </li>
                              <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
                                 <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation"href="{{url('cliente/nuevo')}}" class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="#" class="dropdown-item">Lista</a>
                                 <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
                             </li>
                              <li class="dropdown">
@@ -85,8 +85,8 @@
                             <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
                                 <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
+                                <a role="presentation" href="{{url('tecnico/nuevo')}}" class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('tecnico/lista')}}" class="dropdown-item">Lista</a>
                                 <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
                             </li>
                             <li class="dropdown">
