@@ -59,7 +59,7 @@
                             <li class="nav-item"> <a  class="nav-link" href="{{url('/perfil')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
                             {{-- Inicia como Administrador --}}
                              @if(Auth::user()->hasRole('admin'))
-                             <li class="dropdown">
+                             <li class="dropdown"> 
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Técnico</a>
                                 <div role="menu" class="dropdown-menu">
                                 <a role="presentation" href="{{url('tecnico/nuevo')}}" class="dropdown-item">Nuevo</a>
@@ -69,41 +69,38 @@
                              <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
                                 <div role="menu" class="dropdown-menu">
-                                <a role="presentation"href="{{url('cliente/nuevo')}}" class="dropdown-item">Nuevo</a>
-                                <a role="presentation" href="#" class="dropdown-item">Lista</a>
-                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                                <a role="presentation" href="{{url('cliente/nuevo')}}" class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('cliente/lista')}}"  class="dropdown-item">Lista</a>
+                                
                             </li>
                              <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
-                                <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                                <div role="menu" class="dropdown-menu"> 
+                                <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
                               {{-- Inicia como Tecnico --}}
                             @elseif(Auth::user()->hasRole('tecnico'))
-                            <li class="dropdown">
+                             <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
                                 <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="{{url('tecnico/nuevo')}}" class="dropdown-item">Nuevo</a>
-                                <a role="presentation" href="{{url('tecnico/lista')}}" class="dropdown-item">Lista</a>
-                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                                <a role="presentation" href="{{url('cliente/nuevo')}}" class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('cliente/lista')}}"  class="dropdown-item">Lista</a>
+                                
                             </li>
-                            <li class="dropdown">
+                           <li class="dropdown"> 
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
-                                <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                                <div role="menu" class="dropdown-menu"> 
+                                <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
                               {{-- Inicia como Cliente --}}
                             @elseif(Auth::user()->hasRole('cliente'))
                             <li class="dropdown">
                                  <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
-                                <div role="menu" class="dropdown-menu">
-                                <a role="presentation" href="#" class="dropdown-item">First Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Second Item</a>
-                                <a role="presentation" href="#" class="dropdown-item">Third Item</a></div>
+                                <div role="menu" class="dropdown-menu"> 
+                                <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
                             @endif
 

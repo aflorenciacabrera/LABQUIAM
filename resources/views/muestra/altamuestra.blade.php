@@ -31,7 +31,7 @@
                 </div>
 
                        
-                <form method="POST" action="{{url('muestra/altamuestra')}}">
+                <form method="POST" action="{{url('muestra/nuevo')}}">
                     <div class="card-body">
                         @csrf
 

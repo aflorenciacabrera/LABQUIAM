@@ -84,8 +84,14 @@ class MuestraController extends Controller {
       $m->detalles= $request->detalles;
       $m->save();
      // return view("institucion.mostrarCapacidad");
-      return redirect(url('muestra/inicio'));
+      return redirect(url('inicio'));
       }
 
-      
+      public function listaMuestra () {
+       
+            $muestra =  muestra::all()->take(10);
+            return view('muestra.listaMuestra', compact('muestra'));
+       
+        
+    }
 }
