@@ -105,7 +105,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center">Perfil de {{ Auth::user()->name }}</div>
+                <div class="card-header text-center"><h3>Perfil de {{ Auth::user()->name }}</h3></div>
                 <div class="card-body">
                 <div class="row">
                    <div class="col-md-4">
