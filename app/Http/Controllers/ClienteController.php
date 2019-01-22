@@ -16,8 +16,14 @@ class ClienteController extends Controller
     public function listaCliente () {
        
             $cliente = User::where('rol', 'cliente')->take(10)->get();
-            return view('admin.listaCliente', compact('cliente'));
-       
-        
+            return view('cliente.listaCliente', compact('cliente'));
+    }
+
+    public function eliminarcliente (Request $request) {
+
+        $user = User::findOrFail($request->id);
+        $user->delete();
+
+        return redirect(url('/cliente/lista'))->with('status','El Cliente a sido ELIMINADA definitivamente');
     }
 }

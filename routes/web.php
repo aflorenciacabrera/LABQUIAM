@@ -36,10 +36,12 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     // Tecnico
     Route::get('tecnico/nuevo','TecnicoController@tecnicoNuevo');
     Route::get('tecnico/lista','TecnicoController@listaTecnico');
+    Route::delete('tecnico/lista','TecnicoController@eliminartecnico')->name("eliminartecnico");
 
     // Cliente
     Route::get('cliente/nuevo','ClienteController@clienteNuevo');
     Route::get('cliente/lista','ClienteController@listaCliente');
+    Route::delete('cliente/lista','ClienteController@eliminarcliente')->name("eliminarcliente");
 
     //Activar y suspender usuarios
     Route::get('/inicio/activar/{tipo}/{user}','HomeController@activar');
