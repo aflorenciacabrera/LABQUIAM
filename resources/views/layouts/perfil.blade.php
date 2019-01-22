@@ -128,7 +128,7 @@
                 <div class=" col-md-14 col-lg-8" align="center"> 
                   <table class="table table-user-information">
                     <tbody>
-                      
+                      <br>
                       <tr>
                         <td>Usuario:</td>
                         <td>{{ Auth::user()->name }}</td>
@@ -166,13 +166,13 @@
                 <div align="center">
                     <div class="form-group row ">
                         {{-- <a href="#" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-info  ">Mensaje</a>  --}}
-                        <div class="col-md-4">
-                        <a href="#edit"  data-original-title="Editar Perfil"  title="Editar" class="btn  btn-warning btn-xs " data-toggle="modal" role ="button" > Editar <i class="fa fa-edit"></i></a>
-                        <a href="#delete"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-danger btn-xs " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
-                        <a href="{{ url('/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-primary  ">Cancelar  <i class="fa fa-times"></i></a>
+                        <div align="centrer" class="col-md-12 ">
+                        <a href="#edit"  data-original-title="Editar Perfil"  title="Editar" class="btn  btn-outline-warning btn-xs " data-toggle="modal" role ="button" > Editar <i class="fa fa-edit"></i></a>
+                        <a href="#delete"  data-original-title="Remove this user"  title="Eliminar" class="btn  btn-outline-danger btn-xs " data-toggle="modal" role ="button" > Eliminar  <i class="fa fa-trash-o"></i></a>
+                        <a href="{{ url('/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-outline-primary  ">Cancelar  <i class="fa fa-times"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
                     
 
              {{-- ***********************Modal de Edit********************************* --}}

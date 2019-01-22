@@ -45,7 +45,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+                       <div class="container">
+                           <div class="form-group row "> 
+                        @guest 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Acceder') }}</a>
                             </li>
@@ -55,12 +57,14 @@
                                 @endif
                             </li>
                         @else
-                        
-
+                         </div>
+                            <div class="form-group row ">
                             <li class="nav-item"> <a   href="{{url('/inicio')}}" class="btn  btn-outline-info btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
                             <li class="nav-item"> <a   href="{{url('/perfil')}}" class="btn  btn-outline-info btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
+                           
                             {{-- Inicia como Administrador --}}
                              @if(Auth::user()->hasRole('admin'))
+                            
                              <li class="dropdown" > 
                                  <a  class="btn  btn-outline-info btn-sm"  data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i> Técnico</a>
                                 <div role="menu" class="dropdown-menu">
@@ -81,6 +85,7 @@
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
+                            
                               {{-- Inicia como Tecnico --}}
                             @elseif(Auth::user()->hasRole('tecnico'))
                              <li class="dropdown">
@@ -113,6 +118,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                             </form>
+                            </div> </div> 
                     </ul>           
                                 {{--                
                                 <li class="nav-item dropdown">
