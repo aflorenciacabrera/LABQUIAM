@@ -55,26 +55,28 @@
                                 @endif
                             </li>
                         @else
-                            <li class="nav-item"> <a  class="nav-link" href="{{url('/inicio')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
-                            <li class="nav-item"> <a  class="nav-link" href="{{url('/perfil')}}" class="btn  btn-outline-primary "  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
+                        
+
+                            <li class="nav-item"> <a   href="{{url('/inicio')}}" class="btn  btn-outline-info btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
+                            <li class="nav-item"> <a   href="{{url('/perfil')}}" class="btn  btn-outline-info btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
                             {{-- Inicia como Administrador --}}
                              @if(Auth::user()->hasRole('admin'))
-                             <li class="dropdown"> 
-                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Técnico</a>
+                             <li class="dropdown" > 
+                                 <a  class="btn  btn-outline-info btn-sm"  data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i> Técnico</a>
                                 <div role="menu" class="dropdown-menu">
                                 <a role="presentation" href="{{url('tecnico/nuevo')}}" class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('tecnico/lista')}}" class="dropdown-item">Lista</a>
                                 
                             </li>
                              <li class="dropdown">
-                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
+                                 <a class="btn  btn-outline-info btn-sm" data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i> Cliente</a>
                                 <div role="menu" class="dropdown-menu">
                                 <a role="presentation" href="{{url('cliente/nuevo')}}" class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('cliente/lista')}}"  class="dropdown-item">Lista</a>
                                 
                             </li>
                              <li class="dropdown">
-                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
+                                 <a class="btn  btn-outline-info btn-sm" data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i>  Muestra</a>
                                 <div role="menu" class="dropdown-menu"> 
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
@@ -82,14 +84,14 @@
                               {{-- Inicia como Tecnico --}}
                             @elseif(Auth::user()->hasRole('tecnico'))
                              <li class="dropdown">
-                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Cliente</a>
+                                 <a class="btn  btn-outline-info btn-sm" data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i>  Cliente</a>
                                 <div role="menu" class="dropdown-menu">
                                 <a role="presentation" href="{{url('cliente/nuevo')}}" class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('cliente/lista')}}"  class="dropdown-item">Lista</a>
                                 
                             </li>
                            <li class="dropdown"> 
-                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
+                                 <a class="btn  btn-outline-info btn-sm" data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i>  Muestra</a>
                                 <div role="menu" class="dropdown-menu"> 
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
@@ -97,14 +99,14 @@
                               {{-- Inicia como Cliente --}}
                             @elseif(Auth::user()->hasRole('cliente'))
                             <li class="dropdown">
-                                 <a data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle">Muestra</a>
+                                 <a class="btn  btn-outline-info btn-sm" data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i>  Muestra</a>
                                 <div role="menu" class="dropdown-menu"> 
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
                             @endif
 
-                            <li class="nav-item">  <a class="nav-link" class="btn  btn-outline-link "  href="{{ route('logout') }}"
+                            <li class="nav-item">  <a  class="btn  btn-outline-danger btn-sm"  href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="fa fa-power-off"></i> {{ __('Salir') }}</a> </li>
 
