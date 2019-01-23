@@ -141,21 +141,29 @@
                         <td>Apellido:</td>
                         <td>{{ Auth::user()->apellido }}</td>
                       </tr>
+                       <tr>
+                        <td>Teléfono de contacto:</td>
+                        <td>{{ Auth::user()->telefono }}</td>
+                      </tr>
+                       <tr>
+                        <td>Dirección:</td>
+                        <td>{{ Auth::user()->direccion }}</td>
+                      </tr>
                       <tr>
                         <td>Correo electrónico:</td>
                         <td><a href="mailto:{{ Auth::user()->email }}">{{ Auth::user()->email }}</td>
                       </tr>
+                       <tr>
+                        <td>Trabajo que desempeña:</td>
+                        <td>{{ Auth::user()->trabajo }}</td>
+                      </tr>
                       <tr>
-                        <td>Rol que desempeña:</td>
+                        <td>Rol de usuario :</td>
                         <td>{{ Auth::user()->rol }}</td>
                       </tr>
                       <tr>
-                        <td>Teléfono de contacto:</td>
-                        <td>{{ Auth::user()->telefono }}</td>
-                      </tr>
-                      <tr>
-                        <td>Trabajo:</td>
-                        <td>{{ Auth::user()->trabajo }}</td>
+                        <td>Observaciones:</td>
+                        <td>{{ Auth::user()->observacion }}</td>
                       </tr>
                     </tbody>
                   </table>
