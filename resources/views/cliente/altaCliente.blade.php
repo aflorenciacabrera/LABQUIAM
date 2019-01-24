@@ -9,7 +9,7 @@
                 {{-- Titulo --}}
                 <div class="card-header text-center"><h3>{{ __('Alta de Cliente') }}</h3></div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{url('cliente/nuevo')}}">
                         @csrf
                     
                         <div class="form-group row">
@@ -105,7 +105,7 @@
                         </div>
 
                         <input type="hidden" value="cliente" name="rol">
-                         <input type="hidden" value="1" name="estado">
+                        <input type="hidden" value="1" name="estado">
                          {{-- <input type="hidden" value="0" name="estado"> --}}
                          
                         <div class="form-group row">

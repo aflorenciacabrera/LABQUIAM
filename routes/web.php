@@ -40,6 +40,7 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
 
     // Cliente
     Route::get('cliente/nuevo','ClienteController@clienteNuevo');
+    Route::post('cliente/nuevo','ClienteController@crearCliente');
     Route::get('cliente/lista','ClienteController@listaCliente');
     Route::delete('cliente/lista','ClienteController@eliminarcliente')->name("eliminarcliente");
 

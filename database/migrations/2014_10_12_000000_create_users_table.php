@@ -15,13 +15,14 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
             $table->string('avatar')->default('default.jpg');
             $table->string('name');
-            $table->string('nombre')->nullable();
-            $table->string('apellido')->nullable();
+            $table->string('nomyape')->nullable();
+            $table->string('lugar')->nullable();
+             $table->string('lugar')->nullable();
             $table->string('email')->unique();
             $table->string('telefono')->nullable();
-            $table->string('rol')->nullable();
+            $table->string('rol');
             $table->string('especialidad')->nullable();
-            $table->boolean('estado')->default(false);
+            $table->boolean('estado');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
