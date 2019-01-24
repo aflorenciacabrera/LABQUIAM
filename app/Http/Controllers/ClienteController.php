@@ -44,6 +44,6 @@ class ClienteController extends Controller
     //   $c->password_confirmation= bcrypt($request->password_confirmation);
       $c->save();
      // return view("institucion.mostrarCapacidad");
-      return redirect(url('inicio'));
+      return redirect(url('inicio'))->with('status','El usuario cliente fue registrado');;
       }
 }

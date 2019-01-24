@@ -61,8 +61,8 @@
                           <div class="form-group row">
                              {{-- Ingreso Trabajo que desempeña --}}
                             <div class="col-6">
-                                <label for="trabajo" >{{ __('Trabajo que desempeña') }}</label>
-                                <input id="trabajo" type="text" class="form-control{{ $errors->has('trabajo') ? ' is-invalid' : '' }}" name="telefono" value="{{ old('trabajo') }}" required autofocus placeholder="">
+                                <label for="trabajo" >{{ __('Actividad que desempeña') }}</label>
+                                <input id="trabajo" type="text" class="form-control{{ $errors->has('trabajo') ? ' is-invalid' : '' }}" name="trabajo" value="{{ old('trabajo') }}" required autofocus placeholder="">
                                 @if ($errors->has('trabajo'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('trabajo') }}</strong>
@@ -95,7 +95,7 @@
                               {{-- Ingreso Dirección --}}
                             <div class="col-6">
                                 <label for="direccion" >{{ __('Dirección') }}</label>
-                                <input id="direccion" type="text" class="form-control{{ $errors->has('direccion') ? ' is-invalid' : '' }}" name="telefono" value="{{ old('direccion') }}" required autofocus placeholder="">
+                                <input id="direccion" type="text" class="form-control{{ $errors->has('direccion') ? ' is-invalid' : '' }}" name="direccion" value="{{ old('direccion') }}" required autofocus placeholder="">
                                 @if ($errors->has('direccion'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('direccion') }}</strong>

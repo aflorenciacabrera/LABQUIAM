@@ -35,6 +35,7 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
 
     // Tecnico
     Route::get('tecnico/nuevo','TecnicoController@tecnicoNuevo');
+    Route::post('tecnico/nuevo','TecnicoController@crearTecnico');
     Route::get('tecnico/lista','TecnicoController@listaTecnico');
     Route::delete('tecnico/lista','TecnicoController@eliminartecnico')->name("eliminartecnico");
 

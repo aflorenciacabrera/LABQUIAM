@@ -23,4 +23,24 @@ class TecnicoController extends Controller
 
         return redirect(url('/tecnico/lista'))->with('status','El Técnico a sido ELIMINADA definitivamente');
     }
+
+    public function crearTecnico (Request $request)
+      {
+        $t = new user; 
+        $t->name= $request->name;
+        $t->nomyape= $request->nomyape;
+        $t->lugar= $request->lugar;
+        $t->trabajo= $request->trabajo;
+        $t->observacion= $request->observacion;
+        $t->telefono= $request->telefono;
+        $t->direccion= $request->direccion;
+        $t->email= $request->email;
+        $t->rol= $request->rol;
+        $t->estado= $request->estado;
+        $t->password= bcrypt($request->password);
+    //   $c->password_confirmation= bcrypt($request->password_confirmation);
+      $t->save();
+     // return view("institucion.mostrarCapacidad");
+      return redirect(url('inicio'))->with('status','El usuario técnico fue registrado');
+      }
 }
