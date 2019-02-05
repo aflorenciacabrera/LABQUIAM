@@ -15,7 +15,7 @@
                             
                             <div align="center">
                                 
-                                <a  rol="button" href="{{url('producto/agregar')}}" class="btn btn-outline-primary btn-sm " > <i class="fa fa-plus"></i> Nuevo</a>
+                                <a  rol="button" href="{{url('analsis/tecnica')}}" class="btn btn-outline-primary btn-sm " > <i class="fa fa-selec"></i> Selecionar Técnicas a Implementar</a>
                             </div>
 {{-- ********************************************************************************************************** --}}
                         <div class="row">

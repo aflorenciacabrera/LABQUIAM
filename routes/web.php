@@ -66,4 +66,7 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     //Listas
     
     Route::get('/lista/cliente','AdministradorController@listaCliente');
+    
+    //Analisis tecnicas a implementar
+    Route::get('analsis/tecnica','AnalisisController@seleccionTecnica');
 });
