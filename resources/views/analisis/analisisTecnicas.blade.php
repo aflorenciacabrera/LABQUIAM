@@ -118,7 +118,7 @@
                     <div class="card-footer text-muted d-flex justify-content-end">
 
                         <div class="col-sm-11 input-column">
-                          <a href="{{ url('muestra/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
+                          <a href="{{ url('muestra/lista') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
                         {{-- <button class="btn btn-primary" type="submit">Aceptar</button> --}}
                     </div>

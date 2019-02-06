@@ -43,7 +43,7 @@
                         <th>Tipo de analisis</th> 
                         <th>Eliminar</th>
                         <th>Ver</th>
-                        <th>seleccionar</th>
+                        <th>Operación</th>
                     </thead>
                         <tbody> 
                               @if($muestra->count())
