@@ -19,8 +19,8 @@ class CreateMuestrasTable extends Migration {
             $table->string('tipo_muestra');
             $table->string('remitida_tomada');
             $table->string('tipo_analisis');
-            $table->string('descripcion');
-            $table->string('detalles');
+            $table->string('descripcion')->nullable();
+            $table->string('detalles')->nullable();
             $table->timestamps();
         });
     }

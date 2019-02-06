@@ -15,7 +15,7 @@
                             
                             <div align="center">
                                 
-                                <a  rol="button" href="{{url('analsis/tecnica')}}" class="btn btn-outline-primary btn-sm " > <i class="fa fa-selec"></i> Selecionar Técnicas a Implementar</a>
+                                <a  rol="button" href="{{url('muestra/nuevo')}}" class="btn btn-outline-primary btn-sm " > <i class="fa fa-plus"></i> Nueva muestra</a>
                             </div>
 {{-- ********************************************************************************************************** --}}
                         <div class="row">
@@ -43,6 +43,7 @@
                         <th>Tipo de analisis</th> 
                         <th>Eliminar</th>
                         <th>Ver</th>
+                        <th>seleccionar</th>
                     </thead>
                         <tbody> 
                               @if($muestra->count())
@@ -63,13 +64,15 @@
                                                                 {{ method_field('DELETE') }}
 
                                 <input type="hidden" name="id" value="{{$muestras->id}}">
-                                <button class="btn  btn-danger" type="submit" >Eliminar  <i class="fa fa-trash-o"></i></button>
+                                {{-- <button class="btn  btn-danger" type="submit" >Eliminar  <i class="fa fa-trash-o"></i></button> --}}
                             </form>
+                             <td><p data-placement="top" data-toggle="tooltip" title="Selecionar Técnicas a Implementar"><a class="btn btn-outline-info btn-xs" href="{{url('analisis/tecnica')}}" > <i class="fa fa-hand-o-up"></i></a></p></td>
                             </tr> 
+
                         @endforeach
                         @else
                         <tr>
-                            <td colspan="8">No hay Muestras registrados !!</td>
+                            <td colspan="10">No hay Muestras registrados !!</td>
                         </tr>
                     @endif
                         </tbody>
@@ -99,7 +102,7 @@
     <div class="modal-content">
         <div class="modal-header">
            
-            <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+            <h4 class="modal-title custom_align" id="Heading">Ver detalles de la Muestra</h4>
              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="fa fa-times" aria-hidden="true"></span></button>
         </div>
         <div class="modal-body">

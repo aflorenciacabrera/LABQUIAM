@@ -53,9 +53,11 @@
                             <div class="col-12">
                                 <label for="procedencia">Seleccione una procedencia (*)</label>
                                 <select class="form-control form-control" name="procedencia" id="procedencia" required>
-                                    <option>Procedencia 1</option>
-                                    <option>Procedencia 2</option>
-                                    <option>Procedencia 3</option>
+                                    <option>ERAGIA </option>
+                                    <option>SHONKO</option>
+                                    <option>ICAA</option>
+                                    
+                           
                                 </select>
                             </div>
                         </div>
@@ -64,9 +66,12 @@
                             <div class="col-12">
                                 <label for="tipo_muestra">Seleccione un tipo de muestra (*)</label>
                                 <select class="form-control form-control" name="tipo_muestra" id="tipo_muestra" required>
-                                    <option>Tipo de muestra 1</option>
-                                    <option>Tipo de muestra 2</option>
-                                    <option>Tipo de muestra 3</option>
+                                    <option>DESAGUE</option>
+                                    <option>CLORO</option>
+                                    <option>DETERGENTE</option>
+                                    <option>IBERA NORTE</option>
+                                    
+                           
                                 </select>
                             </div>
                         </div>
@@ -89,9 +94,11 @@
                             <div class="col-12">
                                 <label for="tipo_analisis">Seleccione un tipo de analisis (*)</label>
                                 <select class="form-control form-control" name="tipo_analisis" id="tipo_analisis" required>
-                                    <option>Tipo de analisis 1</option>
-                                    <option>Tipo de analisis 2</option>
-                                    <option>Tipo de analisis 3</option>
+                                    <option>POTABILIDAD</option>
+                                    <option>CONTAMINACION</option>
+                                    <option>BACTERIOLOGICO</option>
+                                   
+                                    
                                 </select>
                             </div>
                         </div>
@@ -115,7 +122,7 @@
                     <div class="card-footer text-muted d-flex justify-content-end">
 
                         <div class="col-sm-11 input-column">
-                          <a href="{{ url('muestra/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
+                          <a href="{{ url('/inicio') }}" data-original-title="cancelar" data-toggle="tooltip" role ="button"  class="btn  btn-light active ">Cancelar</a>  </div>
                         {{-- <a class="btn btn-light mr-2" type="reset">Cancelar</a> --}}
                         <button class="btn btn-primary" type="submit">Enviar</button>
                     </div>

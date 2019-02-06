@@ -85,7 +85,7 @@
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
-                            
+                            <li class="nav-item"> <a   href="{{url('#')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
                               {{-- Inicia como Tecnico --}}
                             @elseif(Auth::user()->hasRole('tecnico'))
                              <li class="dropdown">
