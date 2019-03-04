@@ -15,12 +15,15 @@ class CreateMuestrasTable extends Migration {
             $table->increments('id');
             $table->string('fecha_ingreso');
             $table->string('fecha_toma_muestra');
-            $table->string('procedencia');
-            $table->string('tipo_muestra');
+            $table->integer('procedencia')->unsigned();
+            $table->integer('tipo_muestra')->unsigned();
             $table->string('remitida_tomada');
-            $table->string('tipo_analisis');
+            $table->integer('tipo_analisis')->unsigned();
             $table->string('descripcion')->nullable();
             $table->string('detalles')->nullable();
+            $table->foreign('procedencia')->references('id')->on('procedencias')->onDelete('cascade');
+            $table->foreign('tipo_muestra')->references('id')->on('tipomuestras')->onDelete('cascade');
+            $table->foreign('tipo_analisis')->references('id')->on('tipoanalisis')->onDelete('cascade');
             $table->timestamps();
         });
     }
