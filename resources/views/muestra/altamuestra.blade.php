@@ -186,12 +186,12 @@
     			<div class="modal-header"> 
     				<h4 class="modal-tittle">Agregar Procedencia</h4>
     			</div> 
-    			<form class="form-horizontal" role="form" id="form-agregar">
+    			<form  method="POST" action="{{url('muestra/procedencia')}}">
     				<div class="modal-body"> 
     					<div class="form-group col-md-12">
     						<label for="agregar_porcedencia" class="control-label col-sm-4">Nombre: </label>
     						<div class="col-sm-8">
-    							<input type="text" class="form-control" id="procedencia" name="procedencia">
+    							<input type="text" class="form-control" id="procedencia" name="name">
     						</div>
     					</div> 
     				</div>
@@ -199,7 +199,7 @@
     					<button type="button" class="btn btn-default" data-dismiss="modal">
     						<span class="glyphicon glyphicon-remove"></span><span class="hidden-xs"> Cerrar</span>
     					</button>
-    					<button type="button" id="GuardarNombre" name="GuardarNombre" class="btn btn-primary">
+    					<button  type="submit" id="GuardarNombre" name="GuardarNombre" class="btn btn-primary">
     						<span class="fa fa-save"></span><span class="hidden-xs"> Guardar</span>
                           
     					</button>
@@ -216,12 +216,12 @@
     			<div class="modal-header"> 
     				<h4 class="modal-tittle">Agregar Tipo de Muestra</h4>
     			</div> 
-    			<form class="form-horizontal" role="form" id="form-agregar">
+    			<form method="POST" action="{{url('muestra/tipodeanalisis')}}">
     				<div class="modal-body"> 
     					<div class="form-group col-md-12">
     						<label for="agregar_tipomuestra" class="control-label col-sm-4">Nombre: </label>
     						<div class="col-sm-8">
-    							<input type="text" class="form-control" id="tipo_muestra" name="tipo_muestra">
+    							<input type="text" class="form-control" id="tipo_muestra" name="name">
     						</div>
     					</div> 
     				</div>
@@ -229,7 +229,7 @@
     					<button type="button" class="btn btn-default" data-dismiss="modal">
     						<span class="glyphicon glyphicon-remove"></span><span class="hidden-xs"> Cerrar</span>
     					</button>
-    					<button type="button" id="GuardarNombre" name="GuardarNombre" class="btn btn-primary">
+    					<button type="submit" id="GuardarNombre" name="GuardarNombre" class="btn btn-primary">
     						<span class="fa fa-save"></span><span class="hidden-xs"> Guardar</span>
                           
     					</button>
@@ -246,12 +246,12 @@
     			<div class="modal-header"> 
     				<h4 class="modal-tittle">Agregar Tipo de Análisis</h4>
     			</div> 
-    			<form class="form-horizontal" role="form" id="form-agregar">
+    			<form method="POST" action="{{url('muestra/tipodemuestra')}}">
     				<div class="modal-body"> 
     					<div class="form-group col-md-12">
     						<label for="agregar_tipoAnalisis" class="control-label col-sm-4">Nombre: </label>
     						<div class="col-sm-8">
-    							<input type="text" class="form-control" id="tipo_analisis" name="tipo_analisis">
+    							<input type="text" class="form-control" id="tipo_analisis" name="name">
     						</div>
     					</div> 
     				</div>
@@ -259,10 +259,10 @@
     					<button type="button" class="btn btn-default" data-dismiss="modal">
     						<span class="glyphicon glyphicon-remove"></span><span class="hidden-xs"> Cerrar</span>
     					</button>
-    					<button type="button" id="GuardarNombre" name="GuardarNombre" class="btn btn-primary">
+    					<button  id="GuardarNombre" name="GuardarNombre" type="submit" class="btn btn-primary">
     						<span class="fa fa-save"></span><span class="hidden-xs"> Guardar</span>
                           
-    					</button>
+                        </button>
     				</div>
     			</form>
     		</div>

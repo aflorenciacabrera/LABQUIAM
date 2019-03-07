@@ -15,6 +15,7 @@ class CreateTipoanalisisTable extends Migration
     {
         Schema::create('tipoanalisis', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }

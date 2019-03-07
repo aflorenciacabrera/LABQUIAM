@@ -15,7 +15,7 @@ class CreateTipomuestrasTable extends Migration
     {
         Schema::create('tipomuestras', function (Blueprint $table) {
             $table->increments('id');
-             $table->string('nombre');
+             $table->string('name');
             $table->timestamps();
         });
     }

@@ -56,12 +56,16 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::delete('/perfil','HomeController@eliminarPerfil')->name("eliminarPerfil");
 
     // Muestra
-    Route::get('/muestra/nuevo', 'MuestraController@altaMuestra');
+    Route::get('muestra/nuevo', 'MuestraController@altaMuestra');
     Route::post('muestra/nuevo','MuestraController@crearMuestra');
+    Route::post('muestra/procedencia','MuestraController@crearPrecedencia');
+    Route::post('muestra/tipodeanalisis','MuestraController@crearTipoAnalisis');
+    Route::post('muestra/tipodemuestra','MuestraController@crearTipoMuestra');
+
     Route::get('muestra/lista','MuestraController@listaMuestra');
-    Route::get('/muestra/procedencia', 'MuestraController@procedencia');
-    Route::get('/muestra/tipodeanalisis', 'MuestraController@tipoDeAnalisis');
-    Route::get('/muestra/tipodemuestra', 'MuestraController@tipoDeMuestra');
+    // Route::get('/muestra/procedencia', 'MuestraController@procedencia');
+    // Route::get('/muestra/tipodeanalisis', 'MuestraController@tipoDeAnalisis');
+    // Route::get('/muestra/tipodemuestra', 'MuestraController@tipoDeMuestra');
 
     //Listas
     
