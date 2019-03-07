@@ -8,7 +8,14 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header text-center"> <h3 >Muestas</h3></div>
+                <div class="card-header d-flex justify-content-between"> 
+                     <h3 >Muestas</h3>
+                <div class="input-group pull-right" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Buscar">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sl btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div></div>
                 <div class="card-body">
 {{-- ********************************************************************************************************** --}}
                         <div class="col-md-16 col-md-offset-0" class="text-center" >      

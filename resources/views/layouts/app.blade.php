@@ -84,6 +84,7 @@
                                 <div role="menu" class="dropdown-menu"> 
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
+                                <a role="presentation" href="{{url('muestra/informe')}}"  class="dropdown-item">Informe</a>
                             </li>
                             <li class="nav-item"> <a   href="{{url('#')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
                               {{-- Inicia como Tecnico --}}
@@ -146,7 +147,8 @@
         </main>
     </div>
 </body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/script.min.js"></script>
-     <script src="{{ asset('js/script.min.js') }}" defer></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/script.min.js"></script> --}}
+     {{-- <script src="{{ asset('js/script.min.js') }}" defer></script> --}}
+    
 </html>

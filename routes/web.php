@@ -77,4 +77,6 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('analisis/agua/estancada','AnalisisController@aguaEstancada');
     Route::get('analisis/determinaciones','AnalisisController@determinaciones');
     Route::get('analisis/resultados','AnalisisController@resultados');
+
+    Route::get('muestra/informe','InformepdfController@informepdf');
 });

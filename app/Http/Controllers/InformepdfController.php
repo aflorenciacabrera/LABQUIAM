@@ -4,19 +4,19 @@ namespace labquiam\Http\Controllers;
 
 use Illuminate\Http\Request;
 use labquiam\Http\Requests;
-use labquiam\Http\Controllers\Controller;
+
 use labquiam\user;
 use labquiam\Muestra;
-class Informepdf extends Controller
+class InformepdfController extends Controller
 {
      /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function informepdf()
     {
-        return view("pdf.listado_reportes");
+        return view("informepdf.listado_informe");
     }
 
 

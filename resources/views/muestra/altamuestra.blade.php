@@ -4,8 +4,7 @@
 
 @section('content')
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 
 
 {{-- Alta de tecnico --}}
 <div class="container">
@@ -52,11 +51,11 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <label for="procedencia">Seleccione una procedencia (*) 
-                                    {{-- <a href="/muestra/procedencia">Agregar </a> --}}
-                                     <button type="button" class="btn btn-info" id="agregar_porcedencia">
+                                    {{-- <a href="#ModalAgregarProcedencia" class="btn  btn-info  right" role='button'  data-toggle="modal">Agregar </a> --}}
+                                     <a  href="#ModalAgregarProcedencia" role="button"  data-toggle="modal" class="btn btn-info" id="agregar_porcedencia">
     								    <span class="fa fa-plus"></span>
                         			    <span class="hidden-xs"> </span> 
-                                     </button>
+                                     </a>
                                 </label>
                                 <select class=" form-control" name="procedencia" id="procedencia" required>
                                     <option>ERAGIA </option>
@@ -70,10 +69,14 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <label for="tipo_muestra">Seleccione un tipo de muestra (*) 
-                                    <button type="button" class="btn btn-info" id="agregar_tipomuestra">
+                                    {{-- <button type="button" class="btn btn-info" id="agregar_tipomuestra">
     								    <span class="fa fa-plus"></span>
                         			    <span class="hidden-xs"> </span> 
-                                     </button>
+                                     </button> --}}
+                                      <a href="#ModalAgregarTipoMuestra" role="button"  data-toggle="modal" class="btn btn-info" id="agregar_tipomuestra">
+    								    <span class="fa fa-plus"></span>
+                        			    <span class="hidden-xs"> </span> 
+                                      </a>
                                 {{-- <a  href="/muestra/tipodemuestra">Agregar</a> --}}
                                 </label>
                                 <select class="form-control" name="tipo_muestra" id="tipo_muestra" required>
@@ -103,10 +106,15 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <label for="tipo_analisis">Seleccione un tipo de analisis (*) 
-                                     <button type="button" class="btn btn-info" id="agregar_tipoAnalisis">
+                                     {{-- <button type="button" class="btn btn-info" id="agregar_tipoAnalisis">
     								    <span class="fa fa-plus"></span>
                         			    <span class="hidden-xs"> </span> 
-                                     </button>
+                                     </button> --}}
+                                    
+                                      <a  href="#ModalAgregarTipoAnalisis" role="button"  data-toggle="modal" class="btn btn-info" id="agregar_tipoAnalisis">
+    								    <span class="fa fa-plus"></span>
+                        			    <span class="hidden-xs"> </span> 
+                                      </a>
                                 </label>
                                 <select class=" form-control" name="tipo_analisis" id="tipo_analisis" required>
                                     <option>POTABILIDAD</option>
@@ -271,5 +279,6 @@
 @endsection
 
  
-
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> --}}
 
