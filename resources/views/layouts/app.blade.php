@@ -14,11 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
- 
-   
-     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 {{-- ********************************** Navegador  ****************************************** --}}
 
@@ -27,8 +23,8 @@
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             {{--******************** Logo *******************--}}
              <div class="nav-header " >
-                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/icono quimica.png')}}" width="50" />
-                   <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="4"> <span>Laboratorio de Quimica Ambiental </span></font>
+                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/logo.png')}}" width="150" />
+                   {{-- <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="4"> <span>Laboratorio de Quimica Ambiental </span></font> --}}
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,6 +81,7 @@
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                                 <a role="presentation" href="{{url('muestra/informe')}}"  class="dropdown-item">Informe</a>
+                                 <a role="presentation" href="{{url('muestra/ver/informe')}}"  class="dropdown-item">Ver Informe</a>
                             </li>
                             <li class="nav-item"> <a   href="{{url('#')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
                               {{-- Inicia como Tecnico --}}

@@ -18,7 +18,11 @@ class InformepdfController extends Controller
     {
         return view("informepdf.listado_informe");
     }
-
+    
+     public function informeverpdf()
+    {
+        return view("informepdf.informes_por_muestras");
+    }
 
       public function crearPDF($datos,$vistaurl,$tipo)
     {

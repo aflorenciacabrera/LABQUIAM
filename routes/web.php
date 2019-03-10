@@ -79,4 +79,5 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('analisis/resultados','AnalisisController@resultados');
 
     Route::get('muestra/informe','InformepdfController@informepdf');
+    Route::get('muestra/ver/informe','InformepdfController@informeverpdf');
 });

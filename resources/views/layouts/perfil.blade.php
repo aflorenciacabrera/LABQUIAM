@@ -1,5 +1,4 @@
 
-
 <style>
 /* body{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
@@ -123,7 +122,6 @@
                               </div>
                                </form>  
                     </div>
-                    
                  
                 <div class=" col-md-14 col-lg-8" align="center"> 
                   <table class="table table-user-information">
