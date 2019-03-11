@@ -58,9 +58,10 @@
                                      </a>
                                 </label>
                                 <select class=" form-control" name="procedencia" id="procedencia" required>
+                                     <option value=""> -  </option>
                                      @foreach ( $procedencias as $procedencia)
                                         <option value={{$procedencia->id}}> {{$procedencia->name}}</option>
-                                    @endforeach
+                                    @endforeach  
                                 </select>
                             </div>
                         </div>
@@ -79,9 +80,10 @@
                                 {{-- <a  href="/muestra/tipodemuestra">Agregar</a> --}}
                                 </label>
                                 <select class="form-control" name="tipo_muestra" id="tipo_muestra" required>
-                                    @foreach ( $tipomuestras as $tipomuestra)
+                                     <option value=""> -  </option>
+                                  {{-- @foreach ( $tipomuestras as $tipomuestra)
                                         <option value={{$tipomuestra->id}}> {{$tipomuestra->name}}</option>
-                                    @endforeach                
+                                         @endforeach        --}}
                                 </select>
                             </div>
                         </div>
@@ -114,9 +116,10 @@
                                       </a>
                                 </label>
                                 <select class=" form-control" name="tipo_analisis" id="tipo_analisis" required>
-                                     @foreach ( $tipoanalisis as $tipoanalisi)
+                                     <option value=""> -  </option>
+                                    @foreach ( $tipoanalisis as $tipoanalisi)
                                         <option value={{$tipoanalisi->id}}> {{$tipoanalisi->name}}</option>
-                                    @endforeach 
+                                    @endforeach  
                                 </select>
                             </div>
                         </div>
@@ -190,7 +193,8 @@
     			<div class="modal-header"> 
     				<h4 class="modal-tittle">Agregar Procedencia</h4>
     			</div> 
-    			<form  method="POST" action="{{url('muestra/procedencia')}}">
+                <form  method="POST" action="{{url('muestra/procedencia')}}">
+                    @csrf
     				<div class="modal-body"> 
     					<div class="form-group col-md-12">
     						<label for="agregar_porcedencia" class="control-label col-sm-4">Nombre: </label>
@@ -220,7 +224,8 @@
     			<div class="modal-header"> 
     				<h4 class="modal-tittle">Agregar Tipo de Muestra</h4>
     			</div> 
-    			<form method="POST" action="{{url('muestra/tipodeanalisis')}}">
+                <form method="POST" action="{{url('muestra/tipodemuestra')}}">
+                    @csrf
     				<div class="modal-body"> 
     					<div class="form-group col-md-12">
     						<label for="agregar_tipomuestra" class="control-label col-sm-4">Nombre: </label>
@@ -250,7 +255,8 @@
     			<div class="modal-header"> 
     				<h4 class="modal-tittle">Agregar Tipo de Análisis</h4>
     			</div> 
-    			<form method="POST" action="{{url('muestra/tipodemuestra')}}">
+                <form method="POST" action="{{url('muestra/tipodeanalisis')}}">
+                    @csrf
     				<div class="modal-body"> 
     					<div class="form-group col-md-12">
     						<label for="agregar_tipoAnalisis" class="control-label col-sm-4">Nombre: </label>

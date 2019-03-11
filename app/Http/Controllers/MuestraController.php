@@ -2,7 +2,7 @@
 
 namespace labquiam\Http\Controllers;
 use labquiam\muestra;
-use labquiam\precedemcia;
+use labquiam\procedencia;
 use labquiam\tipomuestra;
 use labquiam\tipoanalisi;
 use Illuminate\Http\Request;
@@ -10,7 +10,17 @@ use Illuminate\Http\Request;
 class MuestraController extends Controller {
 
     public function altaMuestra () {
-        return view('muestra.altamuestra');
+      $procedencias = procedencia::all();
+      $tipoanalisis = tipoanalisi::all();
+      // $tipomuestras = tipomuestra::all();
+      
+      
+        return view('muestra.altamuestra', array('procedencias'=>$procedencias),array('tipoanalisis'=>$tipoanalisis) );   
+    }
+
+    public function listaMuestra () {
+            $muestra =  muestra::all()->take(10);
+            return view('muestra.listaMuestra', compact('muestra'));   
     }
     // public function procedencia () {
     //     $array = array(
@@ -91,36 +101,11 @@ class MuestraController extends Controller {
       return redirect(url('inicio'));
       }
 
-      public function listaMuestra () {
-       
-            $muestra =  muestra::all()->take(10);
-            return view('muestra.listaMuestra', compact('muestra'));   
-    }
+      
 
-     public function crearPrecedencia (Request $request)
-      {
-        $p = new porcedencia; 
-      $p->name= $request->name;
-      $p->save();
-     // return view("institucion.mostrarCapacidad");
-     return redirect(url('muestra/procedencia'));
-      }
-       public function crearTipoAnalisis (Request $request)
-      {
-        $a = new tipomuestra; 
-      $a->name= $request->name;
-      $a->save();
-     // return view("institucion.mostrarCapacidad");
-      return redirect(url('muestra/tipodeanalisis'));
-      }
-       public function crearTipoMuestra (Request $request)
-      {
-        $tm = new tipoanalisi; 
-      $tm->name= $request->name;
-      $tm->save();
-     // return view("institucion.mostrarCapacidad");
-      return redirect(url('muestra/tipodemuestra'));
-      }
+     
+      
+       
 
     //    public function procedencia () {
     //     return view('muestra.altamuestra');

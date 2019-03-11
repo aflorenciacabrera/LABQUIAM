@@ -58,9 +58,15 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     // Muestra
     Route::get('muestra/nuevo', 'MuestraController@altaMuestra');
     Route::post('muestra/nuevo','MuestraController@crearMuestra');
-    Route::post('muestra/procedencia','MuestraController@crearPrecedencia');
-    Route::post('muestra/tipodeanalisis','MuestraController@crearTipoAnalisis');
-    Route::post('muestra/tipodemuestra','MuestraController@crearTipoMuestra');
+
+    Route::get('muestra/procedencia', 'ProcedenciaController@altaPrecedencia');
+    Route::post('muestra/procedencia','ProcedenciaController@crearPrecedencia');
+
+     Route::get('muestra/tipodeanalisis', 'TipoanalisiController@altaTipoAnalisis');
+    Route::post('muestra/tipodeanalisis','TipoanalisiController@crearTipoAnalisis');
+
+     Route::get('muestra/tipodemuestra', 'TipomuestraController@altaTipoMuestra');
+    Route::post('muestra/tipodemuestra','TipomuestraController@crearTipoMuestra');
 
     Route::get('muestra/lista','MuestraController@listaMuestra');
     // Route::get('/muestra/procedencia', 'MuestraController@procedencia');
@@ -68,7 +74,6 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     // Route::get('/muestra/tipodemuestra', 'MuestraController@tipoDeMuestra');
 
     //Listas
-    
     Route::get('/lista/cliente','AdministradorController@listaCliente');
     
     //Analisis tecnicas a implementar
