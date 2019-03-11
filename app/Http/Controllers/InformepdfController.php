@@ -20,8 +20,11 @@ class InformepdfController extends Controller
     }
     
      public function informeverpdf()
+    
     {
-        return view("informepdf.informes_por_muestras");
+        $informe =  muestra::all()->take(10);
+        
+        return view('informepdf.informes_por_muestras' , compact('informe'));
     }
 
       public function crearPDF($datos,$vistaurl,$tipo)
