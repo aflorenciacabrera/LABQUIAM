@@ -3,6 +3,7 @@
 @extends('layouts.menu')
 @section('content')
 {{-- <hr> --}}
+
 @if(session('status'))
       <div class="alert alert-success text-uppercase text-center" role="alert">
           <strong>{{session('status')}}</strong>
