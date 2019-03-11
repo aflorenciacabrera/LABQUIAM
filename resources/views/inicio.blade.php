@@ -11,7 +11,7 @@
      </div>
 @endif 
             <div class="row justify-content-center">
-                     <img src="{{asset('img/icono quimica.png')}}" width="300" />  
+                     <img src="{{asset('img/icono quimica.png')}}" width="150" />  
             </div>
             @endsection
 

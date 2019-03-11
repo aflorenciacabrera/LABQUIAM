@@ -58,10 +58,9 @@
                                      </a>
                                 </label>
                                 <select class=" form-control" name="procedencia" id="procedencia" required>
-                                    <option>ERAGIA </option>
-                                    <option>SHONKO</option>
-                                    <option>ICAA</option>
-                                    
+                                     @foreach ( $procedencias as $procedencia)
+                                        <option value={{$procedencia->id}}> {{$procedencia->name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -80,11 +79,9 @@
                                 {{-- <a  href="/muestra/tipodemuestra">Agregar</a> --}}
                                 </label>
                                 <select class="form-control" name="tipo_muestra" id="tipo_muestra" required>
-                                    <option>DESAGUE</option>
-                                    <option>CLORO</option>
-                                    <option>DETERGENTE</option>
-                                    <option>IBERA NORTE</option>
-                                                          
+                                    @foreach ( $tipomuestras as $tipomuestra)
+                                        <option value={{$tipomuestra->id}}> {{$tipomuestra->name}}</option>
+                                    @endforeach                
                                 </select>
                             </div>
                         </div>
@@ -117,10 +114,9 @@
                                       </a>
                                 </label>
                                 <select class=" form-control" name="tipo_analisis" id="tipo_analisis" required>
-                                    <option>POTABILIDAD</option>
-                                    <option>CONTAMINACION</option>
-                                    <option>BACTERIOLOGICO</option>
-                                   
+                                     @foreach ( $tipoanalisis as $tipoanalisi)
+                                        <option value={{$tipoanalisi->id}}> {{$tipoanalisi->name}}</option>
+                                    @endforeach 
                                 </select>
                             </div>
                         </div>

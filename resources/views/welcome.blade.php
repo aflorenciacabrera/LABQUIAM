@@ -120,7 +120,7 @@
               <div class="row text-center">
                 <div class="col-12">
                    
-                    <img src="{{asset('img/icono quimica.png')}}" width="300" />
+                    <img src="{{asset('img/icono quimica.png')}}" width="150" />
                
                   <h1 class="h1">
                     LABQUIAM
