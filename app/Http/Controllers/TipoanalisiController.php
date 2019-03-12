@@ -18,7 +18,7 @@ class TipoanalisiController extends Controller
         $a = new tipoanalisi; 
       $a->name= $request->name;
       $a->save();
-     // return view("institucion.mostrarCapacidad");
-      return redirect(url('muestra/tipodeanalisis'));
+     
+      // return redirect(url('muestra/nuevo'));
       }
 }

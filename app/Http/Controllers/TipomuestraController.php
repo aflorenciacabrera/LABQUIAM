@@ -16,7 +16,7 @@ class TipomuestraController extends Controller
         $tm = new tipomuestra; 
       $tm->name= $request->name;
       $tm->save();
-     // return view("institucion.mostrarCapacidad");
-      return redirect(url('muestra/tipodemuestra'));
+     
+      // return redirect(url('muestra/nuevo'));
       }
 }

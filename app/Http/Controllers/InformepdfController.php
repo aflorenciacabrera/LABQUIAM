@@ -4,7 +4,9 @@ namespace labquiam\Http\Controllers;
 
 use Illuminate\Http\Request;
 use labquiam\Http\Requests;
-
+use labquiam\procedencia;
+use labquiam\tipomuestra;
+use labquiam\tipoanalisi;
 use labquiam\user;
 use labquiam\Muestra;
 class InformepdfController extends Controller
@@ -22,9 +24,12 @@ class InformepdfController extends Controller
      public function informeverpdf()
     
     {
-        $informe =  muestra::all()->take(10);
-        
-        return view('informepdf.informes_por_muestras' , compact('informe'));
+        $informe =  muestra::all();
+      $procedencias = procedencia::all();
+      $tipomuestras = tipomuestra::all();
+      $tipoanalisis = tipoanalisi::all();
+        // return view('informepdf.informes_por_muestras' , compact('informe'));
+        return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe);
     }
 
       public function crearPDF($datos,$vistaurl,$tipo)

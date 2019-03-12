@@ -26,9 +26,13 @@
                 <label for="">Objeto del Análisis:</label> 
                 <br>
                 <br>
-                <label  for="">Tipo:</label> {{ $muestras->tipo_muestra }} <label for="">Muestra:</label> 
+                  @foreach($tipomuestras as $tipomuestra)
+                <label  for="">Tipo:</label> {{ $tipomuestra->name }} <label for="">Muestra:</label> 
+                  @endforeach
                 <br>
-                <label  for="">Procedencia:</label> {{ $muestras->procedencia }}
+                 @foreach($procedencias as $procedencia)
+                 <label  for="">Procedencia:</label> {{ $procedencia->name }}
+                 @endforeach
                 <br>
                 <label  for="">Sitio de extracción:</label>
                 <br>

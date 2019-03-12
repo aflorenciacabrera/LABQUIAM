@@ -18,8 +18,8 @@ class ProcedenciaController extends Controller
         $p = new procedencia; 
       $p->name= $request->name;
       $p->save();
-     // return view("institucion.mostrarCapacidad");
-     return redirect(url('muestra/nuevo'));
+     
+    //  return redirect(url('muestra/nuevo'));
       
       }
 }
