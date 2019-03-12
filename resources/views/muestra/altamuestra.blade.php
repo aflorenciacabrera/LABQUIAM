@@ -81,9 +81,9 @@
                                 </label>
                                 <select class="form-control" name="tipo_muestra" id="tipo_muestra" required>
                                      <option value=""> -  </option>
-                                  {{-- @foreach ( $tipomuestras as $tipomuestra)
+                                  @foreach ( $tipomuestras as $tipomuestra)
                                         <option value={{$tipomuestra->id}}> {{$tipomuestra->name}}</option>
-                                         @endforeach        --}}
+                                         @endforeach       
                                 </select>
                             </div>
                         </div>

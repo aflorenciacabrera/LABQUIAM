@@ -5,17 +5,19 @@ use labquiam\muestra;
 use labquiam\procedencia;
 use labquiam\tipomuestra;
 use labquiam\tipoanalisi;
+use DB;
 use Illuminate\Http\Request;
 
 class MuestraController extends Controller {
 
     public function altaMuestra () {
       $procedencias = procedencia::all();
+      $tipomuestras = tipomuestra::all();
       $tipoanalisis = tipoanalisi::all();
-      // $tipomuestras = tipomuestra::all();
       
-      
-        return view('muestra.altamuestra', array('procedencias'=>$procedencias),array('tipoanalisis'=>$tipoanalisis) );   
+      // $tipomuestras =tipomuestra::with('tipomuestras')->all();
+   
+        return view('muestra.altamuestra')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias);   
     }
 
     public function listaMuestra () {
