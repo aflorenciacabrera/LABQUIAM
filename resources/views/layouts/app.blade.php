@@ -22,11 +22,23 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             {{--******************** Logo *******************--}}
-             <div class="nav-header " >
-                <a class="navbar-brand "  href="{{ url('/') }}" ><img src="{{asset('img/icono quimica.png')}}" width="40" />
-                   <font face="  " size="5"> {{ config('app.name', 'Laravel') }}</font><span> : </span> <font face="Britannic Bold" size="4"> <span>Laboratorio de Quimica Ambiental </span></font>
-                </a>
-                <br>
+             <div class="nav-header ">
+                <div class="row">
+                <div class="col-md-2 offset-lg-0">
+                     <a class="navbar-brand"  href="{{ url('/') }}" ><img src="{{asset('img/logo3.png')}}" width="270" /></a>
+                </div>
+                 {{-- <div class="col-md-9 offset-lg-1 " >
+                    
+                     <font face="  " size="6"> {{ config('app.name', 'Laravel') }} </font><span> </span> 
+                     <br>
+                     <font face="Britannic Bold" size="3"><i><span>Laboratorio  </i> </span></font> 
+                     <br>
+                      <font face="Britannic Bold" size="3"><i><span> Quimica Ambiental </i> </span></font> 
+                      <br>
+                     <font face="Britannic Bold" size="3"> <span>FACENA - UNNE </span></font> 
+                </div>     --}}
+               </div> 
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

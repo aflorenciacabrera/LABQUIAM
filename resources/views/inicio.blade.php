@@ -11,9 +11,11 @@
           <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
      </div>
 @endif 
-            <div class="row justify-content-center">
+          <div class="container">
+            <div class=" row justify-content-center">
                      <img src="{{asset('img/icono quimica.png')}}" width="150" />  
             </div>
+          </div>
             @endsection
 
 @extends('layouts.app')
