@@ -47,11 +47,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
-            <div class="container">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+            @auth
+                
+           
+             <ul class="navbar-nav mr-auto">
                         
                            <div class="form-group row ">
                              <li class="nav-item">  <a   href="{{url('/inicio')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
@@ -59,6 +58,11 @@
                            
                           </div>  
                     </ul>
+                     @endauth
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                   
                     {{-- ************************Botones de logeo y registro ************************* --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
