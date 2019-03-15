@@ -52,9 +52,8 @@ class InformepdfController extends Controller
      $paises=Muestra::all();
      
      return $this->crearPDF($paises, $vistaurl,$tipo);
+
     }
-
-
     /**
      * Show the form for creating a new resource.
      *

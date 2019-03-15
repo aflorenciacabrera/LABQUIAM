@@ -26,7 +26,10 @@
                 <div class="row">
                 <div class="col-md-2 offset-lg-0">
                      <a class="navbar-brand"  href="{{ url('/') }}" ><img src="{{asset('img/logo3.png')}}" width="270" /></a>
+
+                      
                 </div>
+                
                  {{-- <div class="col-md-9 offset-lg-1 " >
                     
                      <font face="  " size="6"> {{ config('app.name', 'Laravel') }} </font><span> </span> 
@@ -38,6 +41,7 @@
                      <font face="Britannic Bold" size="3"> <span>FACENA - UNNE </span></font> 
                 </div>     --}}
                </div> 
+             
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,6 +52,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        
+                           <div class="form-group row ">
+                             <li class="nav-item">  <a   href="{{url('/inicio')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
+                             <li class="nav-item"><a   href="{{url('/perfil')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
+                           
+                          </div>  
                     </ul>
                     {{-- ************************Botones de logeo y registro ************************* --}}
                     <!-- Right Side Of Navbar -->
@@ -66,10 +76,8 @@
                             </li>
                         @else
                          </div>
-                            <div class="form-group row ">
-                            <li class="nav-item"> <a   href="{{url('/inicio')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
-                            <li class="nav-item"> <a   href="{{url('/perfil')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
                            
+                           <div class="form-group row ">
                             {{-- Inicia como Administrador --}}
                              @if(Auth::user()->hasRole('admin'))
                             
@@ -95,7 +103,7 @@
                                 <a role="presentation" href="{{url('muestra/informe')}}"  class="dropdown-item">Informe</a>
                                  <a role="presentation" href="{{url('muestra/ver/informe')}}"  class="dropdown-item">Ver Informe</a>
                             </li>
-                            <li class="nav-item"> <a   href="{{url('#')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
+                           
                               {{-- Inicia como Tecnico --}}
                             @elseif(Auth::user()->hasRole('tecnico'))
                              <li class="dropdown">
@@ -120,7 +128,8 @@
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
                             @endif
-
+                             <li class="nav-item"> <a   href="{{url('#')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
+                             
                             <li class="nav-item">  <a  class="btn  btn-light btn-sm"  href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="fa fa-power-off"></i> {{ __('Salir') }}</a> </li>
