@@ -15,6 +15,13 @@ class CreateAnalisesTable extends Migration
     {
         Schema::create('analises', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('categoria');
+            $table->string('determinacion');
+            $table->string('botella');
+            $table->string('volumen_gastado');
+            $table->string('factor_dilucion');
+            $table->string('volumen_calculado');
+             $table->string('resultado');
             $table->timestamps();
         });
     }

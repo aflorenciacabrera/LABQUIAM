@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDeterminacionsTable extends Migration
+class CreateCaracteristicaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDeterminacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('determinacions', function (Blueprint $table) {
+        Schema::create('caracteristica', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateDeterminacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('determinacions');
+        Schema::dropIfExists('caracteristica');
     }
 }
