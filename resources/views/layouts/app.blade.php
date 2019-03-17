@@ -51,12 +51,11 @@
                 
            
              <ul class="navbar-nav mr-auto">
-                        
-                           <div class="form-group row ">
+
                              <li class="nav-item">  <a   href="{{url('/inicio')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
                              <li class="nav-item"><a   href="{{url('/perfil')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
                            
-                          </div>  
+                        
                     </ul>
                      @endauth
             <div class="container">

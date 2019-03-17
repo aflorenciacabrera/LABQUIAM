@@ -21,14 +21,14 @@ class UserTableSeeder extends Seeder
        
 
         $user = new User();
-        $user->name = 'Admin';
-        $user->nomyape = 'Administrador';
-        $user->trabajo= 'Encargado de administrar el sistema';
+        $user->name = 'Laboratorio LABQUIAM';
+        $user->nomyape = 'LABQUIAM';
+        $user->trabajo= 'Administrar del sistema';
         $user->lugar= 'UNNE';
-        $user->email = 'admin@example.com';
-        $user->observacion = 'gestiones';
-        $user->direccion= 'Bolivar 345';
-        $user->telefono= '3795053426';
+        $user->email = 'labapisenasa@gmail.com';
+        $user->observacion = 'tel interno 103';
+        $user->direccion= 'Avenida Libertad Nº 5450';
+        $user->telefono= '03783-457996';
         $user->rol = 'admin';
         $user->estado = '1';
         $user->password = bcrypt('123456');
