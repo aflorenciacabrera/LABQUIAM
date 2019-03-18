@@ -103,7 +103,7 @@ class HomeController extends Controller {
         $user->nombre = $request->nombre;
         $user->apellido = $request->apellido;
         $user->telefono = $request->telefono;
-        $user->especialidad = $request->especialidad;
+        
         $user->save();
         // return view("institucion.mostrarCapacidad");
         return redirect(url('/perfil'));

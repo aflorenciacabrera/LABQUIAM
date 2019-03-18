@@ -15,7 +15,8 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
             $table->string('avatar')->default('default.jpg');
             $table->string('name');
-            $table->string('nomyape');
+            $table->string('nombre');
+            $table->string('apellido');
             $table->string('lugar');
             $table->string('trabajo');
             $table->string('direccion');

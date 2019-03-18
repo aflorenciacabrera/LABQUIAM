@@ -47,27 +47,29 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            @auth
-                
            
-             <ul class="navbar-nav mr-auto">
-
-                             <li class="nav-item">  <a   href="{{url('/inicio')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
-                             <li class="nav-item"><a   href="{{url('/perfil')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
-                           
-                        
-                    </ul>
-                     @endauth
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                   
+                    @auth
+                
+           
+                        <ul class="navbar-nav mr-auto">
+           
+                                        <li class="nav-item">  <a   href="{{url('/inicio')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-home"></i> Inicio</a> </li>
+                                        <li class="nav-item"><a   href="{{url('/perfil')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-user"></i> {{ Auth::user()->name }}</a> </li>
+                                      
+                                   
+                               </ul>
+                                @endauth
                     {{-- ************************Botones de logeo y registro ************************* --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                       
                        <div class="container">
                            <div class="form-group row "> 
+                               
                         @guest 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Acceder') }}</a>

@@ -22,7 +22,8 @@ class UserTableSeeder extends Seeder
 
         $user = new User();
         $user->name = 'Laboratorio LABQUIAM';
-        $user->nomyape = 'LABQUIAM';
+        $user->nombre = 'LABQUIAM';
+        $user->apellido = '';
         $user->trabajo= 'Administrar del sistema';
         $user->lugar= 'UNNE';
         $user->email = 'labapisenasa@gmail.com';
@@ -37,7 +38,8 @@ class UserTableSeeder extends Seeder
 
         $user = new User();
         $user->name = 'Técnico';
-        $user->nomyape = 'Tecnico';
+        $user->nombre = 'Tecnico';
+        $user->apellido = 'Tecnico';
         $user->trabajo= 'Encargado de muestras';
         $user->observacion = 'Toma de muestra';
         $user->lugar= 'UNNE';
@@ -52,7 +54,8 @@ class UserTableSeeder extends Seeder
 
         $user = new User();
         $user->name = 'Cliente';
-        $user->nomyape = 'Cliente';
+        $user->nombre = 'Cliente';
+        $user->apellido = 'Cliente';
         $user->trabajo= 'Pedido de muestras';
         $user->observacion = 'solicita un analisis de muestra';
         $user->lugar= 'UNNE';
