@@ -29,7 +29,7 @@
                        
                         <div align="center">
                           
-                             <form method="POST" action="{{url('analisis/tecnica')}}">
+                             <form method="POST" action="{{url('analisis/altatecnica')}}">
                             @csrf
                             <select name="muestra_id" id="muestra" >
                                 <option value="">Seleccionar Muestra</option>
@@ -37,10 +37,10 @@
                                 <option value="{{$muestra->id}}">{{$muestra->id}}</option>
                                 @endforeach
                             </select>
-                               <button class="btn btn-primary" type="submit">Aceptar</button>
-                        {{-- <a class="pull-right" type="submit" class="btn btn-primary active">
+                               {{-- <button class="btn btn-primary" type="submit">Aceptar</button> --}}
+                        <button class="pull-right" type="submit" class="btn btn-primary active">
                         {{ __('Aceptar') }}
-                        </a> --}}
+                        </button>
                         </div>
                 
                   </div>

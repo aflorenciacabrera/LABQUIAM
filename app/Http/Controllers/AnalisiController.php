@@ -4,13 +4,14 @@ namespace labquiam\Http\Controllers;
 
 use Illuminate\Http\Request;
 use labquiam\muestra;
-use labquiam\analisis;
-class AnalisisController extends Controller
+use labquiam\analisi;
+class AnalisiController extends Controller
 {
     //
+
     public function seleccionTecnica (){
        $muestras = muestra::all();
-       $analisis = analisis::all();
+       $analisis = analisi::all();
         return view('analisis.analisisTecnicas')->with('muestras',$muestras) ->with('analisis',$analisis);
     }
 
@@ -30,7 +31,7 @@ class AnalisisController extends Controller
 
     public function crearAnalisis (Request $request)
       {
-        $a = new analisis; 
+        $a = new analisi; 
  
         $a->categoria= $request->categoria;
       $a->determinacion= $request->determinacion;
@@ -42,6 +43,6 @@ class AnalisisController extends Controller
       $a->estado= $request->estado;
       $a->save();
      // return view("institucion.mostrarCapacidad");
-      return redirect(url('inicio'));
+      return redirect(url('analisis/tecnica'));
       }
 }

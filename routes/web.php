@@ -77,13 +77,13 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     Route::get('/lista/cliente','AdministradorController@listaCliente');
     
     //Analisis tecnicas a implementar
-    Route::get('analisis/tecnica','AnalisisController@seleccionTecnica');
-    Route::post('analisis/tecnica','AnalisisController@crearAnalisis');
+    Route::get('analisis/tecnica','AnalisiController@seleccionTecnica');
+    Route::post('analisis/altatecnica','AnalisiController@crearAnalisis');
     
-    Route::get('analisis/agua/potable','AnalisisController@aguaPotable');
-    Route::get('analisis/agua/estancada','AnalisisController@aguaEstancada');
-    Route::get('analisis/determinaciones','AnalisisController@determinaciones');
-    Route::get('analisis/resultados','AnalisisController@resultados');
+    Route::get('analisis/agua/potable','AnalisiController@aguaPotable');
+    Route::get('analisis/agua/estancada','AnalisiController@aguaEstancada');
+    Route::get('analisis/determinaciones','AnalisiController@determinaciones');
+    Route::get('analisis/resultados','AnalisiController@resultados');
 
     Route::get('muestra/informe','InformepdfController@informepdf');
     Route::get('muestra/ver/informe','InformepdfController@informeverpdf');

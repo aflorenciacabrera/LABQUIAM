@@ -4,7 +4,7 @@ namespace labquiam;
 
 use Illuminate\Database\Eloquent\Model;
 
-class analisis extends Model
+class analisi extends Model
 {
     //
 }
