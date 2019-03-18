@@ -22,6 +22,7 @@ class CreateAnalisesTable extends Migration
             $table->string('factor_dilucion');
             $table->string('volumen_calculado');
              $table->string('resultado');
+               $table->string('estado');
             $table->timestamps();
         });
     }

@@ -78,6 +78,8 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     
     //Analisis tecnicas a implementar
     Route::get('analisis/tecnica','AnalisisController@seleccionTecnica');
+    Route::post('analisis/tecnica','AnalisisController@crearAnalisis');
+    
     Route::get('analisis/agua/potable','AnalisisController@aguaPotable');
     Route::get('analisis/agua/estancada','AnalisisController@aguaEstancada');
     Route::get('analisis/determinaciones','AnalisisController@determinaciones');
