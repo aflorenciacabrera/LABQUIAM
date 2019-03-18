@@ -17,6 +17,6 @@ class TipomuestraController extends Controller
       $tm->name= $request->name;
       $tm->save();
      
-      // return redirect(url('muestra/nuevo'));
+      return redirect(url('muestra/nuevo'));
       }
 }

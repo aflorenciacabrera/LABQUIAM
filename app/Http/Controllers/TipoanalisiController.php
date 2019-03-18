@@ -19,6 +19,6 @@ class TipoanalisiController extends Controller
       $a->name= $request->name;
       $a->save();
      
-      // return redirect(url('muestra/nuevo'));
+       return redirect(url('muestra/nuevo'));
       }
 }

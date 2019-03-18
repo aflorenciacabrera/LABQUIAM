@@ -19,7 +19,7 @@ class ProcedenciaController extends Controller
       $p->name= $request->name;
       $p->save();
      
-    //  return redirect(url('muestra/nuevo'));
+      return redirect(url('muestra/nuevo'));
       
       }
 }
