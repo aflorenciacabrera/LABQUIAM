@@ -71,6 +71,7 @@
                            <div class="form-group row "> 
                                
                         @guest 
+                        <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Acceder') }}</a>
                             </li>
@@ -79,6 +80,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Registrar') }}</a>
                                 @endif
                             </li>
+                        </ul>
                         @else
                          </div>
                            
