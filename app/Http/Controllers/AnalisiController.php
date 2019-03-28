@@ -44,7 +44,7 @@ class AnalisiController extends Controller
                     case 'alcanididad':
                         $datos->volumen_gastado = $request->volumen_gastado;
                         $datos->factor = $request->factor;
-                        $datos->volumen_calculado = $request->volumen_calculado;	
+                        $datos->volumen_calculado = $request->volumen_calculado;
                         $datos->botella=$request->botella;
                         $datos->variable=$request->variable;
                         $datos->resultado = ($request->volumen_calculado * $request->variable * 10);
@@ -80,10 +80,46 @@ class AnalisiController extends Controller
                         $a->datos = json_encode((array)$datos);//objeto a texto
                         $a->save();
                     break;
-                     case 'Fosfatos ':
+                     case 'fosfatos ':
                         $datos->absrobancia = $request->absrobancia;
                         $datos->factor = $request->factor;
-                         $datos->resultado = ($request->volumen_calculado * $request->variable * 10);
+                        $datos->resultado = (($request->absrobancia / $request->variable) *  $request->factor);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                     case 'hierro':
+                        $datos->absrobancia = $request->absrobancia;
+                        $datos->factor = $request->factor;
+                        $datos->resultado = (($request->absrobancia / $request->variable) *  $request->factor);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                    case 'nitrato':
+                        $datos->absrobancia = $request->absrobancia;
+                        $datos->factor = $request->factor;
+                        $datos->resultado = (($request->absrobancia / $request->variable) *  $request->factor);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                     case 'nitrito':
+                        $datos->absrobancia = $request->absrobancia;
+                        $datos->factor = $request->factor;
+                        $datos->resultado = (($request->absrobancia / $request->variable) *  $request->factor);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                     case 'oxigeno':
+                        $datos->Volumen_frasco = $request->Volumen_frasco;
+                        $datos->volumen_gastado = $request->volumen_gastado;
+                        $datos->volumen_agregado = $request->volumen_agregado;
+                        $datos->resultado = (($request->volumen_gastado * $request->Volumen_frasco) / ($request->Volumen_frasco - $request->volumen_agregado ) );
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                    case 'sulfato':
+                        $datos->absrobancia = $request->absrobancia;
+                        $datos->factor = $request->factor;
+                        $datos->resultado = (($request->absrobancia / $request->variable) *  $request->factor);
                         $a->datos = json_encode((array)$datos);//objeto a texto
                         $a->save();
                     break;
