@@ -31,17 +31,68 @@ class AnalisiController extends Controller
 
     public function crearAnalisis (Request $request)
       {
-        $a = new analisi; 
- 
-        $a->categoria= $request->categoria;
+           
+        $a = new analisi; //Creo nuevo analisis
+      $a->categoria= $request->categoria;
+      $a->muestra_id= $request->muestra_id;
       $a->determinacion= $request->determinacion;
-      $a->botella= $request->botella;
-      $a->volumen_gastado= $request->volumen_gastado;
-      $a->factor_dilucion= $request->factor_dilucion;
-      $a->volumen_calculado= $request->volumen_calculado;
-      $a->resultado= $request->resultado;
       $a->estado= $request->estado;
-      $a->save();
+       
+      $datos = new stdClass();//creo objeto vacio
+                //Para diferenciad las determinaciones 
+                switch ($request->determincacion) {
+                    case 'alcanididad':
+                        $datos->volumen_gastado = $request->volumen_gastado;
+                        $datos->factor = $request->factor;
+                        $datos->volumen_calculado = $request->volumen_calculado;	
+                        $datos->botella=$request->botella;
+                        $datos->variable=$request->variable;
+                        $datos->resultado = ($request->volumen_calculado * $request->variable * 10);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+
+                    break;
+                    case 'amonio ':
+                        $datos->absrobancia = $request->absrobancia;
+                        $datos->factor = $request->factor;
+                        $datos->variable=$request->variable;
+                        $datos->resultado = ($request->absrobancia * $request->variable * $request->factor);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+
+                    break;
+                    case 'cloruro':
+                        $datos->volumen_gastado = $request->volumen_gastado;
+                        $datos->factor = $request->factor;
+                        $datos->variable=$request->variable;
+                        $datos->volumen_calculado = $request->volumen_calculado;
+                        $datos->resultado = (($request->volumen_calculado - 2.0) * $request->variable * 10);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                    case 'dureza':
+                        $datos->volumen_gastado_dureza = $request->volumen_gastado_dureza;
+                        $datos->variable=$request->variable;
+                        $datos->volumen_gastado = $request->volumen_gastado;
+                        $datos->dureza = ($volumen_gastado_dureza* $request->variable * 20);
+                        $datos->calcio=($volumen_gastado* $request->variable * 8);
+                        $datos->magnesio = (($request->volumen_gastado_dureza - $datos->volumen_gastado = $request->volumen_gastado*2.5)*0.243 );
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                     case 'Fosfatos ':
+                        $datos->absrobancia = $request->absrobancia;
+                        $datos->factor = $request->factor;
+                         $datos->resultado = ($request->volumen_calculado * $request->variable * 10);
+                        $a->datos = json_encode((array)$datos);//objeto a texto
+                        $a->save();
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+
+
      // return view("institucion.mostrarCapacidad");
       return redirect(url('analisis/tecnica'));
       }
