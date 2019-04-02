@@ -15,7 +15,12 @@ class CreateDeterminacionsTable extends Migration
     {
         Schema::create('determinacions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('categoria');
+            $table->integer('muestra_id')->unsigned();
+            $table->foreign('muestra_id')->references('id')->on('muestras')->onDelete('cascade');
+            $table->string('determinacion');
+            $table->string('datos',500);
+            $table->string('estado');
             $table->timestamps();
         });
     }

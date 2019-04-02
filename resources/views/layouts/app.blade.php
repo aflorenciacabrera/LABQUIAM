@@ -107,7 +107,7 @@
                                 <div role="menu" class="dropdown-menu"> 
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
-                                <a class="dropdown-item" href="{{url('analisis/tecnica')}}" > Operaciones</a>
+                                <a class="dropdown-item" href="{{url('analisis/determinacion')}}" > Operaciones</a>
                                 {{-- <a role="presentation" href="{{url('muestra/informe')}}"  
                                 class="dropdown-item">Informe</a> --}}
 
