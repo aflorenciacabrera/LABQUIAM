@@ -66,6 +66,7 @@
                                
                                 <td><p data-placement="top" data-toggle="tooltip" title="Delete"><a class="btn btn-outline-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><i class="fa fa-trash-o"></i></a></p></td>
                                 <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a class="btn btn-outline-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><i class="fa fa-edit"></i></a></p></td>
+                               <td><p data-placement="top" data-toggle="tooltip" title="Informe"><a href="{{ url('muestra/ver/informe/'.$muestras->id) }}"  class="btn  btn-warning  right" type='button'   >    </a></p></td>
                                  <form method="post" action="{{ route('eliminarcuenta') }}">
                                                                 {{ csrf_field() }}
                                                                 {{ method_field('DELETE') }}

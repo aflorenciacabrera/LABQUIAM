@@ -20,7 +20,7 @@
                 </div>  
             </div>
             <hr>
-               @foreach($informe as $muestras)
+              
                 <label for="">Análisis Solicitado por: </label>
                 <br>
                 <label for="">Objeto del Análisis:</label> 
@@ -36,21 +36,21 @@
                 <br>
                 <label  for="">Sitio de extracción:</label>
                 <br>
-                <label for="">Fecha de extracción:</label> {{ $muestras->fecha_toma_muestra }}
+                <label for="">Fecha de extracción:</label> {{ $informe->fecha_toma_muestra }}
                 <br>
                 <label for="">Hora:</label>  <label for="">Temp:</label>
                 <br>
-            <div class="text-center">
+            {{-- <div class="text-center">
                 <label for=""> <u> ANALISIS FISICO-QUIMICO</u></label>
             </div>
 
             <div class="text-center">
                 <label for=""> <u> ANALISIS BACTERIOLOGICO </u></label>
-            </div>
+            </div> --}}
             
             <br>
-            <label for="">Observación:</label>  {{ $muestras->observacion}}
-            @endforeach
+            <label for="">Observación:</label>  {{ $informe->observacion}}
+           
             <br>
           {{-- ***************** Fecha del dia actual ********************** --}}
             Corrientes,
@@ -67,4 +67,64 @@
 .line{
     padding : 10px 10px 10px 10px;
 }
+
+
 </style>
+ <footer class="footer p-t-1" >
+    <div class="container">
+        <div class="copyright company-name text-center"> </div>
+        <div class="row">
+            <br>
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center ">
+                <p><u>  LABQUIAM: Laboratorio de Quimica Ambiental</u> </p>
+                    Dirección: Avenida Libertad Nº 5450 - 3400 Corrientes Argentina.
+                    Tel: 03783-457996 int. 103
+                <p class="h6">E-mail: labquiam@exa.unne.edu.ar</p>
+            </div>
+           
+        </div>
+    </div>
+    <br>
+
+</footer>
+<style>
+    .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
+    color: #ffffff;
+    }
+    footer {
+        background-color: #D7DBDD;
+    }
+
+    /* Efecto Iconos Sociales*/
+    .social:hover {
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+    .social {
+        -webkit-transform: scale(0.8);
+        /* Browser Variations: */
+        -moz-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        -webkit-transition-duration: 0.5s;
+        -moz-transition-duration: 0.5s;
+        -o-transition-duration: 0.5s;
+    }
+     /* Espacio de Footer */
+    #justpushtobottom {
+        height: 10vh;
+    }
+    /* Colores Iconos Sociales*/
+    #social-fb:hover {
+        color: #3B5998;
+    }
+    #social-tw:hover {
+        color: #4099FF;
+    }
+    #social-gp:hover {
+        color: #d34836;
+    }
+    #social-em:hover {
+        color: #f39c12;
+    }
+    </style>

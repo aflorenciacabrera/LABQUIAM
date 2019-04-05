@@ -118,4 +118,11 @@ class DeterminacionController extends Controller
         $d->save();
       return redirect(url('analisis/determinacion'));
       }
+
+      public function viste(){
+            $analisis = Analisis::find(1);
+            $analisis->datos = json_decode($analisis->datos);///testo a objeto
+            return view("cosi")->with('analisis',$analisis);     
+        }
+ 
 }

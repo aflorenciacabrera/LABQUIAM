@@ -21,10 +21,10 @@ class InformepdfController extends Controller
         return view("informepdf.listado_informe");
     }
     
-     public function informeverpdf()
+     public function informeverpdf($id)
     
     {
-        $informe =  muestra::all();
+        $informe =  muestra::findOrFail($id);
       $procedencias = procedencia::all();
       $tipomuestras = tipomuestra::all();
       $tipoanalisis = tipoanalisi::all();
