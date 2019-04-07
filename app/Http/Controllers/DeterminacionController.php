@@ -29,7 +29,7 @@ class DeterminacionController extends Controller
       $datos = new stdClass();//creo objeto vacio
                 //Para diferenciad las determinaciones 
                 switch ($request->determinacion) {
-                    case 'alcanididad':
+                    case 'alcalinidad':
                         $datos->volumen_gastado = $request->volumen_gastado;
                         $datos->factor = $request->factor;
                         $datos->volumen_calculado = $request->volumen_calculado;

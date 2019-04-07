@@ -7,6 +7,7 @@ use labquiam\Http\Requests;
 use labquiam\procedencia;
 use labquiam\tipomuestra;
 use labquiam\tipoanalisi;
+use labquiam\determinacion;
 use labquiam\user;
 use labquiam\Muestra;
 class InformepdfController extends Controller
@@ -20,16 +21,24 @@ class InformepdfController extends Controller
     {
         return view("informepdf.listado_informe");
     }
+
     
      public function informeverpdf($id)
     
     {
-        $informe =  muestra::findOrFail($id);
+      $informe =  muestra::findOrFail($id);
       $procedencias = procedencia::all();
       $tipomuestras = tipomuestra::all();
       $tipoanalisis = tipoanalisi::all();
+      $determinacion = determinacion::where('muestra_id',$id)->get();
+
+      foreach ($determinacion as $det) 
+      {
+            $det->datos = json_decode($det->datos);
+      }
+	 
         // return view('informepdf.informes_por_muestras' , compact('informe'));
-        return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe);
+        return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion);
     }
 
       public function crearPDF($datos,$vistaurl,$tipo)

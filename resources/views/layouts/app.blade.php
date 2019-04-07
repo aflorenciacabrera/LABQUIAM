@@ -113,6 +113,7 @@
 
                                  <a role="presentation" href="{{url('muestra/ver/informe')}}"  class="dropdown-item">Ver Informe</a>
                             </li>
+                             <li class="nav-item"> <a   href="{{url('historial')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
                            
                               {{-- Inicia como Tecnico --}}
                             @elseif(Auth::user()->hasRole('tecnico'))
@@ -138,7 +139,7 @@
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
                             </li>
                             @endif
-                             <li class="nav-item"> <a   href="{{url('#')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
+                            
                              
                             <li class="nav-item">  <a  class="btn  btn-light btn-sm"  href="{{ route('logout') }}"
                             onclick="event.preventDefault();document.getElementById('logout-form').submit();">

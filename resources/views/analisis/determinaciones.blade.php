@@ -61,7 +61,7 @@
                                                        
                         </div>
                   </div>
-                                <input type="hidden" value="alcanididad" name="determinacion">
+                                <input type="hidden" value="alcalinidad" name="determinacion">
                             <input type="hidden" value="pendiente" name="estado">
                            
 						

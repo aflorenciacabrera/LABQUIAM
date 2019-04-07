@@ -39,7 +39,7 @@
                 <label for="">Fecha de extracción:</label> {{ $informe->fecha_toma_muestra }}
                 <br>
                 <label for="">Hora:</label>  <label for="">Temp:</label>
-                <br>
+                <br><br>
             {{-- <div class="text-center">
                 <label for=""> <u> ANALISIS FISICO-QUIMICO</u></label>
             </div>
@@ -47,7 +47,83 @@
             <div class="text-center">
                 <label for=""> <u> ANALISIS BACTERIOLOGICO </u></label>
             </div> --}}
+            {{-- <div class="text-center" >
+                <label for=""> <u> ANALISIS:</u></label>
+            </div> --}}
+             <table class="table table-hover"> 
+                <thead><tr>
+                <th><label for=""> <u> ANÁLISIS</u></label></th>
+                <th></th>
+                 <th>VALORES CAA</th>
+                </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td> @foreach($determinacion as $det)
             
+            @switch($det->determinacion)
+            
+                @case('alcalinidad')
+                   *<label for="">Alcalinidad </label> (mg/L): {{($det->datos->resultado)}}
+                    <br>
+                @break
+           
+                @case('amonio')
+                   *<label for="">Amonio </label> [NH4+ ] (mg/L) : {{($det->datos->resultado)}}
+                    <br>
+                @break
+           
+                 @case('cloruro')
+                    *<label for="">Cloruro</label> (mg/L) : {{($det->datos->resultado)}}
+                    <br>
+                @break
+            
+                @case('dureza')
+                        *<label for="">Dureza</label> (mg/L) : {{($det->datos->dureza)}}
+                         <br>
+                        *<label for="">Calcio </label>(mg/L) : {{($det->datos->calcio)}}
+                         <br>
+                        *<label for="">Magnesio</label> (mg/L) : {{($det->datos->magnesio)}}
+                         <br>
+                @break
+           
+                @case('fosfatos')
+                        *<label for="">Fosfato </label>[PO43- ] (mg/L) : {{($det->datos->resultado)}}
+                         <br>
+                @break
+         
+                @case('hierro')
+                        *<label for="">Hierro</label> [Fe3+ ] (mg/L) : {{($det->datos->resultado)}}
+                         <br>
+                @break
+           
+                @case('nitrato')
+                        *<label for="">Nitrato </label> [NO3- ] (mg/L) : {{($det->datos->resultado)}}
+                         <br>
+                @break
+          
+                @case('nitrito')
+                        *<label for="">Nitrito </label> [NO2- ] (mg/L) : {{($det->datos->resultado)}}
+                         <br>
+                @break
+         
+                @case('oxigeno')
+                        *<label for="">Oxigeno</label> [Oxígeno Disuelto] (mg/L) : {{($det->datos->resultado)}}
+                         <br>
+                @break
+           
+                @default
+                    
+            @endswitch
+           
+             @endforeach</td>
+
+                        <td></td>
+                        
+                       
+                    </tr>
+                  </tbody></table>
+           
             <br>
             <label for="">Observación:</label>  {{ $informe->observacion}}
            
