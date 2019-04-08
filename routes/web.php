@@ -81,10 +81,12 @@ Route::group(['middleware'=>['auth', 'Admin']], function(){
     // Route::post('analisis/tecnica','AnalisiController@crearAnalisis');
     Route::get('analisis/determinacion','DeterminacionController@altaTecnica');
     Route::post('analisis/determinacion','DeterminacionController@crearTecnica');
-    
+    Route::get('analisis/determinaciones/lista','DeterminacionController@listaTecnica');
+
     Route::get('analisis/agua/potable','AnalisiController@aguaPotable');
     Route::get('analisis/agua/estancada','AnalisiController@aguaEstancada');
     Route::get('analisis/determinaciones','AnalisiController@determinaciones');
+   
     Route::get('analisis/resultados','AnalisiController@resultados');
 
     Route::get('muestra/informe','InformepdfController@informepdf');

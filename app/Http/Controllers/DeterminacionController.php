@@ -119,10 +119,22 @@ class DeterminacionController extends Controller
       return redirect(url('analisis/determinacion'));
       }
 
-      public function viste(){
-            $analisis = Analisis::find(1);
-            $analisis->datos = json_decode($analisis->datos);///testo a objeto
-            return view("cosi")->with('analisis',$analisis);     
-        }
+    //   public function viste(){
+    //         $analisis = Analisis::find(1);
+    //         $analisis->datos = json_decode($analisis->datos);///testo a objeto
+    //         return view("cosi")->with('analisis',$analisis);     
+    //     }
+
+         public function listaTecnica () {
+            
+            $muestra = muestra::all();
+            $determinacion =  determinacion::all();
+             //$determinacion->datos = json_decode($determinacion->datos);///testo a objeto
+            foreach ($determinacion as $det) 
+             {
+            $det->datos = json_decode($det->datos);
+             }
+            return view('analisis.listaDeterminacion')->with('muestra',$muestra)->with('determinacion',$determinacion);   
+    }
  
 }

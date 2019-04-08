@@ -107,11 +107,16 @@
                                 <div role="menu" class="dropdown-menu"> 
                                 <a role="presentation" href={{url('/muestra/nuevo')}} class="dropdown-item">Nuevo</a>
                                 <a role="presentation" href="{{url('muestra/lista')}}"  class="dropdown-item">Lista</a>
-                                <a class="dropdown-item" href="{{url('analisis/determinacion')}}" > Operaciones</a>
+                                {{-- <a class="dropdown-item" href="{{url('analisis/determinacion')}}" > Operaciones</a> --}}
                                 {{-- <a role="presentation" href="{{url('muestra/informe')}}"  
                                 class="dropdown-item">Informe</a> --}}
-
-                                 <a role="presentation" href="{{url('muestra/ver/informe')}}"  class="dropdown-item">Ver Informe</a>
+                                 {{-- <a role="presentation" href="{{url('muestra/ver/informe')}}"  class="dropdown-item">Ver Informe</a> --}}
+                            </li>
+                            <li class="dropdown">
+                                 <a class="btn btn-light btn-sm" data-toggle="dropdown" aria-expanded="false" href="#" class="dropdown-toggle nav-link dropdown-toggle"><i class="fa fa-caret-down"></i>  Analisis</a>
+                                <div role="menu" class="dropdown-menu"> 
+                                <a role="presentation" href="{{url('analisis/determinacion')}}" class="dropdown-item">Nuevo</a>
+                                <a role="presentation" href="{{url('analisis/determinaciones/lista')}}"  class="dropdown-item">Lista</a> 
                             </li>
                              <li class="nav-item"> <a   href="{{url('historial')}}" class="btn  btn-light btn-sm"  role ="button" ><i class="fa fa-th-list"></i>  Historial</a> </li>
                            

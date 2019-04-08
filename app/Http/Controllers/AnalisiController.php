@@ -128,6 +128,6 @@ class AnalisiController extends Controller
      // return view("institucion.mostrarCapacidad");
       return redirect(url('analisis/tecnica'));
       }
-
+      
       
 }
