@@ -21,7 +21,7 @@ class MuestraController extends Controller {
     }
 
     public function listaMuestra () {
-            $muestra =  muestra::all()->take(10);
+            $muestra =  muestra::all();
             return view('muestra.listaMuestra', compact('muestra'));   
     }
     // public function procedencia () {

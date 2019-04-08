@@ -17,7 +17,7 @@
                       </div>
                     </div>
                 </div>
-
+                
                 <div class="box-body table-responsive no-padding text-center">
                   <table class="table table-hover">
                    
@@ -29,17 +29,31 @@
                       <th>ver</th>
                       <th>descargar</th>
                     </tr></thead>
+                    @if($muestra->count())
+                        @foreach($muestra as $muestras)
+                          @foreach($determinacion as $det)
                     <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="{{ url('muestra/ver/informe/') }}" target="_blank" ><button class="btn btn-block btn-primary btn-xs">Ver</button></a></td>
+                        <td>{{ $muestras->id }}</td>
+                            <td>-</td>
+                        <td>{{ $det->categoria }}</td>
+                        <td>{{ $det->estado }}</td>
+                       
+                    
+                        <td><a href="{{ url('muestra/ver/informe/'.$muestras->id) }}" target="_blank" ><button class="btn btn-block btn-primary btn-xs">Ver</button></a></td>
                         <td><a href="crear_reporte_porpais/2" target="_blank" ><button class="btn btn-block btn-success btn-xs">Descargar</button></a></td>
                     </tr>
-                  </tbody></table>
+                  </tbody>
+                    @endforeach
+                </table>
                 </div><!-- /.box-body -->
+                    
+                 @endforeach
+                        @else
+                        <tr>
+                            <td colspan="10">No hay Muestras registrados !!</td>
+                        </tr>
+                    @endif
               </div>
         </div>
     </div>
