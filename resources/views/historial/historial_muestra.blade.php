@@ -1,6 +1,6 @@
 @extends('layouts.footer')
 
-@extends('layouts.app')
+
 
 @section('content')
 
@@ -34,8 +34,9 @@
                           @foreach($determinacion as $det)
                     <tbody>
                     <tr>
+                      <td>-</td>
                         <td>{{ $muestras->id }}</td>
-                            <td>-</td>
+                            
                         <td>{{ $det->categoria }}</td>
                         <td>{{ $det->estado }}</td>
                        
@@ -51,7 +52,7 @@
                  @endforeach
                         @else
                         <tr>
-                            <td colspan="10">No hay Muestras registrados !!</td>
+                            <td colspan="10">No hay Muestras registradas !!</td>
                         </tr>
                     @endif
               </div>
@@ -60,3 +61,4 @@
 </div>
 
  @endsection
+@extends('layouts.app')

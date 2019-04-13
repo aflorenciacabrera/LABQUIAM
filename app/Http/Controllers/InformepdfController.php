@@ -10,6 +10,8 @@ use labquiam\tipoanalisi;
 use labquiam\determinacion;
 use labquiam\user;
 use labquiam\Muestra;
+use labquiam\view;
+use labquiam;
 class InformepdfController extends Controller
 {
      /**
@@ -38,7 +40,11 @@ class InformepdfController extends Controller
       }
 	 
         // return view('informepdf.informes_por_muestras' , compact('informe'));
-        return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion);
+        // return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion);
+        $view= \View::make ('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion)->render();
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('informepdf.informes_por_muestras');
     }
 
       public function crearPDF($datos,$vistaurl,$tipo)
@@ -47,7 +53,7 @@ class InformepdfController extends Controller
         $data = $datos;
         $date = date('Y-m-d');
         $view =  \View::make($vistaurl, compact('data', 'date'))->render();
-        $pdf = \labquiam::make('dompdf.wrapper');
+        $pdf = \Labquiam::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         
         if($tipo==1){return $pdf->stream('reporte');}
