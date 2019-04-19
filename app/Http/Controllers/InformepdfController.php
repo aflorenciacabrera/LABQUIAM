@@ -40,11 +40,12 @@ class InformepdfController extends Controller
       }
 	 
         // return view('informepdf.informes_por_muestras' , compact('informe'));
-        // return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion);
-        $view= \View::make ('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion)->render();
-        $pdf = \App::make('dompdf.wrapper');
-        $pdf->loadHTML($view);
-        return $pdf->stream('informepdf.informes_por_muestras');
+        return view('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion);
+
+        // $view= \View::make ('informepdf.informes_por_muestras')->with('tipoanalisis',$tipoanalisis)->with('tipomuestras',$tipomuestras)->with('procedencias',$procedencias)->with('informe',$informe)->with('determinacion',$determinacion)->render();
+        // $pdf = \App::make('dompdf.wrapper');
+        // $pdf->loadHTML($view);
+        // return $pdf->stream('informepdf.informes_por_muestras');
     }
 
       public function crearPDF($datos,$vistaurl,$tipo)

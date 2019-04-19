@@ -27,7 +27,7 @@
                        <th>Categoria</th>
                       <th>Estado</th>
                       <th>ver</th>
-                      <th>descargar</th>
+                      
                     </tr></thead>
                     @if($muestra->count())
                         @foreach($muestra as $muestras)
@@ -42,7 +42,7 @@
                        
                     
                         <td><a href="{{ url('muestra/ver/informe/'.$muestras->id) }}" target="_blank" ><button class="btn btn-block btn-primary btn-xs">Ver</button></a></td>
-                        <td><a href="crear_reporte_porpais/2" target="_blank" ><button class="btn btn-block btn-success btn-xs">Descargar</button></a></td>
+                        {{-- <td><a href="crear_reporte_porpais/2" target="_blank" ><button class="btn btn-block btn-success btn-xs">Descargar</button></a></td> --}}
                     </tr>
                   </tbody>
                     @endforeach
