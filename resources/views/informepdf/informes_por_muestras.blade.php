@@ -53,6 +53,7 @@
             {{-- <div class="text-center" >
                 <label for=""> <u> ANALISIS:</u></label>
             </div> --}}
+             <hr>
              <table class="table table-hover"> 
                 <thead><tr>
                 <th><label for=""> <u> ANÁLISIS</u></label></th>
